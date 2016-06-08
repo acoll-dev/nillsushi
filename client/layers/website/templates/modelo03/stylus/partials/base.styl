@@ -1,0 +1,53 @@
+/**
+ * Basic theme styles.
+ */
+
+//*
+//	box-sizing: border-box
+//
+//body
+//	@extend %grid-container
+//
+//	> header
+//		@extend %grid-100
+//		padding: 20px
+//		background-color: gray
+//
+//section
+//	@extend %grid-60
+//	padding: 20px
+//	background-color: yellow
+//
+//aside
+//	@extend %grid-40
+//	padding: 20px
+//
+//footer
+//	@extend %grid-100
+//	padding: 20px
+//	background-color: green
+
+
+//    grid xs 16, sm 12, md 8, lg 4, xl 16 4
+
+html
+body
+    min-width 320px
+
+body
+    padding 0
+    background $color-bg
+    color $color-text
+
+header
+    position relative
+    z-index 2
+
+.banner
+    position relative
+    z-index 0
+
+main
+footer
+    position relative
+    z-index 1

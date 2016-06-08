@@ -1,0 +1,354 @@
+{
+    "page": {
+        "home": {
+            "feature": [
+                {
+                    "icon": "fa fa-fw fa-check-circle fa-4x",
+                    "title": "Lorem ipsum dolor sit",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua? Tempor incididunt.",
+                    "link": {
+                        "url": "#",
+                        "target": "_blank",
+                        "class": "btn btn-griffo-2",
+                        "icon": "fa fa-fw fa-plus",
+                        "label": "Saiba mais"
+                    }
+                }, {
+                    "icon": "fa fa-fw fa-bars fa-4x",
+                    "title": "Lorem ipsum dolor sit",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua? Tempor incididunt.",
+                    "link": {
+                        "url": "#",
+                        "target": "_blank",
+                        "class": "btn btn-griffo-2",
+                        "icon": "fa fa-fw fa-plus",
+                        "label": "Saiba mais"
+                    }
+                }, {
+                    "icon": "fa fa-fw fa-briefcase fa-4x",
+                    "title": "Lorem ipsum dolor sit",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua? Tempor incididunt.",
+                    "link": {
+                        "url": "#",
+                        "target": "_blank",
+                        "class": "btn btn-griffo-2",
+                        "icon": "fa fa-fw fa-plus",
+                        "label": "Saiba mais"
+                    }
+                }
+            ],
+            "highlight": [
+                {
+                    "title": "Produtos em destaque",
+                    "module": "product",
+                    "type": "carousel",
+                    "carousel": {
+                        "bs": {
+                            "xs": 1,
+                            "sm": 3,
+                            "md": 3,
+                            "lg": 4
+                        },
+                        "controller": {
+                            "position": "bottom",
+                            "_": "top/bottom",
+                            "icon": {
+                                "prev": "fa fa-fw fa-2x fa-chevron-circle-left",
+                                "next": "fa fa-fw fa-2x fa-chevron-circle-right"
+                            }
+                        },
+                        "autoplay": 4000
+                    },
+                    "highlightsOnly": true,
+                    "url": {
+                        "prefix": "produtos/"
+                    },
+                    "sort": {
+                        "order": "desc",
+                        "by": "registrationdate",
+                        "type": "date"
+                    },
+                    "model": {
+                        "sort": ["image", "title", "shortdescription", "link"],
+                        "_": ["date", "image", "title", "shortdescription", "link"],
+                        "date": {
+                            "filter": "dd/MM/yyyy",
+                            "class": "text-muted",
+                            "icon": "fa fa-fw fa-clock-o",
+                            "prefix": "Postado em ",
+                            "suffix": ""
+                        },
+                        "image": {
+                            "preload": true,
+                            "scale": "1:1"
+                        },
+                        "link": {
+                            "class": "btn btn-griffo-2",
+                            "icon": "fa fa-fw fa-plus",
+                            "label": "Saiba mais"
+                        }
+                    }
+                }, {
+                    "title": "Serviços em destaque",
+                    "module": "service",
+                    "type": "carousel",
+                    "carousel": {
+                        "bs": {
+                            "xs": 1,
+                            "sm": 3,
+                            "md": 4,
+                            "lg": 4
+                        },
+                        "controller": {
+                            "position": "bottom",
+                            "_": "top/bottom",
+                            "icon": {
+                                "prev": "fa fa-fw fa-2x fa-chevron-circle-left",
+                                "next": "fa fa-fw fa-2x fa-chevron-circle-right"
+                            }
+                        },
+                        "autoplay": 4000
+                    },
+                    "highlightsOnly": true,
+                    "url": {
+                        "prefix": "servicos/"
+                    },
+                    "sort": {
+                        "order": "desc",
+                        "by": "registrationdate",
+                        "type": "date"
+                    },
+                    "model": {
+                        "sort": ["image", "title", "shortdescription", "link"],
+                        "date": {
+                            "filter": "dd/MM/yyyy",
+                            "class": "text-muted",
+                            "icon": "fa fa-fw fa-clock-o",
+                            "prefix": "Postado em ",
+                            "suffix": ""
+                        },
+                        "image": {
+                            "preload": true,
+                            "scale": "1:1"
+                        },
+                        "link": {
+                            "class": "btn btn-griffo-2",
+                            "icon": "fa fa-fw fa-plus",
+                            "label": "Saiba mais"
+                        }
+                    }
+                }, {
+                    "title": "Últimos trabalhos",
+                    "module": "client",
+                    "type": "carousel",
+                    "carousel": {
+                        "bs": {
+                            "xs": 2,
+                            "sm": 4,
+                            "md": 6,
+                            "lg": 6
+                        },
+                        "controller": {
+                            "position": "bottom",
+                            "_": "top/bottom",
+                            "icon": {
+                                "prev": "fa fa-fw fa-2x fa-chevron-circle-left",
+                                "next": "fa fa-fw fa-2x fa-chevron-circle-right"
+                            }
+                        },
+                        "autoplay": 4000
+                    },
+                    "model": {
+                        "sort": ["image"],
+                        "image": {
+                            "preload": true,
+                            "scale": "1:1"
+                        },
+                        "link": {
+                            "target": "_blank"
+                        }
+                    }
+                }
+            ]
+        },
+        "product": {
+            "category": {
+                "url": {
+                    "prefix": "produtos/categoria/"
+                },
+                "title": "Categorias",
+                "toggle": {
+                    "title": {
+                        "prefix": "Mostrar/Ocultar Subcategorias de "
+                    }
+                },
+                "empty": "Nenhuma categoria",
+                "module": "product"
+            },
+            "highlight": {
+                "module": "product",
+                "type": "pager",
+                "pager": {
+                    "position": "bottom",
+                    "_": "top/bottom/both",
+                    "perPage": 6,
+                    "preload": true
+                },
+                "highlightsOnly": false,
+                "url": {
+                    "prefix": "produtos/"
+                },
+                "sort": {
+                    "order": "desc",
+                    "by": "registrationdate",
+                    "type": "date"
+                },
+                "model": {
+                    "class": "col-xs-12 col-sm-6 col-md-4 col-lg-4",
+                    "sort": ["image", "title", "shortdescription", "link"],
+                    "date": {
+                        "filter": "dd/MM/yyyy",
+                        "class": "text-muted",
+                        "icon": "fa fa-fw fa-clock-o",
+                        "prefix": "Postado em "
+                    },
+                    "image": {
+                        "preload": true,
+                        "scale": "1:1"
+                    },
+                    "link": {
+                        "class": "btn btn-griffo-2",
+                        "icon": "fa fa-fw fa-plus",
+                        "label": "Saiba mais"
+                    }
+                }
+            }
+        },
+        "service": {
+            "category": {
+                "url": {
+                    "prefix": "servicos/categoria/"
+                },
+                "title": "Categorias",
+                "empty": "Nenhuma categoria",
+                "module": "service"
+            },
+            "highlight": {
+                "module": "service",
+                "type": "pager",
+                "pager": {
+                    "position": "bottom",
+                    "_": "top/bottom/both",
+                    "perPage": 6,
+                    "preload": true
+                },
+                "highlightsOnly": false,
+                "url": {
+                    "prefix": "servicos/"
+                },
+                "sort": {
+                    "order": "desc",
+                    "by": "registrationdate",
+                    "type": "date"
+                },
+                "model": {
+                    "class": "col-xs-12 col-sm-6 col-md-4 col-lg-4",
+                    "sort": ["image", "title", "shortdescription", "link"],
+                    "date": {
+                        "filter": "dd/MM/yyyy",
+                        "class": "text-muted",
+                        "icon": "fa fa-fw fa-clock-o",
+                        "prefix": "Postado em "
+                    },
+                    "image": {
+                        "preload": true,
+                        "scale": "1:1"
+                    },
+                    "link": {
+                        "class": "btn btn-griffo-2",
+                        "icon": "fa fa-fw fa-plus",
+                        "label": "Saiba mais"
+                    }
+                }
+            }
+        },
+        "contact": {
+            "subtitle": {
+                "form": "Contato rápido",
+                "info": "Informações"
+            },
+            "form": {
+                "message": {
+                    "success": "Sua mensagem foi enviada com sucesso, em breve entraremos em contato.",
+                    "error": "Ocorreu um erro ao enviar sua mensagem, por favor, entre em contato conosco de outra form e informe o problema."
+                },
+                "button": {
+                    "submit": {
+                        "label": "Enviar",
+                        "icon": "fa fa-fw fa-check",
+                        "class": "btn-griffo-2"
+                    }
+                },
+                "schema": [
+                    {
+                        "property": "name",
+                        "label": "Nome",
+                        "columns": 6,
+                        "attr": {
+                            "required": true
+                        },
+                        "msgs": {
+                            "required": "Preencha o nome"
+                        }
+                    }, {
+                        "property": "email",
+                        "label": "E-mail",
+                        "type": "email",
+                        "columns": 6,
+                        "attr": {
+                            "required": true
+                        },
+                        "msgs": {
+                            "required": "Preencha o e-mail",
+                            "email": "O e-mail é inválido"
+                        }
+                    }, {
+                        "property": "phone",
+                        "label": "Telefone",
+                        "type": "phone",
+                        "columns": 6,
+                        "attr": {
+                            "required": true,
+                            "ngRequired": "!formSettings.data.mobilephone"
+                        },
+                        "msgs": {
+                            "required": "Preencha o telefone"
+                        }
+                    }, {
+                        "property": "mobilephone",
+                        "label": "Celular",
+                        "type": "mobilephone",
+                        "columns": 6,
+                        "attr": {
+                            "required": true,
+                            "ngRequired": "!formSettings.data.phone"
+                        },
+                        "msgs": {
+                            "required": "Preencha o celular"
+                        }
+                    }, {
+                        "property": "message",
+                        "label": "Mensagem",
+                        "type": "textarea",
+                        "attr": {
+                            "required": true
+                        },
+                        "msgs": {
+                            "required": "Preencha a mensagem"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

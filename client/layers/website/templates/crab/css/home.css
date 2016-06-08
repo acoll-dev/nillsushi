@@ -1,0 +1,25 @@
+.page {
+  padding: 0;
+}
+.page > .container {
+  padding: 0;
+}
+.page > .page-header {
+  margin-bottom: 0;
+}
+.home-content {
+  min-height: 300px;
+  padding: 29.5px 0;
+}
+@media (max-width: 991px) {
+  .home-content {
+    padding: 20px 20px;
+  }
+}
+@media (max-width: 767px) {
+  .home-content {
+    padding: 0;
+  }
+}
+
+/*# sourceMappingURL=../../../../../../client/layers/website/templates/crab/css/home.css.map */

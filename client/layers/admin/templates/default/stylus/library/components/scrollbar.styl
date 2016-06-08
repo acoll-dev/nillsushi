@@ -1,0 +1,65 @@
+
+//** ELEMENTS **//
+
+    //scrollbar-shadow-color            { /* 1 */ } // Cor da sombra dos botões e scroller (ie 7< onde a scrollbar era 3D)
+    //scrollbar-highlight-color           { /* 2 */ } // Cor da iluminação dos botões e scroller (ie 7< onde a scrollbar era 3D)
+    //scrollbar-track-color                { /* 3 */ } // Cor do wrapper do scrollbar
+    //scrollbar-arrow-color              { /* 4 */ } // Cor da flecha dos botões
+    //scrollbar-face-color                { /* 5 */ } // Cor do background dos botões e scroller (o que se move)
+    //scrollbar-3dlight-color            { /* 6 */ } // Cor da iluminação dos botões e scroller sobre o wrapper (ie 7< onde a scrollbar era 3D)
+    //scrollbar-darkshadow-color        { /* 7 */ } // Cor da sombra dos botões e scroller sobre o wrapper (ie 7< onde a scrollbar era 3D)
+
+body
+    scrollbar-face-color #666666
+    scrollbar-shadow-color transparent
+    scrollbar-highlight-color transparent
+    scrollbar-3dlight-color transparent
+    scrollbar-darkshadow-color transparent
+    scrollbar-track-color #CCCCCC
+    scrollbar-arrow-color #666666
+
+//** ELEMENTS **//
+
+    //::-webkit-scrollbar              { /* 1 */ } // Lagura e autura das barras de scrollbar
+    //::-webkit-scrollbar-button       { /* 2 */ } // Botões
+    //::-webkit-scrollbar-track        { /* 3 */ } // Wrapper do scrollbar
+    //::-webkit-scrollbar-track-piece  { /* 4 */ } // Espaço entre o scrollbar e o botão/final do scroll
+    //::-webkit-scrollbar-thumb        { /* 5 */ } // Scroller - o que se move
+    //::-webkit-scrollbar-corner       { /* 6 */ } // Espaço entre a scrollbar-x e scrollbar-y
+    //::-webkit-resizer                { /* 7 */ } // |||> Icone de redimencionamento
+
+//** STATES **//
+
+    //:horizontal – The horizontal pseudo-class applies to any scrollbar pieces that have a horizontal orientation.
+
+    //:vertical – The vertical pseudo-class applies to any scrollbar pieces that have a vertical orientation.
+
+    //:decrement – The decrement pseudo-class applies to buttons and track pieces. It indicates whether or not the button or track piece will decrement the view’s position when used (e.g., up on a vertical scrollbar, left on a horizontal scrollbar).
+
+    //:increment – The increment pseudo-class applies to buttons and track pieces. It indicates whether or not a button or track piece will increment the view’s position when used (e.g., down on a vertical scrollbar, right on a horizontal scrollbar).
+
+    //:start – The start pseudo-class applies to buttons and track pieces. It indicates whether the object is placed before the thumb.
+
+    //:end – The end pseudo-class applies to buttons and track pieces. It indicates whether the object is placed after the thumb.
+
+    //:double-button – The double-button pseudo-class applies to buttons and track pieces. It is used to detect whether a button is part of a pair of buttons that are together at the same end of a scrollbar. For track pieces it indicates whether the track piece abuts a pair of buttons.
+
+    //:single-button – The single-button pseudo-class applies to buttons and track pieces. It is used to detect whether a button is by itself at the end of a scrollbar. For track pieces it indicates whether the track piece abuts a singleton button.
+
+    //:no-button – Applies to track pieces and indicates whether or not the track piece runs to the edge of the scrollbar, i.e., there is no button at that end of the track.
+
+    //:corner-present – Applies to all scrollbar pieces and indicates whether or not a scrollbar corner is present.
+
+    //:window-inactive – Applies to all scrollbar pieces and indicates whether or not the window containing the scrollbar is currently active. (In recent nightlies, this pseudo-class now applies to ::selection as well. We plan to extend it to work with any content and to propose it as a new standard pseudo-class.)
+
+::-webkit-scrollbar
+    width 8px
+    height 8px
+::-webkit-scrollbar-track
+    background #CCCCCC
+::-webkit-scrollbar-track:window-inactive
+    background rgba(#CCCCCC, .5)
+::-webkit-scrollbar-thumb
+    background #666666
+::-webkit-scrollbar-thumb:window-inactive
+    background rgba(#666666, .5)

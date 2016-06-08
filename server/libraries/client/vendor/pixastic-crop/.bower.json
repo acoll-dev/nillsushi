@@ -1,0 +1,29 @@
+{
+  "name": "pixastic-crop",
+  "version": "1.0.1",
+  "homepage": "https://github.com/bhaal275/pixastic-crop",
+  "authors": [
+    "bhaal275 <dominik.deren@windowslive.com>"
+  ],
+  "main": "dist/pixastic-crop.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "pixastic-standalone-release": "1.0.0"
+  },
+  "_release": "1.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.1",
+    "commit": "1ad4a28eb187c9bc13c56dfcd6777f5fd01fb331"
+  },
+  "_source": "git://github.com/bhaal275/pixastic-crop.git",
+  "_target": "*",
+  "_originalSource": "pixastic-crop"
+}

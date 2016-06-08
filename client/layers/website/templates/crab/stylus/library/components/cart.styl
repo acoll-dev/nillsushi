@@ -1,0 +1,57 @@
+.gr-cart-list
+    margin 0
+    padding 0
+    .gr-cart-list-item
+        display table
+        width 100%
+        list-style none
+        margin 0
+        padding 5px
+        border-bottom solid 1px #F0F0F0
+        .gr-cart-list-item-name
+            display table-cell
+            vertical-align middle
+        .gr-cart-list-item-control
+            display table-cell
+            vertical-align middle
+            width 108px
+            .btn
+                float left
+                width 18px
+                height 18px
+                line-height 16px
+                padding 0
+                margin 6px 0
+                text-align center
+                border-radius 50%
+                background #FFFFFF
+                color #666666
+                border-color #CCCCCC
+                &:hover
+                    background #F0F0F0
+            input
+                display inline
+                float left
+                width 70px
+                margin 0 10px
+                border-radius 0
+        &:last-child
+            border-bottom 0
+.cart-total
+    display block
+    padding 5px
+.btn-cart-counter
+    display block
+    float right
+    border-radius 50%
+    width 20px
+    height 20px
+    line-height 22px
+    margin-left 5px
+    background $color-bg-secondary
+    set-font-size(10px)
+.cart
+    display inline-block
+    margin-left 7px
+    +screen-min(sm)
+        position relative

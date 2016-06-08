@@ -1,0 +1,14 @@
+make-title()
+    position relative
+    display table
+    set-font-size(38px)
+    color $color-title-text
+    padding 15px 0
+    margin 0 auto 30px
+    background $color-title-bg
+    text-align center
+    &:first-child
+        margin-top 0
+    if($size-title-border)
+        padding remify($size-title-border * 2) remify($size-title-border * 3)
+        border-bottom solid $size-title-border $color-title-border

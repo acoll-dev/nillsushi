@@ -1,0 +1,13 @@
+kits($prop, $args, $important = false)
+    if $important
+        -webkit-{$prop} $args !important
+        -moz-{$prop} $args !important
+        -ie-{$prop} $args !important
+        -o-{$prop} $args !important
+        {$prop} $args !important
+    else
+        -webkit-{$prop} $args
+        -moz-{$prop} $args
+        -ie-{$prop} $args
+        -o-{$prop} $args
+        {$prop} $args

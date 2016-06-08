@@ -1,0 +1,288 @@
+.system-info
+    margin-top 20px
+    dd
+        font-style italic
+.navbar
+    padding 1px
+    margin-bottom 0
+    border-radius 0
+    border none
+    border-bottom solid 1px
+    &:before
+    &:after
+        clear none
+        content none
+    .container-fluid
+        position relative
+        display table
+        width 100%
+        height 50px
+        margin 0
+        padding 0
+        &:before
+        &:after
+            clear none
+            content none
+        .btn-group
+            position relative
+            display table
+            float left
+            .btn
+                margin-left -1px
+                &:first-child
+                    margin-left 0
+        .btn
+            position relative
+            display block
+            float left
+            height 34px
+            margin 8px 0
+            text-shadow none
+            box-shadow none
+            font-size 0.875rem
+            overflow hidden
+            outline none !important
+            &.btn-full
+                min-width 50px
+                height 100%
+                margin 0
+                padding 0
+                border-radius 0
+                border none
+                &.active
+                    border none
+            &.btn-link
+                &, &:hover
+                    background none
+                    border none
+            &.btn-link-full
+                min-width 50px
+                height 100%
+                margin 0
+                padding 0
+                border-radius 0
+                border none
+                &
+                &:hover
+                    background none
+                    border none
+                &.active
+                    border none
+                &not(.active)
+                    background none
+            &.btn-menu
+                font-size 1.3rem
+            &.btn-notification
+                &.has-notification
+                    color #d2322d
+                    &:hover
+                    &.active
+                        background #d2322d !important
+                        color #ffffff
+            &.btn-logout
+                &:hover
+                    background #ac2925
+                    border-color #b71f1b
+                    color #ffffff
+            &.btn-brand
+                position absolute
+                width 70px
+                top 0
+                left 50%
+                margin-left -35px
+                font-size 2.2rem
+                z-index 100
+                +screen-max(xs)
+                    height 50px
+            &.active
+                border solid 1px
+        .navbar-center
+            position relative
+            width 100%
+            > *
+                margin-right 10px
+                &:first-child
+                    margin-left 10px
+            .navbar-center-group
+                display table
+                height 100%
+            > .navbar-center-group
+                > *:not(.navbar-center-group):not(.popover)
+                    float left
+                    margin-right 10px
+                    &:last-of-type
+                        margin-right 0
+        .navbar-right
+        .navbar-left
+            position relative
+            height 100%
+            float none
+        .popover
+            max-width none
+            width 230px
+            left auto !important
+            right 10px
+            font-size 0.875rem
+            .arrow
+                left auto !important
+                right 10px
+            .popover-content
+                padding 10px
+                .popover-profile
+                    position relative
+                    width 100%
+                    box-sizing border-box
+                    display table
+                    margin-bottom 10px
+                    .popover-profile-image
+                        position relative
+                        width 82px
+                        background #F0F0F0
+                        color #DDDDDD
+                        text-align center
+                        box-shadow none
+                    .popover-profile-info
+                        position relative
+                        display table-cell
+                        width 100%
+                        padding 0
+                        padding-left 10px
+                        vertical-align top
+                        p
+                            margin 0
+                        hr
+                            margin 5px 0
+                .popover-list
+                    kits($attr, $value)
+                    margin 0 -11px
+                    box-shadow none
+                    .list-group-item
+                        border-radius 0
+                        border-left none
+                        border-right none
+                        background #f9f9f9
+                        color #999999
+                        cursor pointer
+                        kits(user-select, none)
+                        &.list-group-item-drag
+                            &.active
+                                background #428BCA
+                                color #FFFFFF
+                                .fa
+                                    kits(animation-name, shake)
+                                    kits(animation-duration, 1s)
+                                    kits(animation-iteration-count, infinite)
+                                    kits(animation-timing-function, linear)
+                                    kits(transform-origin, 50% 50%)
+                                &:hover
+                                    background darken(#428BCA, 5%)
+                        &.list-group-item-theme
+                            cursor default
+                            background #ffffff
+                            span
+                                cursor text
+                            .color-list
+                                position relative
+                                display table
+                                width 100%
+                                margin 0
+                                padding 5px
+                                .color-list-item
+                                    position relative
+                                    float left
+                                    width 20px
+                                    height 20px
+                                    margin 5px
+                                    border-radius 4px
+                                    text-align center
+                                    list-style none
+                                    cursor pointer
+                                    transition border .3s
+                                    .fa
+                                        color rgba(0,0,0,.3)
+                                        kits(transition, opacity .3s)
+                                        kits(opacity, 0)
+                                    &.active
+                                    &:hover
+                                        .fa
+                                            kits(opacity, 1)
+                            &:hover
+                                background #ffffff
+                                color #999999
+                        &:hover
+                            background #eeeeee
+                            color #666666
+                    .list-group-itemdisabled
+                        background #CCCCCC
+                .popover-footer
+                    position relative
+                    display table
+                    width 228px
+                    box-sizing border-box
+                    margin 10px -11px
+                    margin-bottom -11px
+                    padding 5px
+                    background #f7f7f7
+                    border-top solid 1px #dddddd
+                    border-bottom-left-radius 6px
+                    border-bottom-right-radius 6px
+                    .btn
+                        float left
+                        background none
+                        margin 0
+                        margin -5px
+                        border none
+                        border-radius 0
+                        border-right solid 1px #dddddd
+                        color #999999
+                        transition(all, .1s)
+                        &.btn-logout
+                            float right
+                            border-left solid 1px #dddddd
+                            &:hover
+                                background #c12f2a
+                                color #FFFFFF
+                        &:first-child
+                            border-bottom-left-radius 6px
+                        &:last-child
+                            border-right none
+                            border-bottom-right-radius 6px
+                        &:hover
+                            background #eeeeee
+                            color #999999
+        .dropdown-menu
+            width 100%
+            max-width 100%
+            min-width 0
+            margin-top -5px
+            li
+                span
+                    display block
+                    padding 3px 20px
+                &.active
+                    background #F6F6F6
+        .navbar-left
+        .navbar-center
+        .navbar-right
+            display table-cell !important
+            float none !important
+        +screen-max(xs)
+            display block
+            height auto
+            .navbar-left
+            .navbar-center
+            .navbar-right
+                position relative
+                display block !important
+                float none !important
+                width 100% !important
+                height 50px
+                border-top solid 1px
+                &:before
+                &:after
+                    display table
+                    content " "
+                    clear both
+                &:first-child
+                    border none
+                    margin-top 0

@@ -1,0 +1,38 @@
+$social-media = {
+        facebook: #3b5998,
+        twitter: #00aced,
+        instagram: #125688,
+        youtube: #bb0000,
+        googlePlus: #dd4b39,
+        github: #333333,
+        whatsapp: #4dc247,
+
+    }
+
+.social
+    display table
+    margin-top 30px
+    if($size-social-border)
+        padding-left ($size-social-border * 2)
+        border-left solid $size-social-border $color-social-border
+    ul
+        display table
+        margin 0
+        padding 5px 0
+        li
+            float left
+            list-style none
+            color $color-social-icon
+            kits(transition, all .3s)
+            a[href]
+                color $color-social-icon
+                kits(transition, all .3s)
+                &:hover
+                &:active
+                    color $color-social-icon-hover
+            for $key ,$value in $social-media
+                &.{$key}
+                    a[href]
+                        &:hover
+                        &:active
+                            color $value

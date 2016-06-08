@@ -1,0 +1,99 @@
+make-columns($columns = $grid-columns)
+    for $key, $col in $screen
+        $col['cols'] = ()
+        for $grid in 1..$columns
+            push($col['cols'], (100%/$columns) * $grid)
+
+make-columns()
+
+$_grid-base-css()
+    position relative
+    float left
+    min-height 1px
+    padding-left ($grid-gutter / 2)
+    padding-right ($grid-gutter / 2)
+
+$_build-grid-css()
+    width: $screen[arguments[0]]['cols'][arguments[1] - 1]
+
+$_build-grid-offset-css()
+    margin-left: $screen[arguments[0]]['cols'][arguments[1] - 1]
+
+$_build-grid-push-css()
+    left: $screen[arguments[0]]['cols'][arguments[1] - 1]
+
+$_build-grid-pull-css()
+    right: $screen[arguments[0]]['cols'][arguments[1] - 1]
+
+grid()
+    if(called-from != ('$_set-classes' 'screen-min' 'make-grid-classes'))
+        $_grid-base-css()
+
+    if(length(arguments) > 1)
+        if(length(arguments[0]) > 1)
+            for $arg in arguments
+                $_build-grid-css($arg)
+        else
+            $_build-grid-css(arguments)
+    else
+        $_build-grid-css(arguments)
+
+grid-offset()
+    if(length(arguments) > 1)
+        if(length(arguments[0]) > 1)
+            for $arg in arguments
+                $_build-grid-offset-css($arg)
+        else
+            $_build-grid-offset-css(arguments)
+    else
+        $_build-grid-offset-css(arguments)
+
+grid-push()
+    if(length(arguments) > 1)
+        if(length(arguments[0]) > 1)
+            for $arg in arguments
+                $_build-grid-push-css($arg)
+        else
+            $_build-grid-push-css(arguments)
+    else
+        $_build-grid-push-css(arguments)
+
+grid-pull()
+    if(length(arguments) > 1)
+        if(length(arguments[0]) > 1)
+            for $arg in arguments
+                $_build-grid-pull-css($arg)
+        else
+            $_build-grid-pull-css(arguments)
+    else
+        $_build-grid-pull-css(arguments)
+
+
+make-grid-classes($columns = $grid-columns)
+    if $columns != $grid-columns
+        make-columns($columns)
+
+    [class*="col-"]{'[class*="-' + $columns + '"]'}
+        $_grid-base-css()
+
+    $_set-classes($key)
+        for $grid in (1..$columns)
+            .col-{$key}-{$grid}-{$columns}
+                grid $key $grid
+            if ($grid < $columns)
+                .col-{$key}-offset-{$grid}-{$columns}
+                    grid-offset $key $grid
+                .col-{$key}-push-{$grid}-{$columns}
+                    grid-push $key $grid
+                .col-{$key}-pull-{$grid}-{$columns}
+                    grid-pull $key $grid
+
+    for $key, $col in $screen
+        if($screen[$key]['min'] > 0)
+            +screen-min($key)
+                $_set-classes($key)
+        else
+            $_set-classes($key)
+
+    if $columns != $grid-columns
+        make-columns()

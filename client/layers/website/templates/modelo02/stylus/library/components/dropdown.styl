@@ -1,0 +1,27 @@
+.nav:not(.navbar-collapse)
+    .dropdown-menu
+        li
+            a
+                .caret
+                    position absolute
+                    right 10px
+                    top 50%
+                    kits(transform, translateY(-50%))
+.dropdown-menu
+    border-radius 0 !important
+    border none
+    li
+        a
+            position relative
+            padding-right 15px
+.dropdown-menu-child
+    list-style none
+    margin 0
+    padding 0
+    li
+        a
+            display block
+            padding 5px
+            text-decoration none
+            &:hover
+                background-color rgba(0, 0, 0, .25)

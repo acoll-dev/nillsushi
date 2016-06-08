@@ -1,0 +1,68 @@
+.access-control-list {
+  margin: 0;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+  border-radius: 4px;
+}
+.access-control-list ul {
+  margin: 15px 0 0;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+  border-radius: 4px;
+}
+.access-control-list li {
+  position: relative;
+  display: table;
+  width: 100%;
+  padding: 15px;
+  list-style-type: none;
+  background: #f9f9f9;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.access-control-list li h4,
+.access-control-list li h5 {
+  display: table;
+  float: left;
+  line-height: 22px;
+  margin: 0;
+  padding: 0;
+}
+.access-control-list li h4 a,
+.access-control-list li h5 a {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+.access-control-list li .visibility {
+  padding: 0 20px;
+  color: rgba(0,0,0,0.25);
+  cursor: pointer;
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  -ie-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.access-control-list li .visibility:hover {
+  color: rgba(0,0,0,0.5);
+}
+.access-control-list li .visibility.active {
+  color: #1ab394;
+}
+.access-control-list li .bootstrap-switch {
+  float: right;
+}
+.access-control-list li .bootstrap-switch .bootstrap-switch-text {
+  content: '&nbps;';
+  padding: 0 10px;
+}
+.access-control-list li.list-group-item-header {
+  background: #f6f6f6;
+}
+.access-control-list li ul li {
+  background: #fcfcfc;
+}
+
+/*# sourceMappingURL=../../../../../../../server/modules/griffo/Profile/view/admin/css/access-control.css.map */

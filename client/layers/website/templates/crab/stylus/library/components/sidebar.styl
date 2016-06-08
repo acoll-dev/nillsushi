@@ -1,0 +1,36 @@
+.sidebar
+    padding 0
+    .sidebar-inner
+        background #EEEEEE
+        ul
+            text-align left
+            li
+                word-wrap break-word
+                list-style none
+        > ul
+            padding 0
+            ul
+                padding 0
+                padding-left 5px
+                li
+                    font-size 0.775rem
+        .amount
+            font-size 1rem
+    +screen-max(sm)
+        border solid 1px #EEEEEE
+        background #FFFFFF
+        .sidebar-inner
+            padding 20px
+            background none
+    +screen-min(md)
+        margin-top -61px
+        overflow hidden
+        .sidebar-inner
+            width $sidebar-width
+            height 100%
+            padding 100px 10px
+            text-align center
+            border-left solid 1px #DDDDDD
+            border-right solid 1px #DDDDDD
+            hr
+                border-color #DDDDDD

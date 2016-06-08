@@ -1,0 +1,202 @@
+/*--------------------------------------------------------------------
+ * Main Styles
+ *--------------------------------------------------------------------
+ * Use this file to compile globally used styles (E.g.: normalize,
+ * structure, default tags styling, etc.).
+ *
+ * P.s.: you probably shouldn't have only one stylesheet in your
+ * application, so that you could avoid sending all your styles to the
+ * client when you are acctually using only a part of them in a
+ * state/page. To createmore stylesheets with different partials, just
+ * copy this file and change the imported extensions and partials as
+ * needed.
+ */
+html,
+html body {
+  min-width: 320px;
+  height: 100%;
+  font-size: 100%;
+}
+@media (max-width: 767px) {
+  body {
+    font-size: 85%;
+  }
+  body .alert {
+    font-size: 0.9rem;
+  }
+}
+.wrapper {
+  position: relative;
+  height: 100%;
+  min-height: 376px;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #f0f0f0;
+  font-size: 0.875rem;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.wrapper > .wrapper-inner {
+  height: 100%;
+  max-height: 100%;
+}
+.wrapper .btn,
+.wrapper .btn:hover,
+.wrapper .btn:focus,
+.wrapper .btn:active,
+.wrapper .btn:visited {
+  outline: none !important;
+}
+.wrapper .alert {
+  font-size: 0.8rem;
+}
+.wrapper .alert ul {
+  padding: 0;
+  margin: 0 20px;
+}
+.wrapper .alert hr {
+  margin: 10px 0;
+}
+.wrapper .alert.ng-hide {
+  opacity: 0;
+  min-height: 0;
+  -webkit-opacity: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  font-size: 0;
+}
+.wrapper .alert.ng-hide > h5,
+.wrapper .alert.ng-hide > p,
+.wrapper .alert.ng-hide > ul,
+.wrapper .alert.ng-hide > ul li,
+.wrapper .alert.ng-hide span {
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+.wrapper .alert.ng-hide h5 {
+  font-weight: bold;
+}
+.dropdown-menu > li a:hover {
+  background: #428bca;
+  color: #fff;
+}
+.popover {
+  z-index: 1030;
+}
+textarea {
+  resize: vertical;
+}
+.badge.badge-primary {
+  background: #428bca;
+}
+.badge.badge-success {
+  background: #5cb85c;
+}
+.badge.badge-info {
+  background: #5bc0de;
+}
+.badge.badge-warning {
+  background: #f0ad4e;
+}
+.badge.badge-danger {
+  background: #d9534f;
+}
+.ng-hide-add {
+  -webkit-animation: 0.5s fadeOut ease;
+  -moz-animation: 0.5s fadeOut ease;
+  -ie-animation: 0.5s fadeOut ease;
+  -o-animation: 0.5s fadeOut ease;
+  animation: 0.5s fadeOut ease;
+}
+.ng-hide-remove {
+  -webkit-animation: 0.5s fadeIn ease;
+  -moz-animation: 0.5s fadeIn ease;
+  -ie-animation: 0.5s fadeIn ease;
+  -o-animation: 0.5s fadeIn ease;
+  animation: 0.5s fadeIn ease;
+}
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=../../../../../../client/layers/admin/templates/default/css/main.css.map */

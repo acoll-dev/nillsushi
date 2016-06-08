@@ -1,0 +1,14 @@
+.sass-cache
+.brackets.json
+koala-config.json
+scss-lint.log
+nbproject
+sitemaps
+sitemap.index.xml
+server/log/*
+server/tmp/*
+#client/config.json
+#client/layers/website/*
+#client/uploads/*
+#server/modules/griffo/*
+#server/libraries/client/gr-ui

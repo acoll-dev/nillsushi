@@ -1,0 +1,29 @@
+.footer
+    background $color-bg-primary
+    .footer-block
+        display table
+        .footer-block-inner
+            display table-cell
+            padding 20px 0
+            vertical-align middle
+            color $color-text-primary
+            font-size 0.875rem
+            h1
+                margin-top 0
+            a
+                color $color-text-primary
+            &.sig-box
+                vertical-align bottom
+                .acoll-sig
+                    kits(transition, color .3s)
+                    &:hover
+                        color #FF1F4F
+    .footer-bottom
+        background darken($color-bg-primary, 5%)
+        color $color-text-primary
+        .footer-block-inner
+            padding 5px 0
+        +screen-max(sm)
+            .footer-block
+                .footer-block-inner
+                    text-align center

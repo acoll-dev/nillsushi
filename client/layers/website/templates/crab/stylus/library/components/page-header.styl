@@ -1,0 +1,28 @@
+.page-header
+    padding 0 0 15px
+    margin 0 0 30px
+    set-font-size(20px)
+    &:before
+    &:after
+        content " "
+        display table
+    &:after
+        clear both
+main
+    header
+        > .page-header
+            background $color-bg-primary
+            margin 0
+            padding 0
+            > .container
+                padding 0
+            h1
+                margin 15px 0
+                padding 0 30px
+                color $color-text-secondary
+                set-font-size(28px)
+                .well
+                    padding 7px
+                    margin -8px 0
+                    border-radius 0
+                    box-shadow none

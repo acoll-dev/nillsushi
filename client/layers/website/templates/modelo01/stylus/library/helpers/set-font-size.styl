@@ -1,0 +1,30 @@
+set-font-size($value, $important = false) {
+    font-size $value
+    if ($value is inherit) {
+        /* do nothing, "inherit" has no unit */
+    } else {
+        if ($important is false) {
+            font-size remify($value)
+        } else {
+            font-size remify($value) !important
+        }
+    }
+}
+
+remify($value) {
+    u = unit($value)
+    if (u is 'px') {
+        return unit($value/16, 'rem')
+    } else {
+        return unit($value, u)
+    }
+}
+
+unremify($value) {
+    u = unit($value)
+    if (u is 'rem') {
+        return unit($value*16, 'px')
+    } else {
+        return unit($value, u)
+    }
+}

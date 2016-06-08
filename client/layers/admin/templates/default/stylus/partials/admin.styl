@@ -1,0 +1,297 @@
+body
+    overflow-x hidden
+    font-family "Open Sans" sans-serif
+    .wrapper
+        position relative
+        > .wrapper-inner
+            position relative
+            display block
+            float left
+            overflow hidden
+            grid-size(12)
+            > .container
+                position relative
+                display block
+                float left
+                min-width 320px
+                grid-size(12)
+                height 100%
+                padding 10px
+                margin 0
+                &:after
+                &:before
+                    display none
+                    clear none
+                    content none
+                > .container-inner
+                    $header-footer-bg = #F6F6F6
+                    position relative
+                    height 100%
+                    padding 0
+                    box-shadow 0 0 2px 1px rgba(0,0,0,.10)
+                    background #FFFFFF
+                    border solid 1px darken($header-footer-bg, 15%)
+                    right 0
+                    left 0
+                    overflow-y auto
+                    .gr-alert
+                        padding 0 10px
+                    .jumbotron
+                        border-radius 0
+                        margin-bottom 0
+                    .view-header
+                        padding 15px
+                        margin 0
+                        background $header-footer-bg
+                        border-bottom solid 1px darken($header-footer-bg, 5%)
+                        font-size 1.6rem
+                    .view-content
+                        position relative
+                        display block
+                        width 100%
+                        padding 0
+                        overflow auto
+                        form
+                            padding-top 10px
+                        .view-content-inner
+                            position relative
+                            display table
+                            width 100%
+                            padding 10px
+                            .tabbable
+                                .nav.nav-tabs
+                                    li
+                                        cursor pointer
+                                .tab-content
+                                    display table
+                                    width 100%
+                                    .tab-pane
+                                        padding 15px
+                                        .well
+                                            margin 10px 0
+                                            padding 10px
+                                            > *
+                                                margin-right 10px
+                                            > last-child
+                                                margin-right 0
+                                                margin-left 10px
+                                        &.active
+                                            display table
+                                            width 100%
+                            .view-footer
+                                display none
+                    .view-footer
+                        position absolute
+                        display table
+                        width 100%
+                        bottom 0
+                        padding 10px 0
+                        margin 0
+                        background $header-footer-bg
+                        border-top solid 1px darken($header-footer-bg, 5%)
+                        font-size 0.875rem
+                        label
+                            font-weight normal
+                        > *
+                            float left
+                            margin-left 10px
+                            &:last-child
+                                margin-right 10px
+                        .view-footer-header
+                            position relative
+                            display table
+                            width 100%
+                            background #EEEEEE
+                            margin 0
+                            margin-top -11px
+                            margin-bottom 10px
+                            padding 10px
+                            border-top solid 1px darken($header-footer-bg, 10%)
+                            border-bottom solid 1px darken($header-footer-bg, 10%)
+                            box-sizing border-box
+                            &:before
+                            &:after
+                                clear both
+                            > *
+                                float left
+                                margin-left 10px
+                                &first-child
+                                    margin-left 0
+                            @media screen and (max-width 800px)
+                                > *
+                                    position relative
+                                    display table
+                                    margin 0 auto !important
+                                    margin-bottom 10px !important
+                                    float none !important
+                                    &:before,
+                                    &:after
+                                        clear both
+                                    &:last-child
+                                        margin-bottom 0 !important
+            > .sidebar
+                position relative
+                display block
+                float left
+                height 100%
+                min-height 325px
+                padding 0
+                border none
+                overflow hidden
+                &.sidebar-notification
+                    border-left solid 1px
+                    border-color transparent
+                &.sidebar-menu
+                    border-right solid 1px
+                    border-color transparent
+    .alert
+        border-radius 0
+    .tabbable
+        .nav
+            &.nav-tabs
+                li.active
+                    a
+                        border-top solid 3px
+                li:not(.active)
+                    margin-top 2px
+    .well
+        border-radius 0
+        padding 15px
+        box-shadow none
+        form
+            padding-top 0 !important
+    .btn
+        -webkit-transition background .3s, border .3s, color .3s
+        -moz-transition background .3s, border .3s, color .3s
+        -ie-transition background .3s, border .3s, color .3s
+        -o-transition background .3s, border .3s, color .3s
+        transition background .3s, border .3s, color .3s
++screen-min(lg)
+    body
+        > .wrapper
+            > .wrapper-inner
+                grid-size(12)
+                > .container
+                    grid-size(12)
+                > .sidebar-menu
+                    grid-size(2)
+                    margin-grid(2, left)
+                    block-transition(margin)
+                > .sidebar-notification
+                    grid-size(2)
+                    margin-grid(2, right)
+                    block-transition(margin)
+        &.open-none
+            > .wrapper
+                > .wrapper-inner
+                    grid-size(12)
+                    > .container
+                        grid-size(12)
+                        block-transition(width)
+                    > .sidebar
+                        block-transition(margin)
+                    > .sidebar-menu
+                        grid-size(2)
+                        margin-grid(2, left)
+                    > .sidebar-notification
+                        grid-size(2)
+                        margin-grid(2, right)
+        &.open-both
+            > .wrapper
+                > .wrapper-inner
+                    > .container
+                        grid-size(8)
+                        block-transition(width)
+                    > .sidebar-menu
+                    > .sidebar-notification
+                        grid-size(2)
+                        margin 0
+        &.open-left
+            > .wrapper
+                > .wrapper-inner
+                    > .container
+                        grid-size(10)
+                        block-transition(width)
+                    > .sidebar-menu
+                        grid-size(2)
+                        margin 0
+        &.open-right
+            > .wrapper
+                > .wrapper-inner
+                    > .container
+                        grid-size(10)
+                        block-transition(width)
+                    > .sidebar-notification
+                        grid-size(2)
+                        margin 0
++screen(md)
+    body
+        > .wrapper
+            > .wrapper-inner
+                grid-size(18)
+                margin-grid(3, left)
+                > .container
+                    grid-size(8)
+                > .sidebar-menu
+                    grid-size(2)
+                > .sidebar-notification
+                    grid-size(2)
+        &.open-none
+            > .wrapper
+                > .wrapper-inner
+                    grid-size(18)
+                    margin-grid(3, left)
+                    block-transition(margin)
+                    > .container
+                        grid-size(8)
+                    > .sidebar-menu
+                        grid-size(2)
+                    > .sidebar-notification
+                        grid-size(2)
+        &.open-left
+        &.open-both
+            > .wrapper
+                > .wrapper-inner
+                    margin 0
+                    block-transition(margin)
+        &.open-right
+            > .wrapper
+                > .wrapper-inner
+                    margin-grid(6, left)
+                    block-transition(margin)
++screen-max(sm)
+    body
+        > .wrapper
+            > .wrapper-inner
+                grid-size(30)
+                margin-grid(9, left)
+                > .container
+                    grid-size(4.8)
+                    > .container-inner
+                        .view-header
+                            padding10px
+                > .sidebar
+                    margin 0
+                    grid-size(3.6)
+        &.open-none
+            > .wrapper
+                > .wrapper-inner
+                    grid-size(30)
+                    margin-grid(9, left)
+                    block-transition(margin)
+                    > .container
+                        grid-size(4.8)
+                    > .sidebar
+                        margin 0
+                        grid-size(3.6)
+        &.open-left
+        &.open-both
+            > .wrapper
+                > .wrapper-inner
+                    margin 0
+                    block-transition(margin)
+        &.open-right
+            > .wrapper
+                > .wrapper-inner
+                    margin-grid(18, left)
+                    block-transition(margin)

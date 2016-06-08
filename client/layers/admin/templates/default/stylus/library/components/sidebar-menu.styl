@@ -1,0 +1,161 @@
+sidebar-menu-list-group()
+    .sidebar-menu-list-group
+        margin-bottom 0
+        margin-left 10px
+        border none
+        border-radius 0
+        .list-group-item
+            display table
+            width 100%
+            margin 0
+            margin-bottom  1px
+            padding 0
+            border none
+            border-left solid 4px
+            border-radius 0
+            .list-group-item-label
+                position relative
+                display table
+                width 100%
+                margin  0
+                padding  0
+                .list-group-item-icon
+                    position relative
+                    display  table-cell
+                    width 35px
+                    height  100%
+                    padding 11px 10px
+                    margin 0
+                    text-align center
+                    vertical-align  middle
+                    border none
+                .list-group-item-text
+                    position relative
+                    display table-cell
+                    width 100%
+                    height 100%
+                    padding 0
+                    border none
+                    a
+                        position  relative
+                        display block
+                        width 100%
+                        height 100%
+                        margin 0
+                        padding 12px
+                        text-decoration none
+                        cursor  pointer
+                        -webkit-transition  background .3s, border .3s
+                        -moz-transition  background .3s, border .3s
+                        -ie-transition  background .3s, border .3s
+                        -o-transition  background .3s, border .3s
+                        transition  background .3s, border .3s
+                        .list-group-item-text-inner
+                            position relative
+                            display table
+                            width 100%
+                            height 100%
+                            .list-group-item-text-content
+                                position relative
+                                display table-cell
+                                width 100%
+                                font-size  0.875rem
+                            .list-group-item-text-arrow
+                                position relative
+                                display table-cell
+                                width 15px
+                                height  100%
+                                padding  0
+                                margin  0
+                                vertical-align  middle
+                                .fa:not(.draggable)
+                                    cursor pointer
+                                +screen-max(xs)
+                                    font-size  .8rem
+            &.open
+                > .list-group
+                    display  block
+            &.active
+                text-shadow  none
+                .list-group-item-label
+                    .list-group-item-text
+                        a
+                            .list-group-item-text-inner
+                                .list-group-item-text-arrow
+                                    opacity  .25
+                                    -webkit-opacity .25
+    > .sidebar-menu-list-group
+        width 100%
+        box-shadow none
+        margin 0
+        border none
+        .list-group-item
+            > .list-group
+                display  none
+                margin-top 10px
+                margin-bottom 10px
+                overflow  hidden
+
+body
+    sidebar-menu-list-group()
+.sidebar-menu
+    .sidebar-menu-client
+        display  table
+        width  100%
+        margin  20px 0
+        border  none
+        .acoll-griffo
+            font-size  3rem
+        .sidebar-menu-client-image
+            padding  0
+            img
+                max-width  100px
+        .sidebar-menu-client-info
+            padding  0
+            .sidebar-menu-layer
+                .sidebar-menu-layer-icon
+                    padding-left  5px
+                    padding-right  5px
+                .sidebar-menu-layer-display
+                    position  relative
+                    max-width  120px
+                    min-width  106px
+                .sidebar-menu-layer-select-menu
+                    width  100%
+                    max-width  100%
+                    li
+                        span
+                            display  block
+            @media (min-width $screen-md-min)
+                overflow  visible
+                text-align  center
+        @media (max-width $screen-sm-max)
+            .sidebar-menu-client-image
+                position  relative
+                float  left
+                display  table
+                padding  0 10px
+                padding-left  20px
+            .sidebar-menu-client-info
+                position  relative
+                float  left
+                display  table
+        @media (max-width 425px)
+            .sidebar-menu-client-image
+                width  100%
+                padding  0
+            .sidebar-menu-client-info
+                width  100%
+                text-align  center
+    .sidebar-menu-filter
+        padding  10px
+    .sidebar-menu-content
+        -webkit-touch-callout none
+        -webkit-user-select none
+        -khtml-user-select none
+        -moz-user-select none
+        -ms-user-select none
+        user-select none
+        overflow-y  scroll
+        overflow-x  hidden
+        sidebar-menu-list-group()

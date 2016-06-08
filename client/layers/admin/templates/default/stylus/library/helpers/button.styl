@@ -1,0 +1,12 @@
+button($bg, $border, $color, $bg-hover, $border-hover, $color-hover)
+    background-color: $bg;
+    border-color: $border;
+    color: $color;
+    &:hover,
+    &:active,
+    &.active
+        background-color: $bg-hover;
+        border-color: $border-hover;
+        color: $color-hover;
+    [class*="text-"]:not(.text-muted)
+        color: $color;

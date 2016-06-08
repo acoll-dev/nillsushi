@@ -1,0 +1,555 @@
+.navbar
+    position relative
+    display table
+    width 100%
+    min-height 70px
+    border none !important
+    border-radius 0 !important
+    margin 0 !important
+    background $color-navbar-bg
+    .container
+        position relative
+    .navbar-header
+        display table
+        height auto
+        float none
+        margin 20px auto -60px
+        *
+            z-index 2
+        .navbar-brand
+            display block
+            float none
+            height 100%
+            margin 0
+            padding 30px
+            background $color-navbar-brand-bg
+            border-radius 50%
+            img
+                max-width 250px
+    .btn-griffo-toggle-collapse
+        position absolute
+        top 50%
+        left 15px
+        kits(transform, translateY(-50%))
+        &.active
+            box-shadow 0 0 6px rgba(#000000, .5)
+            z-index 2
+        +screen-min(md)
+            display none;
+
+    .navbar-nav
+        background-color $color-navbar-bg
+        if($size-navbar-border-top)
+            border-top solid $size-navbar-border-top $color-navbar-border-top
+        if($size-navbar-border-right)
+            border-right solid $size-navbar-border-right $color-navbar-border-right
+        if($size-navbar-border-bottom)
+            border-bottom solid $size-navbar-border-bottom $color-navbar-border-bottom
+        if($size-navbar-border-left)
+            border-left solid $size-navbar-border-left $color-navbar-border-left
+        > li.navbar-social
+            > a
+                display block
+                width auto
+                color $color-navbar-item-text
+                background-color $color-navbar-item-bg
+                padding-top $size-navbar-item-padding-top
+                padding-right $size-navbar-item-padding-right
+                padding-bottom $size-navbar-item-padding-bottom
+                padding-left $size-navbar-item-padding-left
+                kits(transition, all .3s)
+                if($size-navbar-item-border-top)
+                    border-top solid $size-navbar-item-border-top $color-navbar-item-border-top
+                if($size-navbar-item-border-right)
+                    border-right solid $size-navbar-item-border-right $color-navbar-item-border-right
+                if($size-navbar-item-border-bottom)
+                    border-bottom solid $size-navbar-item-border-bottom $color-navbar-item-border-bottom
+                if($size-navbar-item-border-left)
+                    border-left solid $size-navbar-item-border-left $color-navbar-item-border-left
+                &:hover
+                &:active
+                    color $color-navbar-item-text-hover
+                    background-color $color-navbar-item-bg-hover
+                    if($size-navbar-item-border-top)
+                        border-top solid $size-navbar-item-border-top $color-navbar-item-border-top-hover
+                    if($size-navbar-item-border-right)
+                        border-right solid $size-navbar-item-border-right $color-navbar-item-border-right-hover
+                    if($size-navbar-item-border-bottom)
+                        border-bottom solid $size-navbar-item-border-bottom $color-navbar-item-border-bottom-hover
+                    if($size-navbar-item-border-left)
+                        border-left solid $size-navbar-item-border-left $color-navbar-item-border-left-hover
+            &.active
+                > a
+                    color $color-navbar-item-text-active
+                    background-color $color-navbar-item-bg-active
+                    if($size-navbar-item-border-top)
+                        border-top solid $size-navbar-item-border-top $color-navbar-item-border-top-active
+                    if($size-navbar-item-border-right)
+                        border-right solid $size-navbar-item-border-right $color-navbar-item-border-right-active
+                    if($size-navbar-item-border-bottom)
+                        border-bottom solid $size-navbar-item-border-bottom $color-navbar-item-border-bottom-active
+                    if($size-navbar-item-border-left)
+                        border-left solid $size-navbar-item-border-left $color-navbar-item-border-left-active
+            &.open
+                > a
+                    color $color-navbar-item-text-open
+                    background-color $color-navbar-item-bg-open
+                    if($size-navbar-item-border-top)
+                        border-top solid $size-navbar-item-border-top $color-navbar-item-border-top-open
+                    if($size-navbar-item-border-right)
+                        border-right solid $size-navbar-item-border-right $color-navbar-item-border-right-open
+                    if($size-navbar-item-border-bottom)
+                        border-bottom solid $size-navbar-item-border-bottom $color-navbar-item-border-bottom-open
+                    if($size-navbar-item-border-left)
+                        border-left solid $size-navbar-item-border-left $color-navbar-item-border-left-open
+        > li:not(.navbar-social)
+            > a
+                color $color-navbar-item-text
+                background-color $color-navbar-item-bg
+                padding-top $size-navbar-item-padding-top
+                padding-right $size-navbar-item-padding-right
+                padding-bottom $size-navbar-item-padding-bottom
+                padding-left $size-navbar-item-padding-left
+                font-weight bold
+                text-transform uppercase
+                letter-spacing 1px
+                kits(transition, all .3s)
+                if($size-navbar-item-border-top)
+                    border-top solid $size-navbar-item-border-top $color-navbar-item-border-top
+                if($size-navbar-item-border-right)
+                    border-right solid $size-navbar-item-border-right $color-navbar-item-border-right
+                if($size-navbar-item-border-bottom)
+                    border-bottom solid $size-navbar-item-border-bottom $color-navbar-item-border-bottom
+                if($size-navbar-item-border-left)
+                    border-left solid $size-navbar-item-border-left $color-navbar-item-border-left
+                &:hover
+                &:active
+                    color $color-navbar-item-text-hover
+                    background-color $color-navbar-item-bg-hover
+                    if($size-navbar-item-border-top)
+                        border-top solid $size-navbar-item-border-top $color-navbar-item-border-top-hover
+                    if($size-navbar-item-border-right)
+                        border-right solid $size-navbar-item-border-right $color-navbar-item-border-right-hover
+                    if($size-navbar-item-border-bottom)
+                        border-bottom solid $size-navbar-item-border-bottom $color-navbar-item-border-bottom-hover
+                    if($size-navbar-item-border-left)
+                        border-left solid $size-navbar-item-border-left $color-navbar-item-border-left-hover
+            &.active
+                > a
+                    color $color-navbar-item-text-active
+                    background-color $color-navbar-item-bg-active
+                    if($size-navbar-item-border-top)
+                        border-top solid $size-navbar-item-border-top $color-navbar-item-border-top-active
+                    if($size-navbar-item-border-right)
+                        border-right solid $size-navbar-item-border-right $color-navbar-item-border-right-active
+                    if($size-navbar-item-border-bottom)
+                        border-bottom solid $size-navbar-item-border-bottom $color-navbar-item-border-bottom-active
+                    if($size-navbar-item-border-left)
+                        border-left solid $size-navbar-item-border-left $color-navbar-item-border-left-active
+            &.open
+                > a
+                    color $color-navbar-item-text-open
+                    background-color $color-navbar-item-bg-open
+                    if($size-navbar-item-border-top)
+                        border-top solid $size-navbar-item-border-top $color-navbar-item-border-top-open
+                    if($size-navbar-item-border-right)
+                        border-right solid $size-navbar-item-border-right $color-navbar-item-border-right-open
+                    if($size-navbar-item-border-bottom)
+                        border-bottom solid $size-navbar-item-border-bottom $color-navbar-item-border-bottom-open
+                    if($size-navbar-item-border-left)
+                        border-left solid $size-navbar-item-border-left $color-navbar-item-border-left-open
+            .dropdown-menu
+                padding 0
+                border none
+                background-clip border-box
+                background-color $color-navbar-dropdown-bg
+                set-font-size(14px)
+                if($size-navbar-dropdown-border-top)
+                    border-top solid $size-navbar-dropdown-border-top $color-navbar-dropdown-border-top
+                if($size-navbar-dropdown-border-right)
+                    border-right solid $size-navbar-dropdown-border-right $color-navbar-dropdown-border-right
+                if($size-navbar-dropdown-border-bottom)
+                    border-bottom solid $size-navbar-dropdown-border-bottom $color-navbar-dropdown-border-bottom
+                if($size-navbar-dropdown-border-left)
+                    border-left solid $size-navbar-dropdown-border-left $color-navbar-dropdown-border-left
+                li
+                    a
+                        padding-top $size-navbar-dropdown-item-padding-top
+                        padding-right $size-navbar-dropdown-item-padding-right
+                        padding-bottom $size-navbar-dropdown-item-padding-bottom
+                        padding-left $size-navbar-dropdown-item-padding-left
+                        background $color-navbar-dropdown-item-bg
+                        color $color-navbar-dropdown-item-text
+                        if($size-navbar-dropdown-item-border-top)
+                            border-top solid $size-navbar-dropdown-item-border-top $color-navbar-dropdown-item-border-top
+                        if($size-navbar-dropdown-item-border-right)
+                            border-right solid $size-navbar-dropdown-item-border-right $color-navbar-dropdown-item-border-right
+                        if($size-navbar-dropdown-item-border-bottom)
+                            border-bottom solid $size-navbar-dropdown-item-border-bottom $color-navbar-dropdown-item-border-bottom
+                        if($size-navbar-dropdown-item-border-left)
+                            border-left solid $size-navbar-dropdown-item-border-left $color-navbar-dropdown-item-border-left
+                    &.open
+                        .dropdown-menu-child
+                            background $color-navbar-dropdown-child-bg
+                            if($size-navbar-dropdown-child-border-top)
+                                border-top solid $size-navbar-dropdown-child-border-top $color-navbar-dropdown-child-border-top
+                            if($size-navbar-dropdown-child-border-right)
+                                border-right solid $size-navbar-dropdown-child-border-right $color-navbar-dropdown-child-border-right
+                            if($size-navbar-dropdown-child-border-bottom)
+                                border-bottom solid $size-navbar-dropdown-child-border-bottom $color-navbar-dropdown-child-border-bottom
+                            if($size-navbar-dropdown-child-border-left)
+                                border-left solid $size-navbar-dropdown-child-border-left $color-navbar-dropdown-child-border-left
+                            li
+                                a
+                                    padding-top $size-navbar-dropdown-child-item-padding-top
+                                    padding-right $size-navbar-dropdown-child-item-padding-right
+                                    padding-bottom $size-navbar-dropdown-child-item-padding-bottom
+                                    padding-left $size-navbar-dropdown-child-item-padding-left
+                                    background $color-navbar-dropdown-child-item-bg
+                                    color $color-navbar-dropdown-child-item-text
+                                    if($size-navbar-dropdown-child-item-border-top)
+                                        border-top solid $size-navbar-dropdown-child-item-border-top $color-navbar-dropdown-child-item-border-top
+                                    if($size-navbar-dropdown-child-item-border-right)
+                                        border-right solid $size-navbar-dropdown-child-item-border-right $color-navbar-dropdown-child-item-border-right
+                                    if($size-navbar-dropdown-child-item-border-bottom)
+                                        border-bottom solid $size-navbar-dropdown-child-item-border-bottom $color-navbar-dropdown-child-item-border-bottom
+                                    if($size-navbar-dropdown-child-item-border-left)
+                                        border-left solid $size-navbar-dropdown-child-item-border-left $color-navbar-dropdown-child-item-border-left
+                                &:hover:not(.open)
+                                &:active:not(.open)
+                                    a
+                                        background lighten($color-navbar-dropdown-child-item-bg-hover, 5%)
+                                        color $color-navbar-dropdown-child-item-text-hover
+                                        if($size-navbar-dropdown-child-item-border-top)
+                                            border-top solid $size-navbar-dropdown-child-item-border-top $color-navbar-dropdown-child-item-border-top-hover
+                                        if($size-navbar-dropdown-child-item-border-right)
+                                            border-right solid $size-navbar-dropdown-child-item-border-right $color-navbar-dropdown-child-item-border-right-hover
+                                        if($size-navbar-dropdown-child-item-border-bottom)
+                                            border-bottom solid $size-navbar-dropdown-child-item-border-bottom $color-navbar-dropdown-child-item-border-bottom-hover
+                                        if($size-navbar-dropdown-child-item-border-left)
+                                            border-left solid $size-navbar-dropdown-child-item-border-left $color-navbar-dropdown-child-item-border-left-hover
+                        > a
+                            background $color-navbar-dropdown-item-open-bg !important
+                            color $color-navbar-dropdown-item-open-text !important
+                            if($size-navbar-dropdown-item-border-top)
+                                border-top solid $size-navbar-dropdown-item-border-top $color-navbar-dropdown-item-open-border-top !important
+                            if($size-navbar-dropdown-item-border-right)
+                                border-right solid $size-navbar-dropdown-item-border-right $color-navbar-dropdown-item-open-border-right !important
+                            if($size-navbar-dropdown-item-border-bottom)
+                                border-bottom solid $size-navbar-dropdown-item-border-bottom $color-navbar-dropdown-item-open-border-bottom !important
+                            if($size-navbar-dropdown-item-border-left)
+                                border-left solid $size-navbar-dropdown-item-border-left $color-navbar-dropdown-item-open-border-left !important
+                            &:hover
+                            &:active
+                                background $color-navbar-dropdown-item-open-bg-hover !important
+                                color $color-navbar-dropdown-item-open-text-hover !important
+                                if($size-navbar-dropdown-item-border-top)
+                                    border-top solid $size-navbar-dropdown-item-border-top $color-navbar-dropdown-item-open-border-top-hover !important
+                                if($size-navbar-dropdown-item-border-right)
+                                    border-right solid $size-navbar-dropdown-item-border-right $color-navbar-dropdown-item-open-border-right-hover !important
+                                if($size-navbar-dropdown-item-border-bottom)
+                                    border-bottom solid $size-navbar-dropdown-item-border-bottom $color-navbar-dropdown-item-open-border-bottom-hover !important
+                                if($size-navbar-dropdown-item-border-left)
+                                    border-left solid $size-navbar-dropdown-item-border-left $color-navbar-dropdown-item-open-border-left-hover !important
+                    &:hover:not(.open)
+                    &:active:not(.open)
+                        a
+                            background lighten($color-navbar-dropdown-item-bg-hover, 5%)
+                            color $color-navbar-dropdown-item-text-hover
+                            if($size-navbar-dropdown-item-border-top)
+                                border-top solid $size-navbar-dropdown-item-border-top $color-navbar-dropdown-item-border-top-hover
+                            if($size-navbar-dropdown-item-border-right)
+                                border-right solid $size-navbar-dropdown-item-border-right $color-navbar-dropdown-item-border-right-hover
+                            if($size-navbar-dropdown-item-border-bottom)
+                                border-bottom solid $size-navbar-dropdown-item-border-bottom $color-navbar-dropdown-item-border-bottom-hover
+                            if($size-navbar-dropdown-item-border-left)
+                                border-left solid $size-navbar-dropdown-item-border-left $color-navbar-dropdown-item-border-left-hover
+                    &.active
+                        a
+                            background $color-navbar-dropdown-item-bg-active
+                            color $color-navbar-dropdown-item-text-active
+                            if($size-navbar-dropdown-item-border-top)
+                                border-top solid $size-navbar-dropdown-item-border-top $color-navbar-dropdown-item-border-top-active
+                            if($size-navbar-dropdown-item-border-right)
+                                border-right solid $size-navbar-dropdown-item-border-right $color-navbar-dropdown-item-border-right-active
+                            if($size-navbar-dropdown-item-border-bottom)
+                                border-bottom solid $size-navbar-dropdown-item-border-bottom $color-navbar-dropdown-item-border-bottom-active
+                            if($size-navbar-dropdown-item-border-left)
+                                border-left solid $size-navbar-dropdown-item-border-left $color-navbar-dropdown-item-border-left-active
+                        &:hover
+                        &:active
+                            a
+                                background $color-navbar-dropdown-item-bg-active
+                                color $color-navbar-dropdown-item-text-active
+                                if($size-navbar-dropdown-item-border-top)
+                                    border-top solid $size-navbar-dropdown-item-border-top $color-navbar-dropdown-item-border-top-active
+                                if($size-navbar-dropdown-item-border-right)
+                                    border-right solid $size-navbar-dropdown-item-border-right $color-navbar-dropdown-item-border-right-active
+                                if($size-navbar-dropdown-item-border-bottom)
+                                    border-bottom solid $size-navbar-dropdown-item-border-bottom $color-navbar-dropdown-item-border-bottom-active
+                                if($size-navbar-dropdown-item-border-left)
+                                    border-left solid $size-navbar-dropdown-item-border-left $color-navbar-dropdown-item-border-left-active
+                    &:last-child
+                        border-bottom none !important
+                    &:first-child
+                        border-top none !important
+            &.dropdown
+                > a
+                    cursor default
+                    .caret
+                        margin-left 10px
+    .navbar-collapse
+        background-color $color-navbar-mobile-bg
+        if($size-navbar-mobile-border-top)
+            border-top solid $size-navbar-mobile-border-top $color-navbar-mobile-border-top
+        if($size-navbar-mobile-border-right)
+            border-right solid $size-navbar-mobile-border-right $color-navbar-mobile-border-right
+        if($size-navbar-mobile-border-bottom)
+            border-bottom solid $size-navbar-mobile-border-bottom $color-navbar-mobile-border-bottom
+        if($size-navbar-mobile-border-left)
+            border-left solid $size-navbar-mobile-border-left $color-navbar-mobile-border-left
+        li.navbar-social
+            a
+                display block
+                float left
+                width auto
+                color $color-navbar-mobile-item-text
+                background-color $color-navbar-mobile-item-bg
+                padding-top $size-navbar-mobile-item-padding-top
+                padding-right $size-navbar-mobile-item-padding-right
+                padding-bottom $size-navbar-mobile-item-padding-bottom
+                padding-left $size-navbar-mobile-item-padding-left
+                kits(transition, all .3s)
+                &:hover
+                &:active
+                    color $color-navbar-mobile-item-text-hover
+                    background-color $color-navbar-mobile-item-bg-hover
+        li:not(.navbar-social)
+            float none
+            > a
+                color $color-navbar-mobile-item-text
+                background-color $color-navbar-mobile-item-bg
+                padding-top $size-navbar-mobile-item-padding-top
+                padding-right $size-navbar-mobile-item-padding-right
+                padding-bottom $size-navbar-mobile-item-padding-bottom
+                padding-left $size-navbar-mobile-item-padding-left
+                kits(transition, all .3s)
+                if($size-navbar-mobile-item-border-top)
+                    border-top solid $size-navbar-mobile-item-border-top $color-navbar-mobile-item-border-top
+                if($size-navbar-mobile-item-border-right)
+                    border-right solid $size-navbar-mobile-item-border-right $color-navbar-mobile-item-border-right
+                if($size-navbar-mobile-item-border-bottom)
+                    border-bottom solid $size-navbar-mobile-item-border-bottom $color-navbar-mobile-item-border-bottom
+                if($size-navbar-mobile-item-border-left)
+                    border-left solid $size-navbar-mobile-item-border-left $color-navbar-mobile-item-border-left
+                &:hover
+                &:active
+                    color $color-navbar-mobile-item-text-hover
+                    background-color $color-navbar-mobile-item-bg-hover
+                    if($size-navbar-mobile-item-border-top)
+                        border-top solid $size-navbar-mobile-item-border-top $color-navbar-mobile-item-border-top-hover
+                    if($size-navbar-mobile-item-border-right)
+                        border-right solid $size-navbar-mobile-item-border-right $color-navbar-mobile-item-border-right-hover
+                    if($size-navbar-mobile-item-border-bottom)
+                        border-bottom solid $size-navbar-mobile-item-border-bottom $color-navbar-mobile-item-border-bottom-hover
+                    if($size-navbar-mobile-item-border-left)
+                        border-left solid $size-navbar-mobile-item-border-left $color-navbar-mobile-item-border-left-hover
+            &.active
+                > a
+                    color $color-navbar-mobile-item-text-active
+                    background-color $color-navbar-mobile-item-bg-active
+                    if($size-navbar-mobile-item-border-top)
+                        border-top solid $size-navbar-mobile-item-border-top $color-navbar-mobile-item-border-top-active
+                    if($size-navbar-mobile-item-border-right)
+                        border-right solid $size-navbar-mobile-item-border-right $color-navbar-mobile-item-border-right-active
+                    if($size-navbar-mobile-item-border-bottom)
+                        border-bottom solid $size-navbar-mobile-item-border-bottom $color-navbar-mobile-item-border-bottom-active
+                    if($size-navbar-mobile-item-border-left)
+                        border-left solid $size-navbar-mobile-item-border-left $color-navbar-mobile-item-border-left-active
+            .dropdown-menu
+                position static
+                float none
+                width auto
+                margin 0
+                padding 0
+                box-shadow none
+                padding 0
+                border none
+                background-clip border-box
+                background-color $color-navbar-mobile-dropdown-bg
+                set-font-size(14px)
+                if($size-navbar-mobile-dropdown-border-top)
+                    border-top solid $size-navbar-mobile-dropdown-border-top $color-navbar-mobile-dropdown-border-top
+                if($size-navbar-mobile-dropdown-border-right)
+                    border-right solid $size-navbar-mobile-dropdown-border-right $color-navbar-mobile-dropdown-border-right
+                if($size-navbar-mobile-dropdown-border-bottom)
+                    border-bottom solid $size-navbar-mobile-dropdown-border-bottom $color-navbar-mobile-dropdown-border-bottom
+                if($size-navbar-mobile-dropdown-border-left)
+                    border-left solid $size-navbar-mobile-dropdown-border-left $color-navbar-mobile-dropdown-border-left
+                li
+                    a
+                        padding-top $size-navbar-mobile-dropdown-item-padding-top
+                        padding-right $size-navbar-mobile-dropdown-item-padding-right
+                        padding-bottom $size-navbar-mobile-dropdown-item-padding-bottom
+                        padding-left $size-navbar-mobile-dropdown-item-padding-left
+                        color $color-navbar-mobile-dropdown-item-text
+                        background $color-navbar-mobile-dropdown-item-bg
+                        if($size-navbar-mobile-dropdown-item-border-top)
+                            border-top solid $size-navbar-mobile-dropdown-item-border-top $color-navbar-mobile-dropdown-item-border-top
+                        if($size-navbar-mobile-dropdown-item-border-right)
+                            border-right solid $size-navbar-mobile-dropdown-item-border-right $color-navbar-mobile-dropdown-item-border-right
+                        if($size-navbar-mobile-dropdown-item-border-bottom)
+                            border-bottom solid $size-navbar-mobile-dropdown-item-border-bottom $color-navbar-mobile-dropdown-item-border-bottom
+                        if($size-navbar-mobile-dropdown-item-border-left)
+                            border-left solid $size-navbar-mobile-dropdown-item-border-left $color-navbar-mobile-dropdown-item-border-left
+                    &:hover
+                    &:active
+                        a
+                            background $color-navbar-mobile-dropdown-item-bg-hover
+                            color $color-navbar-mobile-dropdown-item-text-hover
+                            if($size-navbar-mobile-dropdown-item-border-top)
+                                border-top solid $size-navbar-mobile-dropdown-item-border-top $color-navbar-mobile-dropdown-item-border-top-hover
+                            if($size-navbar-mobile-dropdown-item-border-right)
+                                border-right solid $size-navbar-mobile-dropdown-item-border-right $color-navbar-mobile-dropdown-item-border-right-hover
+                            if($size-navbar-mobile-dropdown-item-border-bottom)
+                                border-bottom solid $size-navbar-mobile-dropdown-item-border-bottom $color-navbar-mobile-dropdown-item-border-bottom-hover
+                            if($size-navbar-mobile-dropdown-item-border-left)
+                                border-left solid $size-navbar-mobile-dropdown-item-border-left $color-navbar-mobile-dropdown-item-border-left-hover
+                    &.active
+                        a
+                            background $color-navbar-mobile-dropdown-item-bg-active
+                            color $color-navbar-mobile-dropdown-item-text-active
+                            if($size-navbar-mobile-dropdown-item-border-top)
+                                border-top solid $size-navbar-mobile-dropdown-item-border-top $color-navbar-mobile-dropdown-item-border-top-active
+                            if($size-navbar-mobile-dropdown-item-border-right)
+                                border-right solid $size-navbar-mobile-dropdown-item-border-right $color-navbar-mobile-dropdown-item-border-right-active
+                            if($size-navbar-mobile-dropdown-item-border-bottom)
+                                border-bottom solid $size-navbar-mobile-dropdown-item-border-bottom $color-navbar-mobile-dropdown-item-border-bottom-active
+                            if($size-navbar-mobile-dropdown-item-border-left)
+                                border-left solid $size-navbar-mobile-dropdown-item-border-left $color-navbar-mobile-dropdown-item-border-left-active
+                        &:hover
+                        &:active
+                            a
+                                background $color-navbar-mobile-dropdown-item-bg-active
+                                color $color-navbar-mobile-dropdown-item-text-active
+                                if($size-navbar-mobile-dropdown-item-border-top)
+                                    border-top solid $size-navbar-mobile-dropdown-item-border-top $color-navbar-mobile-dropdown-item-border-top-active
+                                if($size-navbar-mobile-dropdown-item-border-right)
+                                    border-right solid $size-navbar-mobile-dropdown-item-border-right $color-navbar-mobile-dropdown-item-border-right-active
+                                if($size-navbar-mobile-dropdown-item-border-bottom)
+                                    border-bottom solid $size-navbar-mobile-dropdown-item-border-bottom $color-navbar-mobile-dropdown-item-border-bottom-active
+                                if($size-navbar-mobile-dropdown-item-border-left)
+                                    border-left solid $size-navbar-mobile-dropdown-item-border-left $color-navbar-mobile-dropdown-item-border-left-active
+            &.open
+                .dropdown-menu-child
+                    background $color-navbar-mobile-dropdown-child-bg
+                    if($size-navbar-mobile-dropdown-child-border-top)
+                        border-top solid $size-navbar-mobile-dropdown-child-border-top $color-navbar-mobile-dropdown-child-border-top
+                    if($size-navbar-mobile-dropdown-child-border-right)
+                        border-right solid $size-navbar-mobile-dropdown-child-border-right $color-navbar-mobile-dropdown-child-border-right
+                    if($size-navbar-mobile-dropdown-child-border-bottom)
+                        border-bottom solid $size-navbar-mobile-dropdown-child-border-bottom $color-navbar-mobile-dropdown-child-border-bottom
+                    if($size-navbar-mobile-dropdown-child-border-left)
+                        border-left solid $size-navbar-mobile-dropdown-child-border-left $color-navbar-mobile-dropdown-child-border-left
+                    li
+                        a
+                            padding-top $size-navbar-mobile-dropdown-child-item-padding-top
+                            padding-right $size-navbar-mobile-dropdown-child-item-padding-right
+                            padding-bottom $size-navbar-mobile-dropdown-child-item-padding-bottom
+                            padding-left $size-navbar-mobile-dropdown-child-item-padding-left
+                            background $color-navbar-mobile-dropdown-child-item-bg
+                            color $color-navbar-mobile-dropdown-child-item-text
+                            if($size-navbar-mobile-dropdown-child-item-border-top)
+                                border-top solid $size-navbar-mobile-dropdown-child-item-border-top $color-navbar-mobile-dropdown-child-item-border-top
+                            if($size-navbar-mobile-dropdown-child-item-border-right)
+                                border-right solid $size-navbar-mobile-dropdown-child-item-border-right $color-navbar-mobile-dropdown-child-item-border-right
+                            if($size-navbar-mobile-dropdown-child-item-border-bottom)
+                                border-bottom solid $size-navbar-mobile-dropdown-child-item-border-bottom $color-navbar-mobile-dropdown-child-item-border-bottom
+                            if($size-navbar-mobile-dropdown-child-item-border-left)
+                                border-left solid $size-navbar-mobile-dropdown-child-item-border-left $color-navbar-mobile-dropdown-child-item-border-left
+                        &:hover:not(.open)
+                        &:active:not(.open)
+                            a
+                                background lighten($color-navbar-mobile-dropdown-child-item-bg-hover, 5%)
+                                color $color-navbar-mobile-dropdown-child-item-text-hover
+                                if($size-navbar-mobile-dropdown-child-item-border-top)
+                                    border-top solid $size-navbar-mobile-dropdown-child-item-border-top $color-navbar-mobile-dropdown-child-item-border-top-hover
+                                if($size-navbar-mobile-dropdown-child-item-border-right)
+                                    border-right solid $size-navbar-mobile-dropdown-child-item-border-right $color-navbar-mobile-dropdown-child-item-border-right-hover
+                                if($size-navbar-mobile-dropdown-child-item-border-bottom)
+                                    border-bottom solid $size-navbar-mobile-dropdown-child-item-border-bottom $color-navbar-mobile-dropdown-child-item-border-bottom-hover
+                                if($size-navbar-mobile-dropdown-child-item-border-left)
+                                    border-left solid $size-navbar-mobile-dropdown-child-item-border-left $color-navbar-mobile-dropdown-child-item-border-left-hover
+                > a
+                    background $color-navbar-mobile-dropdown-item-open-bg !important
+                    color $color-navbar-mobile-dropdown-item-open-text !important
+                    if($size-navbar-mobile-dropdown-item-border-top)
+                        border-top solid $size-navbar-mobile-dropdown-item-border-top $color-navbar-mobile-dropdown-item-open-border-top !important
+                    if($size-navbar-mobile-dropdown-item-border-right)
+                        border-right solid $size-navbar-mobile-dropdown-item-border-right $color-navbar-mobile-dropdown-item-open-border-right !important
+                    if($size-navbar-mobile-dropdown-item-border-bottom)
+                        border-bottom solid $size-navbar-mobile-dropdown-item-border-bottom $color-navbar-mobile-dropdown-item-open-border-bottom !important
+                    if($size-navbar-mobile-dropdown-item-border-left)
+                        border-left solid $size-navbar-mobile-dropdown-item-border-left $color-navbar-mobile-dropdown-item-open-border-left !important
+                    &:hover
+                    &:active
+                        background $color-navbar-mobile-dropdown-item-open-bg-hover !important
+                        color $color-navbar-mobile-dropdown-item-open-text-hover !important
+                        if($size-navbar-mobile-dropdown-item-border-top)
+                            border-top solid $size-navbar-mobile-dropdown-item-border-top $color-navbar-mobile-dropdown-item-open-border-top-hover !important
+                        if($size-navbar-mobile-dropdown-item-border-right)
+                            border-right solid $size-navbar-mobile-dropdown-item-border-right $color-navbar-mobile-dropdown-item-open-border-right-hover !important
+                        if($size-navbar-mobile-dropdown-item-border-bottom)
+                            border-bottom solid $size-navbar-mobile-dropdown-item-border-bottom $color-navbar-mobile-dropdown-item-open-border-bottom-hover !important
+                        if($size-navbar-mobile-dropdown-item-border-left)
+                            border-left solid $size-navbar-mobile-dropdown-item-border-left $color-navbar-mobile-dropdown-item-open-border-left-hover !important
+            &.dropdown
+                > a
+                    cursor default
+                    .caret
+                        margin-left 10px
+    #navbar-menu-collapse
+        position absolute
+        top 70%
+        left 50%
+        padding 0
+        background-color $color-navbar-mobile-bg !important
+        box-shadow 0 0 6px rgba(#000000, .5)
+        kits(transform, translateX(-50%))
+    +screen-min(md)
+        #navbar-menu-collapse
+            display none
+        .navbar-nav
+            position absolute
+            top 50%
+            *
+                z-index 1
+            &.navbar-right
+                right 0
+                margin 0
+                kits(transform, translateY(-50%))
+            &.navbar-left
+                left 0
+                margin 0
+                kits(transform, translateY(-50%))
+            &.navbar-center
+                left 50%
+                margin 0
+                kits(transform, translateY(-50%))
+    +screen-max(sm)
+        .navbar-header
+            .navbar-brand
+                img
+                    max-width 175px
+            .btn-griffo-toggle-collapse
+                display block
+        .navbar-nav:not(.navbar-collapse)
+            display none
+        .navbar-collapse
+            position relative
+            width 100%
+            margin 10px 0 0
+            padding 0
+    +screen(xs)
+        #navbar-menu-collapse
+            width 100%

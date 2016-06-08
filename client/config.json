@@ -1,0 +1,25 @@
+{
+    "client":{
+        "name": "Acoll",
+        "website": "www.acoll.com.br"
+    },
+    "alias": {
+        "http://localhost/web/nillsushi/website/admin": "admin",
+        "http://localhost/web/nillsushi/website": "website",
+        "http://localhost/nillsushi/website/admin": "admin",
+        "http://localhost/nillsushi/website": "website"
+    },
+    "database": {
+        "base": "mysql",
+        "host": "localhost",
+        "user": "root",
+        "password": "root",
+        "name": "nillsushi",
+        "table_prefix": "gr_"
+    },
+    "thumb":{
+        "width": 100,
+        "height": 100
+    },
+    "compress": 30
+}

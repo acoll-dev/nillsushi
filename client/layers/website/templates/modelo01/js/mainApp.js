@@ -1,0 +1,9 @@
+(function() {
+  'use strict';
+  angular.module('mainApp', ['griffo', 'uiGmapgoogle-maps']).config(["$compileProvider", function($compileProvider) {
+    return $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
+  }]);
+
+}).call(this);
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNsaWVudC9sYXllcnMvd2Vic2l0ZS90ZW1wbGF0ZXMvbW9kZWxvMDEvY29mZmVlL21haW5BcHAuY29mZmVlIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQUE7RUFDQSxPQUFPLENBQUMsTUFBUixDQUFlLFNBQWYsRUFBMEIsQ0FBQyxRQUFELEVBQVcsbUJBQVgsQ0FBMUIsQ0FDSSxDQUFDLE1BREwsQ0FDWSxTQUFDLGdCQUFEO1dBQ0osZ0JBQWdCLENBQUMsMEJBQWpCLENBQTRDLG1DQUE1QztFQURJLENBRFo7QUFEQSIsImZpbGUiOiJjbGllbnQvbGF5ZXJzL3dlYnNpdGUvdGVtcGxhdGVzL21vZGVsbzAxL2pzL21haW5BcHAuanMiLCJzb3VyY2VSb290IjoiL3NvdXJjZS8iLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCdcbmFuZ3VsYXIubW9kdWxlICdtYWluQXBwJywgWydncmlmZm8nLCAndWlHbWFwZ29vZ2xlLW1hcHMnXVxuICAgIC5jb25maWcgKCRjb21waWxlUHJvdmlkZXIpIC0+XG4gICAgICAgICRjb21waWxlUHJvdmlkZXIuYUhyZWZTYW5pdGl6YXRpb25XaGl0ZWxpc3QgL15cXHMqKGh0dHBzP3xmdHB8bWFpbHRvfGZpbGV8dGVsKTovXG4iXX0=

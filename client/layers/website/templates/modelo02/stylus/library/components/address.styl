@@ -1,0 +1,32 @@
+.address
+    display table
+    margin-top 30px
+    if($size-address-border)
+        padding-left ($size-address-border * 2)
+        border-left solid $size-address-border $color-address-border
+    dl
+        margin 0
+        dt
+            color $color-address-title
+            padding-top 5px
+    dl.dl-horizontal
+        display table
+        dt
+            display table
+            width auto
+            float left
+            padding 2px 0
+            +screen(xs)
+                clear left
+                text-overflow ellipsis
+                overflow hidden
+                white-space nowrap
+        dd
+            display table
+            margin 0
+            padding 2px 0
+            padding-left 10px
+
+    a:not([href])
+        color inherit
+        text-decoration none

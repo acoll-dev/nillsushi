@@ -1,0 +1,31 @@
+screen($size)
+    if($screen[$size])
+        $min = ($screen[$size]['min'] > 0) ? 'min-width: ' + $screen[$size]['min'] : ''
+        $and = ($screen[$size]['min'] > 0) && ($screen[$size]['max'] > 0) ? ', ' : ''
+        $max = ($screen[$size]['max'] > 0) ? 'max-width: ' + $screen[$size]['max'] : ''
+        @media ({unquote($min + $and + $max)})
+            {block}
+
+screen-min($size)
+    if($screen[$size] && $screen[$size]['min'] > 0)
+        @media (min-width: $screen[$size]['min'])
+            {block}
+
+screen-max($size)
+    if($screen[$size] && $screen[$size]['max'] > 0)
+        @media (max-width: $screen[$size]['max'])
+            {block}
+
+/*======================================================================
+    PIXEL DENSITY
+======================================================================*/
+hdpi(density = 1.3)
+    media = " all"
+    query = media + " and (-webkit-min-device-pixel-ratio: " + density + "), "
+    query += media + " and (min--moz-device-pixel-ratio: " + density + "), "
+    query += media + " and (-o-min-device-pixel-ratio: " + density + "/1), "
+    query += media + " and (min-device-pixel-ratio: " + density + "), "
+    query += media + " and (min-resolution: " + ceil( density * 96 ) + "dpi), "
+    query += media + " and (min-resolution: " + density + "dppx)"
+    @media query
+        {block}

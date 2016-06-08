@@ -1,0 +1,21 @@
+.breadcrumb-wrapper
+    background $color-breadcrumb-bg
+    padding 7px 0
+.breadcrumb
+    margin 0
+    border-radius 0
+    background none
+    a[href]
+        color $color-breadcrumb-link
+    a:not([href])
+        text-decoration none
+    &:before
+        display table
+        content "Você está em:"
+        margin-right 15px
+        float left
+        color rgba(#000000, .25)
+#navbar-menu-collapse
+    .container
+        padding 0
+        width 100%

@@ -1,0 +1,34 @@
+.panel-login
+    position absolute
+    width 90%
+    max-width 320px
+    margin 0 auto
+    top 50%
+    left 50%
+    background #F9F9F9
+    box-shadow 2px 2px 4px rgba(0, 0, 0, .25)
+    kits(transform, translate(-50%, -50%))
+    @media(max-height 470px)
+        position relative
+        top auto
+        left auto
+        margin 50px auto
+        kits(transform, translate(0,0))
+    .panel-heading
+        text-align center
+        font-size 2.6rem
+        color #666666
+        .forgot-password
+            line-height 19.99997901916504px
+            padding-top 14px
+.signature-login
+    position absolute
+    width 100%
+    margin 0 auto
+    text-align center
+    bottom 0
+    left 0
+    @media(max-height 470px)
+        position relative
+        bottom auto
+        left auto

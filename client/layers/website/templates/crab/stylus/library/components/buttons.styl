@@ -1,0 +1,22 @@
+.btn
+    border-radius 0
+.btn-amount
+.btn-sign-out
+.btn-user-panel
+    background $color-btn-bg
+    border $btn-border
+    color $color-btn-text
+    outline-color $btn-outline-color
+    kits(transition, $attrs = background .3s, border .3s, color .3s)
+    &:hover
+    &:active
+    &:focus
+        background $color-btn-bg-hover
+        border $btn-border-hover
+        color $color-btn-text-hover
+    &:disabled
+    &.disabled
+        background $color-btn-bg-disabled
+        border $btn-border-disabled
+        color $color-btn-text-disabled
+        kits(opacity, .8)

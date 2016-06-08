@@ -1,0 +1,59 @@
+.btn
+    border-radius $size-btn-border-radius
+    line-height 1.24rem
+    &[class*="btn-griffo-"]
+        kits(transition, all .3s)
+        &:hover
+        &:active
+        &:focus
+            outline none
+    &.btn-griffo-toggle-collapse
+        background $color-btn-tgl-clps-bg
+        padding 8px 10px
+        if($size-btn-tgl-clps-border)
+            border solid $size-btn-tgl-clps-border $color-btn-tgl-clps-border
+        .icon-bar
+            position relative
+            display block
+            background $color-btn-tgl-clps-bars
+            width 20px
+            height 3px
+            margin-bottom 3px
+            kits(transition, all .3s)
+            &:last-child
+                margin-bottom 0
+        &:hover
+        &:active
+            background $color-btn-tgl-clps-bg-hover
+            if($size-btn-tgl-clps-border)
+                border-color $color-btn-tgl-clps-border-hover
+            .icon-bar
+                background $color-btn-tgl-clps-bars-hover
+        &.active
+            background $color-btn-tgl-clps-bg-active
+            if($size-btn-tgl-clps-border)
+                border-color $color-btn-tgl-clps-border-active
+            .icon-bar
+                background $color-btn-tgl-clps-bars-active
+    &.btn-griffo-1
+        background $color-btn1-bg
+        color $color-btn1-text
+        if($size-btn1-border)
+            border solid $size-btn1-border $color-btn1-border
+        &:hover
+        &:active
+            background $color-btn1-bg-hover
+            color $color-btn1-text-hover
+            if($size-btn1-border)
+                border solid $size-btn1-border $color-btn1-border-hover
+    &.btn-griffo-2
+        background $color-btn2-bg
+        color $color-btn2-text
+        if($size-btn2-border)
+            border solid $size-btn2-border $color-btn2-border
+        &:hover
+        &:active
+            background $color-btn2-bg-hover
+            color $color-btn2-text-hover
+            if($size-btn2-border)
+                border solid $size-btn2-border $color-btn2-border-hover

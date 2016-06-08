@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<list>
+    <griffo>
+            <module>
+                <idmodule>null</idmodule>
+                <name>product</name>
+                <struct>0</struct>
+                <path>complementary/Product/</path>
+                <searchable>1</searchable>
+                <status>1</status>
+            </module>
+
+            <layermodule>
+                <idlayer>1</idlayer>
+                <idmodule>|current_module|</idmodule>
+                <filtermodel>/%layer%/%module%/%view%</filtermodel>
+                <url>website/product/</url>
+                <custom>null</custom>
+                <urlcategory>null</urlcategory>
+                <default>0</default>
+                <status>1</status>
+            </layermodule>
+
+            <layermodule>
+                <idlayer>2</idlayer>
+                <idmodule>|current_module|</idmodule>
+                <filtermodel>/%view%/%urlcategory%/%category%</filtermodel>
+                <url>product/</url>
+                <custom>null</custom>
+                <urlcategory>categoria/</urlcategory>
+                <default>0</default>
+                <status>1</status>
+            </layermodule>
+
+            <resource>
+                <idresource>null</idresource>
+                <resource>insert</resource>
+                <idresourceparent>null</idresourceparent>
+                <fkidmodule>|current_module|</fkidmodule>
+            </resource>
+
+            <resource>
+                <idresource>null</idresource>
+                <resource>update</resource>
+                <idresourceparent>null</idresourceparent>
+                <fkidmodule>|current_module|</fkidmodule>
+            </resource>
+
+            <resource>
+                <idresource>null</idresource>
+                <resource>select</resource>
+                <idresourceparent>null</idresourceparent>
+                <fkidmodule>|current_module|</fkidmodule>
+            </resource>
+
+            <resource>
+                <idresource>null</idresource>
+                <resource>delete</resource>
+                <idresourceparent>null</idresourceparent>
+                <fkidmodule>|current_module|</fkidmodule>
+            </resource>
+
+            <resource>
+                <idresource>null</idresource>
+                <resource>config</resource>
+                <idresourceparent>null</idresourceparent>
+                <fkidmodule>|current_module|</fkidmodule>
+            </resource>
+
+            <menu>
+                <idmenu>null</idmenu>
+                <label>Product</label>
+                <icon>fa fa-fw fa-shopping-cart</icon>
+                <idmenuparent>null</idmenuparent>
+                <path>null</path>
+                <keywords>product,produto</keywords>
+                <status>1</status>
+                <fkidmodule>|current_module|</fkidmodule>
+                <fkidlayer>1</fkidlayer>
+            </menu>
+
+            <menu>
+                <idmenu>null</idmenu>
+                <label>New</label>
+                <icon>fa fa-fw fa-file</icon>
+                <idmenuparent>|last|</idmenuparent>
+                <path>product/new/</path>
+                <keywords>new,novo,novo produto</keywords>
+                <status>1</status>
+                <fkidmodule>|current_module|</fkidmodule>
+                <fkidlayer>1</fkidlayer>
+            </menu>
+
+            <menu>
+                <idmenu>null</idmenu>
+                <label>List</label>
+                <icon>fa fa-fw fa-list</icon>
+                <idmenuparent>|last|</idmenuparent>
+                <path>product/list/</path>
+                <keywords>list,listar,listar produto</keywords>
+                <status>1</status>
+                <fkidmodule>|current_module|</fkidmodule>
+                <fkidlayer>1</fkidlayer>
+            </menu>
+
+            <menu>
+                <idmenu>null</idmenu>
+                <label>Category</label>
+                <icon>fa fa-fw fa-flag</icon>
+                <idmenuparent>|last|</idmenuparent>
+                <path>product/category/</path>
+                <keywords>category,categoria,categoria do produto</keywords>
+                <status>1</status>
+                <fkidmodule>|current_module|</fkidmodule>
+                <fkidlayer>1</fkidlayer>
+            </menu>
+            
+            <menu>
+                <idmenu>null</idmenu>
+                <label>Optional</label>
+                <icon>fa fa-fw fa-plus</icon>
+                <idmenuparent>|last|</idmenuparent>
+                <path>product/optional/</path>
+                <keywords>optional,opcional,opcional do produto</keywords>
+                <status>1</status>
+                <fkidmodule>|current_module|</fkidmodule>
+                <fkidlayer>1</fkidlayer>
+            </menu>
+
+	    <menu>
+                <idmenu>null</idmenu>
+                <label>Fraction</label>
+                <icon>fa fa-fw fa-pie-chart</icon>
+                <idmenuparent>|last|</idmenuparent>
+                <path>product/fraction/</path>
+                <keywords>fração,frações,fração do produto</keywords>
+                <status>1</status>
+                <fkidmodule>|current_module|</fkidmodule>
+                <fkidlayer>1</fkidlayer>
+            </menu>	
+
+            <menu>
+                <idmenu>null</idmenu>
+                <label>Config</label>
+                <icon>fa fa-fw fa-cogs</icon>
+                <idmenuparent>|last|</idmenuparent>
+                <path>product/config/</path>
+                <keywords>config,configuração,configuração do produto</keywords>
+                <status>1</status>
+                <fkidmodule>|current_module|</fkidmodule>
+                <fkidlayer>1</fkidlayer>
+            </menu>
+
+            <moduleprofile>
+                <idmodule>|current_module|</idmodule>
+                <idprofile>1</idprofile>
+                <status>1</status>
+            </moduleprofile>
+
+            <profileresource>
+                <idprofile>1</idprofile>
+                <idresource>|all|</idresource>
+                <status>1</status>
+            </profileresource>
+
+            <profileresource>
+                <idprofile>1</idprofile>
+                <idresource>|all|</idresource>
+                <status>1</status>
+            </profileresource>
+
+            <profileresource>
+                <idprofile>1</idprofile>
+                <idresource>|all|</idresource>
+                <status>1</status>
+            </profileresource>
+
+            <profileresource>
+                <idprofile>1</idprofile>
+                <idresource>|all|</idresource>
+                <status>1</status>
+            </profileresource>
+
+            <profileresource>
+                <idprofile>1</idprofile>
+                <idresource>|all|</idresource>
+                <status>1</status>
+            </profileresource>
+
+            <profilemenu>
+                <idmenu>|all|</idmenu>
+                <idprofile>1</idprofile>
+                <status>1</status>
+            </profilemenu>
+
+            <profilemenu>
+                <idmenu>|all|</idmenu>
+                <idprofile>1</idprofile>
+                <status>1</status>
+            </profilemenu>
+
+            <profilemenu>
+                <idmenu>|all|</idmenu>
+                <idprofile>1</idprofile>
+                <status>1</status>
+            </profilemenu>
+
+            <profilemenu>
+                <idmenu>|all|</idmenu>
+                <idprofile>1</idprofile>
+                <status>1</status>
+            </profilemenu>
+
+            <profilemenu>
+                <idmenu>|all|</idmenu>
+                <idprofile>1</idprofile>
+                <status>1</status>
+            </profilemenu>
+            
+            <profilemenu>
+                <idmenu>|all|</idmenu>
+                <idprofile>1</idprofile>
+                <status>1</status>
+            </profilemenu>
+
+	    <profilemenu>
+                <idmenu>|all|</idmenu>
+                <idprofile>1</idprofile>
+                <status>1</status>
+            </profilemenu>
+
+    </griffo>
+</list>

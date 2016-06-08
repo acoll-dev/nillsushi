@@ -1,0 +1,102 @@
+
+set-banner-sizes($large-height, $small-height)
+    .preloader
+        height $large-height
+    .gr-carousel
+        &
+        .gr-carousel-item
+            +screen-min(md)
+                height $large-height !important
+            +screen-max(sm)
+                height $small-height !important
+        +screen-min(md)
+            height $large-height !important
+        +screen-max(sm)
+            height $small-height !important
+
+.banner
+    background-color darken($color-bg, 10%)
+    if($size-banner-border)
+        border-bottom solid $size-banner-border $color-banner-border
+    .gr-carousel
+        .gr-carousel-inner
+            height 100%
+        .gr-carousel-item
+            overflow hidden
+            img
+                position absolute
+                top 50%
+                left 50%
+                kits(transform, translate(-50%, -50%))
+                kits(filter, (brightness(45%) grayscale(25%)))
+        .gr-carousel-indicator
+            bottom 15px
+            li
+                width $size-banner-indicator
+                height $size-banner-indicator
+                margin ($size-banner-indicator / 3)
+                border-radius 2px
+                background-color $color-banner-indicator
+                kits(transition, all .3s)
+                &.active
+                    width $size-banner-indicator
+                    height $size-banner-indicator
+                    margin ($size-banner-indicator / 3)
+                    background-color $color-banner-indicator-active
+                &:not(.active):hover
+                    background-color $color-banner-indicator-hover
+    .banner-content
+        position absolute
+        display block
+        width 100%
+        bottom 20%
+        text-align center
+        h1
+        h2
+        h3
+        h4
+        h5
+        h6
+            position relative !important
+            bottom auto !important
+            left auto !important
+            kits(transform, translate(0,0), true)
+        h1
+            set-font-size(54px)
+            color $color-banner-text-title
+            +screen(md)
+                set-font-size(48px)
+            +screen(sm)
+                set-font-size(42px)
+            +screen(xs)
+                set-font-size(34px)
+        h2
+            set-font-size(22px)
+            color $color-banner-text-description
+            +screen(md)
+                set-font-size(19px)
+            +screen(sm)
+                set-font-size(16px)
+            +screen(xs)
+                set-font-size(14px)
+        .btn
+            margin-top 20px
+            margin-bottom 10px
+        &:hover
+        &:active
+        &:focus
+            text-shadow none
+        +screen-min(sm)
+            left 50%
+            kits(transform, translate(-50%, 0))
+        +screen-min(md)
+            width 970px !important
+        +screen-min(lg)
+            width 1170px !important
+        +screen(xs)
+            width 100%
+    set-banner-sizes(350px, 250px)
+
+.home
+    .banner
+        set-banner-sizes(500px, 300px)

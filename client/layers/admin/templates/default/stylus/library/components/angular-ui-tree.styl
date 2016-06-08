@@ -1,0 +1,33 @@
+.angular-ui-tree-on
+    // .angular-ui-tree-handle{}
+    .angular-ui-tree-node
+        .list-group-item-text-arrow
+            kits(animation-name, shake)
+            kits(animation-duration, 1s)
+            kits(animation-iteration-count, infinite)
+            kits(animation-timing-function, linear)
+            kits(transform-origin, 50% 50%)
+            cursor move !important
+        transition all .1s
+        margin 5px 0 !important
+        a
+            cursor default !important
+.angular-ui-tree-off
+    .angular-ui-tree-node
+        kits(transition, all .1s)
+.angular-ui-tree-drag
+    position absolute
+    pointer-events none
+    z-index 999999
+    kits(transform, rotate(3deg))
+    box-shadow 2px 2px 6px rgba(0,0,0,.15) !important
+
+@keyframes shake
+    for i in 0..10
+        {10% * i}
+            if i == 0
+                kits(transform, rotate(0deg))
+            else if i % 2 == 0
+                kits(transform, rotate(5deg))
+            else
+                kits(transform, rotate(-5deg))

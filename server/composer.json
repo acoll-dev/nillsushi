@@ -1,0 +1,20 @@
+{
+    "config": {
+        "vendor-dir": "libraries"
+    },
+
+    "require": {
+        "slim/slim": "2.*",
+        "php-activerecord/php-activerecord": "dev-master",
+        "respect/validation": "dev-master",
+        "ezyang/htmlpurifier": "4.*",
+        "imagine/imagine": "~0.5.0",
+        "mobiledetect/mobiledetectlib": "2.*",
+        "phpmailer/phpmailer": "*",
+        "filp/whoops": "dev-master",
+        "mrclay/minify": "dev-master",
+        "league/flysystem": "0.*",
+        "gilbitron/php-simplecache": "~1.4",
+        "sonrisa/sitemap-component": "dev-master"
+    }
+}

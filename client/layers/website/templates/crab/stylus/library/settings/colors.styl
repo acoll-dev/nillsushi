@@ -1,0 +1,36 @@
+/*------------------------------------------------------------------------------
+ * Color Definitions
+ *------------------------------------------------------------------------------
+ * Use this file to set color variables & functions.
+ *
+ * Before starting to define your color variables, I'll advice you: colors (
+ * maybe more then other kind of variables in Sass) can get really trick and
+ * messed up after some time, mostly because then tend to change a lot during
+ * development. To help you make better decisions, I would advice you to read
+ * the followng articles:
+ *
+ * - http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-name-your-sass-variables-modularly/
+ * - http://sachagreif.com/sass-color-variables/
+ */
+
+$color-red = #CB2128
+$color-yellow = #FFCF26
+$color-light = #FFFFFF
+$color-dark = #333333
+
+$color-bg-primary = $color-light
+$color-bg-secondary = $color-yellow
+
+$color-bg-logo = $color-red
+
+$color-text-primary = $color-red
+$color-text-secondary = $color-dark
+
+$color-btn-bg = $color-red
+$color-btn-text = $color-light
+
+$color-btn-bg-hover = desaturate(darken($color-btn-bg , 10%), 10%)
+$color-btn-text-hover = desaturate(darken($color-btn-text , 10%), 10%)
+
+$color-btn-bg-disabled = desaturate(darken($color-btn-bg , 5%), 20%)
+$color-btn-text-disabled = desaturate(darken($color-btn-text , 5%), 20%)

@@ -1,0 +1,89 @@
+.header
+    .navbar
+        margin-bottom 0
+        border-radius 0
+        border none
+        &.navbar-default
+            background $color-bg-primary;
+        .container
+            position relative
+            padding 0
+            [class*='col-']:firt-child
+                padding 0
+            +screen(xs)
+                display table
+                width 100%
+        .logo
+            position absolute
+            width 100%
+            left 0
+            top 0
+            padding 10px 0
+            background $color-bg-logo
+            z-index 100
+            img
+                position relative
+                margin 0 auto
+        .navbar-text-header
+            display table
+            padding 10px
+            h1
+                margin 0 0 5px
+                padding-bottom 10px
+                font-size 1.8rem
+                border-bottom solid 1px $color-text-primary
+            p
+                margin 0
+                padding 0 5px
+                set-font-size(14px)
+
+        .contact-wrapper
+            position absolute
+            right 10px
+            top 50%
+            margin-top -14px
+        .contact
+            text-decoration none
+            &.fa
+                margin 0 10px
+                color $color-text-primary
+                kits(transition, color .3s)
+                &:hover
+                    color desaturate(darken($color-text-primary, 10%), 10%)
+        .navbar-divisor
+            height 10px
+            width 100%
+            background $color-bg-primary
+        .navbar-divisor-mask
+            height 10px
+            padding 0
+            margin-top -10px
+            .navbar-divisor
+                position relative
+                float left
+                width $sidebar-width
+                margin-left -15px
+                background #FFFFFF
+        +screen(xs)
+            .logo
+            .navbar-text-header
+                display table-cell
+                vertical-align middle
+                float none
+            .logo
+                position relative
+                width 80px
+                margin 0
+                img
+                    position relative
+                    display block
+                    max-width $sidebar-width
+                    margin 0 auto
+            .navbar-text-header
+                position relative
+                margin 0
+                padding 0 15px
+                set-font-size(16px)
+                p
+                    margin 0
+                    padding 2px 0

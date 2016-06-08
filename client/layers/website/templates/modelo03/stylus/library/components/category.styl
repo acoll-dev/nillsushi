@@ -1,0 +1,146 @@
+.category-list-wrapper
+    h2
+        padding 15px 10px
+        margin 0
+        set-font-size(24px)
+    .category-list
+        margin 0
+        padding 0
+        li
+            position relative
+            padding 0
+            list-style none
+            kits(user-select, none)
+            a
+                display block
+                padding 10px
+                text-decoration none
+            > .category-list
+                display none
+                margin-top 0
+                margin-right -30px
+            &.parent
+                padding-right 30px
+                .parent-icon
+                    position absolute
+                    display table
+                    width 30px
+                    padding 0 9px
+                    right 0
+                    top 0
+                    cursor pointer
+            &.active
+                a
+                    padding-right 20px
+                    .fa
+                        position absolute
+                        right 0
+                        top 50%
+                        kits(transform, translateY(-50%))
+            &.open
+                > .category-list
+                    display block
+                    li
+                        position relative
+                        &.active
+                            a
+                                padding-right 20px
+            &.category-empty
+                padding 10px
+                p
+                    padding 0
+                    margin 0
+            &:last-child
+                border-bottom none
+    +screen-max(sm)
+        margin-bottom 30px
+.category-list-wrapper
+    background $color-category-bg
+    h2
+        background $color-category-title-bg
+        color $color-category-title-text
+        if($size-category-title-border-bottom)
+            border-bottom solid $size-category-title-border-bottom $color-category-title-border-bottom
+    .category-list
+        li
+            if($size-category-item-border-left)
+                border-left solid $size-category-item-border-left $color-category-item-border-left
+            > a
+                background-color $color-category-item-bg
+                color $color-category-item-text
+                if($size-category-item-border-bottom)
+                    border-bottom solid $size-category-item-border-bottom $color-category-item-border-bottom
+                &:hover
+                &:focus
+                &:active
+                    background-color $color-category-item-bg-hover
+                    color $color-category-item-text-hover
+            .parent-icon
+                background-color $color-category-item-bg
+                color $color-category-item-icon
+                if($size-category-item-border-bottom)
+                    border-bottom solid $size-category-item-border-bottom $color-category-item-border-bottom
+                &:hover
+                &:focus
+                &:active
+                    background-color $color-category-item-bg-hover
+                    color $color-category-item-icon-hover
+            > .category-list
+                background $color-category-sub-bg
+
+            &.open
+                if($size-category-item-border-left-open)
+                    > .category-list
+                        border-left solid $size-category-item-border-left-open $color-category-item-border-left-open
+                > a
+                    background $color-category-item-bg-open
+                    color $color-category-item-text-open
+                    if($size-category-item-border-bottom)
+                        border-bottom solid $size-category-item-border-bottom $color-category-item-border-bottom-open
+                    &:hover
+                    &:focus
+                    &:active
+                        background-color $color-category-item-bg-open-hover
+                        color $color-category-item-text-open-hover
+                > .parent-icon
+                    background $color-category-item-bg-open
+                    color $color-category-item-icon-open
+                    &:hover
+                    &:focus
+                    &:active
+                        background-color $color-category-item-bg-open-hover
+                        color $color-category-item-icon-open-hover
+            &.active:not(.open)
+                if($size-category-item-border-left-open)
+                    border-left solid 1px lighten($color-category-item-border-left-active, 10%)
+                    if($size-category-item-border-bottom)
+                        > a
+                            border-top solid ($size-category-item-border-bottom/2) $color-category-item-border-left-active
+                            border-bottom solid ($size-category-item-border-bottom/2) $color-category-item-border-left-active
+                            .fa
+                                kits(transform, translateY(-45%))
+                        > .parent-icon
+                            border-top solid ($size-category-item-border-bottom/2) $color-category-item-border-left-active
+                            border-bottom solid ($size-category-item-border-bottom/2) $color-category-item-border-left-active
+                if($size-category-item-border-left-active)
+                    > .category-list
+                        border-left solid $size-category-item-border-left-active $color-category-item-border-left-active
+                > a
+                    background $color-category-item-bg-active
+                    color $color-category-item-text-active
+                    .fa
+                        if($size-category-item-border-bottom)
+                            margin-top (($size-category-item-border-bottom * (-1))/2)
+                    &:hover
+                    &:focus
+                    &:active
+                        background $color-category-item-bg-active
+                        color $color-category-item-text-active
+                > .parent-icon
+                    background $color-category-item-bg-active
+                    color $color-category-item-icon-active
+                    &:hover
+                    &:focus
+                    &:active
+                        background $color-category-item-bg-active
+                        color $color-category-item-icon-active

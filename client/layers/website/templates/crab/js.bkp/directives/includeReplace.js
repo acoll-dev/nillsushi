@@ -1,0 +1,12 @@
+'use strict';
+(function(){
+    angular.module('mainApp').directive('includeReplace', function () {
+        return {
+            require: 'ngInclude',
+            restrict: 'A', /* optional */
+            link: function (scope, el, attrs) {
+                el.replaceWith(el.children());
+            }
+        };
+    });
+}());

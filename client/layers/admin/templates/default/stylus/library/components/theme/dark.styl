@@ -1,0 +1,321 @@
+// THEME VARIABLES
+
+    $theme-name = 'dark'
+
+// NAVBAR
+
+    $primary-color = #4F4F4F
+
+    $navbar-bg-color = #222222
+    $navbar-border-color = none
+    $navbar-btn-bg-color = $primary-color
+    $navbar-btn-border-color = darken($primary-color, 10%)
+    $navbar-btn-text-color = #999999
+    $navbar-btn-link-text-color = #999999
+    $navbar-btn-hover-bg-color = lighten($primary-color, 5%)
+    $navbar-btn-hover-border-color = darken(lighten($primary-color, 5%), 10%)
+    $navbar-btn-hover-text-color = #AAAAAA
+
+// SIDEBAR
+
+    $sidebar-bg-color = $primary-color
+    $sidebar-border-color = none
+    $sidebar-text-color = #DDDDDD
+    $sidebar-filter-btn-bg-color = darken($primary-color, 10%)
+    $sidebar-filter-btn-border-color = darken($primary-color, 15%)
+    $sidebar-filter-btn-text-color = #FFFFFF
+    $sidebar-filter-btn-hover-bg-color = darken($primary-color, 5%)
+    $sidebar-filter-btn-hover-border-color = darken($primary-color, 10%)
+    $sidebar-filter-btn-hover-text-color = #FFFFFF
+
+// SIDEBAR MENU
+
+    $sidebar-menu-btn-bg-color = #3C3C3C
+    $sidebar-menu-btn-border-left-color = #111111
+    $sidebar-menu-btn-text-color = #DDDDDD
+    $sidebar-menu-btn-icon-bg-color = #363636
+    $sidebar-menu-btn-icon-color = #DDDDDD
+    $sidebar-menu-btn-hover-bg-color = #363636
+    $sidebar-menu-btn-hover-text-color = #CCCCCC
+    $sidebar-menu-btn-open-bg-color = $primary-color
+
+// CLIENT INFO
+
+    $sidebar-menu-client-icon-color = lighten($primary-color, 10%)
+    $sidebar-menu-client-text-color = #DDDDDD
+
+// BOOTSTRAP COLORS
+
+    $bs-default-bg-color = #FFFFFF
+    $bs-default-border-color = #DDDDDD
+    $bs-default-text-color = #333333
+
+    $bs-default-hover-bg-color = #EEEEEE
+    $bs-default-hover-border-color = #DDDDDD
+    $bs-default-hover-text-color = #333333
+
+// ---
+
+    $bs-primary-bg-color = #1492DE
+    $bs-primary-border-color = darken($bs-primary-bg-color, 5%)
+    $bs-primary-text-color = #FFFFFF
+
+    $bs-primary-hover-bg-color = darken($bs-primary-bg-color, 5%)
+    $bs-primary-hover-border-color = darken($bs-primary-bg-color, 5%)
+    $bs-primary-hover-text-color = #F6F6F6
+
+// ---
+
+    $bs-info-bg-color = #3EB2F8
+    $bs-info-border-color = darken($bs-info-bg-color, 5%)
+    $bs-info-text-color = #FFFFFF
+
+    $bs-info-hover-bg-color = darken($bs-info-bg-color, 5%)
+    $bs-info-hover-border-color = $bs-info-bg-color
+    $bs-info-hover-text-color = #F6F6F6
+
+// ---
+
+    $bs-success-bg-color = #1AB394
+    $bs-success-border-color = darken($bs-success-bg-color, 5%)
+    $bs-success-text-color = #FFFFFF
+
+    $bs-success-hover-bg-color = darken($bs-success-bg-color, 5%)
+    $bs-success-hover-border-color = $bs-success-bg-color
+    $bs-success-hover-text-color = #F6F6F6
+
+// ---
+
+    $bs-warning-bg-color = #F0CB4E
+    $bs-warning-border-color = darken($bs-warning-bg-color, 5%)
+    $bs-warning-text-color = #FFFFFF
+
+    $bs-warning-hover-bg-color = darken($bs-warning-bg-color, 5%)
+    $bs-warning-hover-border-color = $bs-warning-bg-color
+    $bs-warning-hover-text-color = #F6F6F6
+
+// ---
+
+    $bs-danger-bg-color = #FF5B57
+    $bs-danger-border-color = darken($bs-danger-bg-color, 5%)
+    $bs-danger-text-color = #FFFFFF
+
+    $bs-danger-hover-bg-color = darken($bs-danger-bg-color, 5%)
+    $bs-danger-hover-border-color = $bs-danger-bg-color
+    $bs-danger-hover-text-color = #F6F6F6
+
+// ---
+
+/////////////////////////////////////////////////////////////////////////////////
+
+body.theme-{$theme-name}
+    .sidebar
+        background $sidebar-bg-color
+        color $sidebar-text-color
+        if $sidebar-border-color != none
+            border-color  $sidebar-border-color !important
+        else
+            border none !important
+    .sidebar-menu
+        .sidebar-menu-filter
+            .btn
+                button($sidebar-filter-btn-bg-color, $sidebar-filter-btn-border-color, $sidebar-filter-btn-text-color, $sidebar-filter-btn-hover-bg-color, $sidebar-filter-btn-hover-border-color, $sidebar-filter-btn-hover-text-color)
+                z-index 2
+        .sidebar-menu-content
+            .sidebar-menu-list-group
+                .list-group-item
+                    background $sidebar-menu-btn-bg-color
+                    color $sidebar-menu-btn-text-color
+                    if $sidebar-menu-btn-border-left-color != none
+                        border-left-color  $sidebar-menu-btn-border-left-color
+                    else
+                        border-left none !important
+                    .list-group-item-label
+                        .list-group-item-icon
+                            background $sidebar-menu-btn-icon-bg-color
+                            color $sidebar-menu-btn-icon-color
+                        .list-group-item-text
+                            a
+                                color $sidebar-menu-btn-text-color
+                                &:hover
+                                    color $sidebar-menu-btn-hover-text-color
+                                    background $sidebar-menu-btn-hover-bg-color
+                    &.open
+                        background $sidebar-menu-btn-open-bg-color !important
+                        > .list-group-item-label
+                            .list-group-item-text
+                                a
+                                    color $sidebar-menu-btn-hover-text-color
+                                    background $sidebar-menu-btn-hover-bg-color
+                                &:hover
+                                    a
+                                        color $sidebar-menu-btn-hover-text-color
+                                        background $sidebar-menu-btn-hover-bg-color
+                    &.active
+                        .list-group-item-label
+                            .list-group-item-text
+                                a
+                                    color $sidebar-menu-btn-hover-text-color
+                                    background $sidebar-menu-btn-hover-bg-color
+            .sidebar-menu-list-group-parent
+                .list-group-item
+                    > .sidebar-menu-list-group
+                        > .list-group-item
+                            background $sidebar-menu-btn-bg-color
+        .sidebar-menu-client
+            color  $sidebar-menu-client-text-color
+            .sidebar-menu-client-icon
+                color  $sidebar-menu-client-icon-color
+    .navbar
+        background $navbar-bg-color
+        if $navbar-border-color != none
+            border-bottom-color  $navbar-border-color
+        else
+            border none
+        .container-fluid
+            .btn-file-manager.navbar-btn .btn
+                background $navbar-btn-bg-color
+                border-color $navbar-btn-border-color
+                color $navbar-btn-text-color
+                &:hover
+                    background $navbar-btn-hover-bg-color
+                    border-color $navbar-btn-hover-border-color
+                    color $navbar-btn-hover-text-color
+            .btn
+                background $navbar-btn-bg-color
+                border-color $navbar-btn-border-color
+                color $navbar-btn-text-color
+                &:hover
+                    background $navbar-btn-hover-bg-color
+                    border-color $navbar-btn-hover-border-color
+                    color $navbar-btn-hover-text-color
+                &.btn-link,
+                &.btn-link-full
+                    color  $navbar-btn-link-text-color
+                    background none
+                    &:hover,
+                    &:active,
+                    &:disabled,
+                    &:focus,
+                    &:link,
+                    &.disabled
+                        background none
+                &.btn-menu
+                    &.active
+                        background $navbar-btn-bg-color
+                        color $navbar-btn-text-color
+                        &:hover
+                            background $navbar-btn-hover-bg-color
+                            color $navbar-btn-hover-text-color
+                    &:hover
+                        background $navbar-btn-bg-color
+                        color $navbar-btn-text-color
+                &.btn-notification
+                    &.active
+                        background $navbar-btn-bg-color
+                        &:hover
+                            background $navbar-btn-hover-bg-color
+                &.btn-user
+                    &.active
+                        background $navbar-btn-hover-bg-color
+                        border-color  $navbar-btn-hover-border-color
+                        color $navbar-btn-hover-text-color
+            .navbar-center
+                background-color lighten($navbar-bg-color, 5%)
+        .dropdown-menu
+            li
+                a
+                span
+                    &
+                    *
+                        color $bs-default-text-color
+                &.active
+                &:not(.active):hover
+                    a
+                    span
+                        background $navbar-btn-bg-color
+                        color $navbar-btn-text-color
+                        *
+                            color $navbar-btn-text-color
+    .sidebar-menu-list-group
+        .list-group-item
+            background $sidebar-menu-btn-bg-color
+            color $sidebar-menu-btn-text-color
+            .list-group-item-label
+                .list-group-item-icon
+                    background $sidebar-menu-btn-icon-bg-color
+                    color $sidebar-menu-btn-icon-color
+                .list-group-item-text
+                    a
+                        color $sidebar-menu-btn-text-color
+                        &:hover
+                            color $sidebar-menu-btn-hover-text-color
+                            background $sidebar-menu-btn-hover-bg-color
+            &.open
+                background $sidebar-menu-btn-open-bg-color !important
+                > .list-group-item-label
+                    .list-group-item-text
+                        a
+                            color $sidebar-menu-btn-hover-text-color
+                            background $sidebar-menu-btn-hover-bg-color
+                        &:hover
+                            a
+                                color $sidebar-menu-btn-hover-text-color
+                                background $sidebar-menu-btn-hover-bg-color
+            &.active
+                .list-group-item-label
+                    .list-group-item-text
+                        a
+                            color $sidebar-menu-btn-hover-text-color
+                            background $sidebar-menu-btn-hover-bg-color
+    .sidebar-menu-list-group-parent
+        .list-group-item
+            > .sidebar-menu-list-group
+                > .list-group-item
+                    background $sidebar-menu-btn-bg-color
+    .btn
+        &.btn-default
+            button($bs-default-bg-color, $bs-default-border-color, $bs-default-text-color, $bs-default-hover-bg-color, $bs-default-hover-border-color, $bs-default-hover-text-color)
+        &.btn-primary
+            button($bs-primary-bg-color, $bs-primary-border-color, $bs-primary-text-color, $bs-primary-hover-bg-color, $bs-primary-hover-border-color, $bs-primary-hover-text-color)
+        &.btn-info
+            button($bs-info-bg-color, $bs-info-border-color, $bs-info-text-color, $bs-info-hover-bg-color, $bs-info-hover-border-color, $bs-info-hover-text-color)
+        &.btn-success
+            button($bs-success-bg-color, $bs-success-border-color, $bs-success-text-color, $bs-success-hover-bg-color, $bs-success-hover-border-color, $bs-success-hover-text-color)
+        &.btn-warning
+            button($bs-warning-bg-color, $bs-warning-border-color, $bs-warning-text-color, $bs-warning-hover-bg-color, $bs-warning-hover-border-color, $bs-warning-hover-text-color)
+        &.btn-danger
+            button($bs-danger-bg-color, $bs-danger-border-color, $bs-danger-text-color, $bs-danger-hover-bg-color, $bs-danger-hover-border-color, $bs-danger-hover-text-color)
+    .toggle-switch
+        border solid 1px rgba(0, 0, 0, .15)
+        border-radius 4px
+        span
+            &.switch-left
+                color  #fff
+                background  #428bca
+            &.switch-right
+                color  #000
+                background  #eeeeee
+        switch('on-default', 'left', $bs-default-bg-color, $bs-default-text-color)
+        switch('on-primary', 'left', $bs-primary-bg-color, $bs-primary-text-color)
+        switch('on-info', 'left', $bs-info-bg-color, $bs-info-text-color)
+        switch('on-success', 'left', $bs-success-bg-color, $bs-success-text-color)
+        switch('on-warning', 'left', $bs-warning-bg-color, $bs-warning-text-color)
+        switch('on-danger', 'left', $bs-danger-bg-color, $bs-danger-text-color)
+        switch('off-default', 'right', $bs-default-bg-color, $bs-default-text-color)
+        switch('off-primary', 'right', $bs-primary-bg-color, $bs-primary-text-color)
+        switch('off-info', 'right', $bs-info-bg-color, $bs-info-text-color)
+        switch('off-success', 'right', $bs-success-bg-color, $bs-success-text-color)
+        switch('off-warning', 'right', $bs-warning-bg-color, $bs-warning-text-color)
+        switch('off-danger', 'right', $bs-danger-bg-color, $bs-danger-text-color)
+        &.switch-mini
+            min-width 60px
+            font-size 10px
+            span
+                line-height 14px
+    .tabbable
+        .nav
+            &.nav-tabs
+                li.active
+                    a
+                        border-top-color  $bs-primary-bg-color

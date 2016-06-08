@@ -1,0 +1,23 @@
+transition($properties = all, $duration = .3s, $easing = cubic-bezier(0.645, 0.045, 0.355, 1.000)) // EasingInOutCubic
+    if length($properties) > 1
+        -webkit-transition-property $properties
+        -moz-transition-property $properties
+        -ie-transition-property $properties
+        -o-transition-property $properties
+        transition-property $properties
+         -webkit-transition-duration $duration
+        -moz-transition-duration $duration
+        -ie-transition-duration $duration
+        -o-transition-duration $duration
+        transition-duration $duration
+         -webkit-transition-timing-function $easing
+        -moz-transition-timing-function $easing
+        -ie-transition-timing-function $easing
+        -o-transition-timing-function $easing
+        transition-timing-function $easing
+    else
+        -webkit-transition $properties $duration $easing
+        -moz-transition $properties $duration $easing
+        -ie-transition $properties $duration $easing
+        -o-transition $properties $duration $easing
+        transition $properties $duration $easing

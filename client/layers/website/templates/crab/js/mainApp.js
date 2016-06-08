@@ -1,0 +1,9 @@
+(function() {
+  'use strict';
+  angular.module('mainApp', ['griffo', 'ui.bootstrap.collapse', 'ngAnimate']).config(["$compileProvider", function($compileProvider) {
+    return $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
+  }]);
+
+}).call(this);
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNsaWVudC9sYXllcnMvd2Vic2l0ZS90ZW1wbGF0ZXMvY3JhYi9jb2ZmZWUvbWFpbkFwcC5jb2ZmZWUiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFBQTtFQUNBLE9BQU8sQ0FBQyxNQUFSLENBQWUsU0FBZixFQUEwQixDQUFDLFFBQUQsRUFBVyx1QkFBWCxFQUFvQyxXQUFwQyxDQUExQixDQUNJLENBQUMsTUFETCxDQUNZLFNBQUMsZ0JBQUQ7V0FDSixnQkFBZ0IsQ0FBQywwQkFBakIsQ0FBNEMsbUNBQTVDO0VBREksQ0FEWjtBQURBIiwiZmlsZSI6ImNsaWVudC9sYXllcnMvd2Vic2l0ZS90ZW1wbGF0ZXMvY3JhYi9qcy9tYWluQXBwLmpzIiwic291cmNlUm9vdCI6Ii9zb3VyY2UvIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnXG5hbmd1bGFyLm1vZHVsZSAnbWFpbkFwcCcsIFsnZ3JpZmZvJywgJ3VpLmJvb3RzdHJhcC5jb2xsYXBzZScsICduZ0FuaW1hdGUnXVxuICAgIC5jb25maWcgKCRjb21waWxlUHJvdmlkZXIpIC0+XG4gICAgICAgICRjb21waWxlUHJvdmlkZXIuYUhyZWZTYW5pdGl6YXRpb25XaGl0ZWxpc3QgL15cXHMqKGh0dHBzP3xmdHB8bWFpbHRvfGZpbGV8dGVsKTovXG4iXX0=

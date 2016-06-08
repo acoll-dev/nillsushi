@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'acoll';
+    src: url('../font/acoll.eot?86674876');
+    src: url('../font/acoll.eot?86674876#iefix') format('embedded-opentype'),
+        url('../font/acoll.woff?86674876') format('woff'),
+        url('../font/acoll.ttf?86674876') format('truetype'),
+        url('../font/acoll.svg?86674876#acoll') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'acoll';
+    src: url('../font/acoll.svg?86674876#acoll') format('svg');
+  }
+}
+
+[class^="acoll-"]:before, [class*=" acoll-"]:before {
+    font-family: "acoll";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+
+    /* you can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.acoll-logo:before { content: '\e800'; }
+.acoll-github:before { content: '\e801'; }
+.acoll-github-circled:before { content: '\e802'; }
+.acoll-flickr:before { content: '\e803'; }
+.acoll-flickr-circled:before { content: '\e804'; }
+.acoll-vimeo:before { content: '\e805'; }
+.acoll-chart-pie:before { content: '\e806'; }
+.acoll-vimeo-circled:before { content: '\e807'; }
+.acoll-lock:before { content: '\e808'; }
+.acoll-tools:before { content: '\e809'; }
+.acoll-mouse:before { content: '\e80a'; }
+.acoll-th:before { content: '\e80b'; }
+.acoll-basket:before { content: '\e80c'; }
+.acoll-quote-left:before { content: '\e80d'; }
+.acoll-quote-right:before { content: '\e80e'; }
+.acoll-briefcase:before { content: '\e80f'; }
+.acoll-desktop:before { content: '\e810'; }
+.acoll-laptop:before { content: '\e811'; }
+.acoll-tablet:before { content: '\e812'; }
+.acoll-twitter:before { content: '\e813'; }
+.acoll-facebook:before { content: '\e814'; }
+.acoll-home:before { content: '\e815'; }
+.acoll-w3c:before { content: '\e816'; }
+.acoll-html5:before { content: '\e817'; }
+.acoll-email:before { content: '\e818'; }
+.acoll-phone:before { content: '\e819'; }
+.acoll-mobile:before { content: '\e81a'; }
+.acoll-firefox:before { content: '\e81b'; }
+.acoll-griffo:before { content: '\e81c'; }
+.acoll-angle-down:before { content: '\e81d'; }
+.acoll-angle-up:before { content: '\e81e'; }
+.acoll-angle-right:before { content: '\e81f'; }
+.acoll-angle-left:before { content: '\e820'; }
+.acoll-code:before { content: '\e821'; }
+.acoll-clipboard:before { content: '\e822'; }
+.acoll-chrome:before { content: '\e823'; }
+.acoll-opera:before { content: '\e824'; }
+.acoll-ie:before { content: '\e825'; }
+.acoll-tumblr:before { content: '\e826'; }
+.acoll-linkedin:before { content: '\e827'; }
+.acoll-twitter-circled:before { content: '\e828'; }
+.acoll-facebook-circled:before { content: '\e829'; }
+.acoll-facebook-squared:before { content: '\e82a'; }
+.acoll-gplus:before { content: '\e82b'; }
+.acoll-gplus-circled:before { content: '\e82c'; }
+.acoll-pinterest:before { content: '\e82d'; }
+.acoll-pinterest-circled:before { content: '\e82e'; }
+.acoll-tumblr-circled:before { content: '\e82f'; }
+.acoll-linkedin-circled:before { content: '\e830'; }
+.acoll-dribbble:before { content: '\e831'; }
+.acoll-dribbble-circled:before { content: '\e832'; }
+.acoll-instagram:before { content: '\e833'; }
+.acoll-dropbox:before { content: '\e834'; }
+.acoll-skype:before { content: '\e835'; }
+.acoll-skype-circled:before { content: '\e836'; }
+.acoll-youtube:before { content: '\e837'; }
+.acoll-cloud:before { content: '\e838'; }
+.acoll-terminal:before { content: '\e839'; }
+
+.acoll-sig {
+    font-size: 26px;
+    color: #CCCCCC;
+    &:before {
+        content: '\e800';
+    }
+}

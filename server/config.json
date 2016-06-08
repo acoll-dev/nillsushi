@@ -1,0 +1,21 @@
+{
+    "version": "2.1.1",
+    "log": {
+        "send_email": {
+            "enable": true,
+            "address": {
+                "Webmaster": "webmaster@acoll.com.br"
+            },
+            "cc": {},
+            "cco": {},
+            "attachment": {},
+            "subject": "",
+            "body": ""
+        }
+    },
+    "session_name": "griffo",
+    "debug": true,
+    "cache": false,
+    "environment": "development",
+    "id_profile_master": 1
+}

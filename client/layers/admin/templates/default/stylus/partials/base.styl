@@ -1,0 +1,111 @@
+html
+    &
+    body
+        min-width 320px
+        height 100%
+        font-size 100%
+body
+    +screen-max(xs)
+        font-size 85%
+        .alert
+            font-size .9rem
+.wrapper
+     position relative
+     height 100%
+     min-height 376px
+     max-height: 100%;
+     margin 0
+     padding 0
+     background #F0F0F0
+     font-size 0.875rem
+     overflow hidden
+     overflow-y auto
+     > .wrapper-inner
+         height 100%
+         max-height 100%
+     .btn
+        &
+        &:hover
+        &:focus
+        &:active
+        &:visited
+            outline none !important
+        &.btn-default
+            btn-inactive(#ffffff #e0e0e0 #cccccc)
+     .alert
+         font-size .8rem
+         ul
+            padding 0
+            margin 0 20px
+         hr
+            margin 10px 0
+         &.ng-hide
+             opacity 0
+             min-height 0
+             -webkit-opacity 0
+             overflow hidden
+             padding 0
+             margin 0
+             font-size 0
+             > h5
+             > p
+             > ul
+             > ul li
+             span
+                 height 0
+                 padding 0
+                 margin 0
+             h5
+                font-weight bold
+    .dropdown-menu
+        > li
+            // span
+                //padding 0 20px
+            a
+                &:hover
+                    background #428bca
+                    color #FFFFFF
+    .popover
+        z-index 1030
+    textarea
+        resize vertical
+    // .btn
+    // .form-control
+    // .input-group-addon
+    // .dropdown-menu
+        //border-radius 0
+    .badge
+        &.badge-primary
+            background #428bca
+        &.badge-success
+            background #5cb85c
+        &.badge-info
+            background #5bc0de
+        &.badge-warning
+            background #f0ad4e
+        &.badge-danger
+            background #d9534f
+    .ng-hide-add
+        kits(animation, .5s fadeOut ease)
+    .ng-hide-remove
+        kits(animation, .5s fadeIn ease)
+    @-webkit-keyframes fadeOut
+        0%
+            opacity 1
+        100%
+            opacity 0
+    @keyframes fadeOut
+        0%
+            opacity 1
+        100%
+            opacity 0
+    @-webkit-keyframes fadeIn
+        0%
+            opacity 0
+        100%
+            opacity 1
+    @keyframes fadeIn
+        0%
+            opacity 0
+        100%
+            opacity 1

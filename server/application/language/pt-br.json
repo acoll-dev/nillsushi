@@ -1,0 +1,1688 @@
+{
+    "ALERT": {
+        "CHANGING": {
+            "SORT": "Alterando ordenação..."
+        },
+        "GENERATING": {
+            "SITEMAPS": "Gerando sitemaps"
+        },
+        "LOADING": {
+            "SITEMAPS": "Gerando sitemaps...",
+            "TABLE": {
+                "DATA": "Carregando dados da tabela..."
+            }
+        },
+        "RELOADING": {
+            "TABLE": {
+                "DATA": "Recarregando dados da tabela..."
+            }
+        },
+        "SUCCESS": {
+            "CHANGE": {
+                "SORT": "Ordem alterada com sucesso",
+                "PASSWORD": "Senha alterada com sucesso"
+            },
+            "GENERATE": {
+                "SITEMAPS": "Sitemaps gerados com sucesso"
+            },
+            "LOAD": {
+                "TABLE": {
+                    "DATA": "Dados da tabela carregados com sucesso"
+                }
+            }
+        },
+        "ERROR": {
+            "LOAD": {
+                "TABLE": {
+                    "DATA": "Ocorreu um erro no carregamento dos dados da tabelas, por favor, tente recarregar a página!"
+                }
+            }
+        }
+    },
+    "BUTTON": {
+        "ADD": "Adicionar",
+        "ADD.BLOCK": "Adicionar bloco",
+        "ADD.FIELD": "Adicionar campo",
+        "ADD.FILES": "Adicionar arquivos",
+        "ADD.METATAG": "Adicionar meta tag",
+        "CANCEL": "Cancelar",
+        "CANCEL.ALL": "Cancelar tudo",
+        "CHANGE.DATE": "Alterar data",
+        "CHANGE.IMAGE": "Alterar imagem",
+        "CHANGE.LOGO": "Alterar logo",
+        "CHANGE.PASSWORD": "Alterar senha",
+        "CHANGE.PICTURE": "Alterar foto",
+        "CLEAR": "Limpar",
+        "CLEAR.FILTER": "Limpar filtros",
+        "CLEAR.SORTING": "Limpar ordenação",
+        "CLOSE": "Fechar",
+        "CONFIRM": "Confirmar",
+        "CREATE": "Criar",
+        "DELETE": "Deletar",
+        "EDIT": "Editar",
+        "EDIT.INFORMATIONS": "Editar informações",
+        "EDIT.PROFILE": "Editar perfil",
+        "EXPORT.TABLE.CSV": "Exporta tabela para CSV",
+        "FILEMANAGER": "Gerenciador de arquivos",
+        "GENERATE": {
+            "SITEMAPS": "Gerar Sitemaps"
+        },
+        "GET": {
+            "SELECTION": "Usar selecionado(s)"
+        },
+        "INSTALL": "Instalar",
+        "LIST": "Listar",
+        "LOGIN": "Entrar",
+        "MOVE": "Mover",
+        "OK": "Ok",
+        "PRINT": "Imprimir",
+        "PUBLISH": "Publicar",
+        "REMOVE": "Remover",
+        "REMOVE.ALL": "Remover tudo",
+        "REORDER.MENU": "Reodenar menu",
+        "RESET": "Resetar",
+        "SAVE": "Salvar",
+        "SAVE.DRAFT": "Salvar rascunho",
+        "SELECT": "Selecionar",
+        "SELECT.IMAGE": "Selecionar imagem",
+        "SELECT.LOGO": "Selecionar logo",
+        "SELECT.PICTURE": "Selecionar foto",
+        "TODAY": "Hoje",
+        "TOOLS": "Ferramentas",
+        "UNINSTALL": "Desinstalar",
+        "UPLOAD": "Fazer upload",
+        "UPLOAD.ALL": "Fazer upload de tudo"
+    },
+    "CONFIRM": {
+        "DELETE": "Essa ação não poderá ser desfeita, tem certeza que deseja excluir?",
+        "ACTION": "Essa ação não poderá ser desfeita, tem certeza que deseja continuar?"
+    },
+    "ERROR": {
+        "EMPTY": {
+            "VALUE": "A variável \"Tipo\" está vazia ou não foi aceita"
+        },
+        "EXISTS": {
+            "EMAIL": "O e-mail informado já existe",
+            "NAME": "O nome informado já existe",
+            "NAMEORURLCATEGORY": "Já existe uma categoria com esse nome cadastrada",
+            "URL": "A URL informada já existe"
+        },
+        "FATAL": "ERRO FATAL! Entre me contato com o administrador do sistema!",
+        "INVALID": {
+            "TOKEN": "O Token de sessão enviado é inválido"
+        },
+        "NOTEXISTS": {
+            "IDPROFILESESSION": "O ID do perfil do usuário atual não existe",
+            "USERBOND": "Não existe nenhum usuário vinculado a esse perfil"
+        },
+        "NOTFOUND": {
+            "PARAMETERS": "Não existem variáveis passadas no parâmetro",
+            "SESSION": "A variável de sessão não existe, por favor, atualize a página e tente novamente!",
+            "VALUE": "Não existe um valor para gravar!"
+        },
+        "RECUSED": {
+            "RESOURCE": "O usuário atual não possui permissão para executar essa ação"
+        }
+    },
+    "FORM": {
+        "MESSAGE": {
+            "REQUIRED": {
+                "ADDRESS": "O endereço é obrigatório",
+                "BUDGETED": "É obrigatório marcar orçado: Sim ou Não",
+                "CATEGORY": "A categoria é obrigatória",
+                "CATEGORY.PARENT": "A categoria pai é obrigatória",
+                "CITY": "A cidade é obrigatória",
+                "CLIENT": "O cliente é obrigatório",
+                "COLUMN.SIZE": "O tamanho de coluna é obrigatório",
+                "CONFIRMPASSWORD": "Confirmar a senha é obrigatório",
+                "CONTENT": "O conteúdo é obrigatório",
+                "DATE": "A data é obrigatória",
+                "DEFAULT.PAGE": "A página padrão é obrigatória",
+                "DEFAULT.TEMPLATE": "O template padão é obrigatório",
+                "DEFAULT.URL.SITEMAP": "A URL padrão do Sitemap é obrigatória",
+                "DISTRICT": "O bairro é obrigatório",
+                "EMAIL": "O e-mail é obrigatório",
+                "FILE.VIEW": "O arquivo view é obrigatório",
+                "FORMULA": "A fórmula é obrigatória",
+                "IMAGE": "A imagem é obrigatória",
+                "IMAGE.COVER": "A imagem da capa é obrigatória",
+                "LABEL": "O rótulo é obrigatório",
+                "LANGUAGE": "O idioma é obrigatório",
+                "LAYER": "A camada é obrigatória",
+                "LOGIN": "O nome de usuário é obrigatório",
+                "LOGO": "A logo é obrigatória",
+                "MODULE": "O módulo é obrigatório",
+                "NAME": "O nome é obrigatório",
+                "NICKNAME": "O apelido é obrigatório",
+                "NUMBER": "O número é obrigatório",
+                "PAGE.BLOCK.NAME": "O nome do bloco é obrigatório",
+                "PAGE.BLOCK.TYPE": "O tipo do bloco é obrigatório",
+                "PAGE.METATAG.CONTENT": "O conteúdo da meta tag é obrigatório",
+                "PAGE.METATAG.NAME": "O nome da meta tag é obrigatório",
+                "PAGE.TITLE": "O título da página é obrigatório",
+                "PASSWORD": "A senha é obrigatória",
+                "PASSWORD.CURRENT": "A senha atual é obrigatória",
+                "PASSWORD.NEW": "A nova senha é obrigatória",
+                "PASSWORD.NEW.CONFIRM": "Repetir a nova senha é obrigatório",
+                "PATH": "O caminho é obrigatório",
+                "PHONE": "O telefone é obrigatório",
+                "PICTURE": "A foto é obrigatória",
+                "PROFILE": "O perfil é obrigatório",
+                "SERVICE": "O serviço é obrigatório",
+                "SHOP": "A loja é obrigatória",
+                "STATE": "O estado é obrigatório",
+                "STATUS": "O status é obrigatório",
+                "SUBTOTAL": "O subtotal é obrigatório",
+                "SUBTOTAL.MONEY": "O subtotal é obrigatório",
+                "TEMPLATE": "O template é obrigatório",
+                "THEME": "O tema é obrigatório",
+                "TITLE": "O título é obrigatório",
+                "TOTAL": "O total é obrigatório",
+                "TOTAL.MONEY": "O total é obrigatório",
+                "TYPE": "O tipo é obrigatório",
+                "URL": "A URL é obrigatória",
+                "URL.LOGIN": "A URL de login é obrigatória",
+                "USER": "O usuário é obrigatório",
+                "USER.NAME": "O nome de usuário é obrigatório",
+                "VALUE.UNIT": "O valor unitário é obrigatório",
+                "VIDEO.ID": "O ID do vídeo é obrigatório"
+            },
+            "EMAIL": {
+                "EMAIL": "O formato do e-mail é inválido"
+            },
+            "URL": {
+                "FANPAGE": "A fan page precisa conter uma URL válida",
+                "URL": "A URL é inválida",
+                "LINK": "O link precisa conter uma URL válida"
+            },
+            "MASK": {
+                "MOBILEPHONE": "O celular é inválido",
+                "PHONE": "O telefone é inválido",
+                "PHONE1": "O telefone é inválido",
+                "PHONE2": "O telefone é inválido",
+                "PHONE3": "O telefone é inválido"
+            },
+            "NUMBER": {
+                "NUMBER": "O número é inválido",
+                "THUMBNAIL": {
+                    "HEIGHT": "A altura da miniatura é inválida",
+                    "WIDTH": "A largura da miniatura é inválida"
+                },
+                "VALUE": {
+                    "UNIT": "O valor unitário é inválido"
+                }
+            },
+            "PATTERN": {
+                "DELIVERYFEE.MONEY": "A taxa de entrega é inválida",
+                "PASSWORD": "A senha não é válida",
+                "PASSWORD.NEW": "A nova senha não é válida",
+                "PHONE": "O formato do telefone é inválido",
+                "PHONE.MOBILE": "O formato do celular é inválido",
+                "RESEARCH": {
+                    "FIELD": {
+                        "NAME": "O nome do campo só pode conter letras minúsculas (a-z), números(0-9) ou \"-\""
+                    }
+                },
+                "SUBTOTAL.MONEY": "O subtotal é inválido",
+                "TOTAL.MONEY": "O total é inválido",
+                "VALUE": {
+                    "MONEY": "O valor é inválido"
+                }
+            },
+            "MATCH": {
+                "CONFIRMPASSWORD": "As senhas precisam ser iguais"
+            },
+            "MINLENGTH": {
+                "PASSWORD": "A senha deve conter mais que [[$1]] caractéres",
+                "PASSWORD.NEW": "A nova senha deve conter mais que [[$1]] caractéres"
+            },
+            "MAXLENGTH": {
+                "CRM": "O CRM não pode conter mais que [[$1]] caractéres",
+                "CURRICULUM": "O currículo não pode conter mais que [[$1]] caractéres",
+                "DEFAULT": {
+                    "URL": {
+                        "SITEMAP": "A URL padrão do sitemap não pode conter mais que [[$1]] caractéres"
+                    }
+                },
+                "DESCRIPTION": {
+                    "SHORT": "A descrição curta não pode conter mais que [[$1]] caractéres"
+                },
+                "FANPAGE": "A fan page não pode conter mais que [[$1]] caractéres",
+                "LABEL": "O rótulo não pode conter mais que [[$1]] caractéres",
+                "LOGIN": "O nome de usuário não pode conter mais que [[$1]] caractéres",
+                "MODEL": {
+                    "FILTER": "O modelo de filtro não pode conter mais que [[$1]] caractéres"
+                },
+                "NAME": "O nome não pode conter mais que [[$1]] caractéres",
+                "PAGE": {
+                    "TITLE": "O título da página não pode conter mais que [[$1]] caractéres"
+                },
+                "PASSWORD": "A senha não pode conter mais que [[$1]] caractéres",
+                "PASSWORD.NEW": "A nova senha não pode conter mais que [[$1]] caractéres",
+                "PATH": "O caminho não pode conter mais que [[$1]] caractéres",
+                "SOURCE": {
+                    "NEWS": "A fonte da notícia não pode conter mais que [[$1]] caractéres"
+                },
+                "TITLE": {
+                    "BROWSER": "O título do navegador não pode conter mais que [[$1]] caractéres"
+                },
+                "URL": "A URL não pode conter mais que [[$1]] caractéres",
+                "URL.LOGIN": "A URL de login não pode conter mais que [[$1]] caractéres"
+            },
+            "MIN": {
+                "THUMBNAIL": {
+                    "HEIGHT": "A altura mínima do miniatura ser de [[$1]] pixels",
+                    "WIDTH": "A largura mínima da miniatura ser de [[$1]] pixels"
+                },
+                "COLUMN": {
+                    "SIZE": "A tamanho mínimo da coluna deve ser [[$1]]",
+                    "VALUE": {
+                        "UNIT": "O valor unitário mínimo deve ser [[$1]]"
+                    }
+                }
+            },
+            "MAX": {
+                "THUMBNAIL": {
+                    "HEIGHT": "A altura máxima do miniatura ser de [[$1]] pixels",
+                    "WIDTH": "A largura máxima do miniatura ser de [[$1]] pixels"
+                },
+                "COLUMN": {
+                    "SIZE": "A tamanho máximo da coluna deve ser [[$1]]"
+                }
+            },
+            "UNIQUE": {
+                "NAME": "O nome digitado já foi utilizado"
+            },
+            "GREATERTHAN": {
+                "MAXLENGTH": "O tamanho máximo deve ser maior que o tamanho mínimo",
+                "MAX": "O valor máximo deve ser maior que o valor mínimo"
+            }
+        }
+    },
+    "HELP": {
+        "DATE": {
+            "PICKER": "Clique no botão com um calendário para alterar a data"
+        }
+    },
+    "LABEL": {
+        "ACTING": "Atuação profissional",
+        "ACTIVE": "Ativo",
+        "ADD": {
+            "TABLE": "Adicionar tabela"
+        },
+        "ADDRESS": "Endereço",
+        "ADDRESS.COMPLEMENT": "Complemento",
+        "AUTHENTICATION": {
+            "REQUIRED": "Autenticação obrigatória"
+        },
+        "BUDGETED": "Orçado",
+        "CATEGORIES": "Categorias",
+        "CATEGORY": "Categoria",
+        "CATEGORY.PARENT": "Categoria pai",
+        "CHANGE": "Troco",
+        "CHANGE.FOR": "Troco para",
+        "CITY": "Cidade",
+        "COLS": "Colunas",
+        "COLUMN": "Coluna",
+        "COLUMN.SIZE": "Tamanho da coluna",
+        "CONFIRMPASSWORD": "Confirmação da senha",
+        "CONTENT": "Conteúdo",
+        "CONTENTBLOCKS": "Blocos de conteúdo",
+        "CRM": "CRM",
+        "CURRICULUM": "Currículo",
+        "CLIENT": "Cliente",
+        "CREATED": "Criado em",
+        "DATE": "Data",
+        "DEFAULT": "Padrão",
+        "DEFAULT.LAYER": "Camada padrão",
+        "DEFAULT.PAGE": "Página padrão",
+        "DEFAULT.TEMPLATE": "Template padrão",
+        "DEFAULT.URL": "URL padrão",
+        "DEFAULT.URL.SITEMAP": "URL padrão do Sitemap",
+        "DELIVERYFEE": "Taxa de Entrega",
+        "DELIVERYFEE.MONEY": "Taxa de Entrega",
+        "DESCRIPTION": "Descrição",
+        "DESCRIPTION.SHORT": "Descrição curta",
+        "DISTRICT": "Bairro",
+        "DIVISIBLE": "Divisível",
+        "DIVISION": "Divisão",
+        "DIVISION.FRACTION": "Fração de divisão",
+        "DIVISION.GROUP": "Grupo de divisão",
+        "DRAFT": "Rascunho",
+        "EMAIL": "E-mail",
+        "EXTRA": "Adicional",
+        "FANPAGE": "Fan page",
+        "FIELD": "Campo",
+        "FIELD.MULTIPLE": "Campo multiplo",
+        "FIELD.PARENT": "Campo pai",
+        "FILE": {
+            "CSS": "Arquivo CSS",
+            "JS": "Arquivo JS",
+            "VIEW": "Arquivo view"
+        },
+        "FILTER": "Filtro",
+        "FORMATION": "Formação",
+        "FORMPAYMENT": "Forma de Pagamento",
+        "FORMULA": "Fórmula",
+        "FRACTION": "Fração",
+        "FRACTIONS": "Frações",
+        "GENERAL": "Geral",
+        "GROUP": "Grupo",
+        "GROUPS": "Grupos",
+        "HEIGHT": "Altura",
+        "HIGHLIGHT": "Destaque",
+        "HIGHLIGHT.NEWS": "Destacar notícia",
+        "ICON": "Icone",
+        "ICON.CLASS": "Classe do icone",
+        "IMAGE": "Imagem",
+        "IMAGE.COVER": "Imagem capa",
+        "IMAGE.GALLERY": "Galeria de imagens",
+        "INACTIVE": "Inativo",
+        "INFO": "Informação Adicional",
+        "INPUT": {
+            "TYPE": {
+                "CHECKBOX": "Checkbox",
+                "DATE": "Data",
+                "EMAIL": "E-mail",
+                "HR": "HR",
+                "LABEL": "Título",
+                "MULTIPLE": "Campo pai",
+                "NUMBER": "Numero",
+                "RADIO": "Radio",
+                "SELECT": "Select",
+                "TEXT": "Texto",
+                "TEXTAREA": "Área de Texto",
+                "URL": "URL"
+            }
+        },
+        "ITEMS": {
+            "NOTFOUND": "Nenhum item encontrado..."
+        },
+        "KEYWORDS": "Palavras chave",
+        "LABEL": "Rótulo",
+        "LANGUAGE": "Idioma",
+        "LAYER": "Camada",
+        "LENGTH": {
+            "MAX": "Tamanho máximo",
+            "MIN": "Tamanho mínimo"
+        },
+        "LINK": "Link",
+        "LIST": "Lista",
+        "LOGIN": "Nome de usuário",
+        "LOGO": "Logo",
+        "MAP": "Mapa",
+        "MAP.ZOOM": "Zoom do mapa",
+        "MENU": "Menu",
+        "MENU.PARENT": "Menu pai",
+        "MESSAGES": "Mensagens",
+        "METATAGS": "Meta tags",
+        "MODEL": "Modelo",
+        "MODEL.FILTER": "Modelo de filtro",
+        "MODULE": "Módulo",
+        "MODULES": "Módulos",
+        "NAME": "Nome",
+        "NATIVE": "Nativo",
+        "NICKNAME": "Apelido",
+        "NO": "Não",
+        "NUMBER": "Número",
+        "OPTIONS": {
+            "TO": {
+                "SELECT": "Opções para seleção"
+            }
+        },
+        "PAGE": "Página",
+        "PAGE.BLOCK": {
+            "CONTENT": "Conteúdo do bloco",
+            "NAME": "Nome do bloco",
+            "TYPE": "Tipo do bloco",
+            "TYPE.TEXT": "Texto",
+            "TYPE.TEXTEDITOR": "Editor de texto"
+        },
+        "PAGE.DESCRIPTION": "Descrição da página",
+        "PAGE.METATAG": {
+                "CONTENT": "Conteúdo da meta tag",
+                "NAME": "Nome da meta tag"
+            },
+        "PAGE.PARENT": "Página pai",
+        "PAGE.TITLE": "Título da página",
+        "PASSWORD": "Senha",
+        "PASSWORD.CURRENT": "Senha atual",
+        "PASSWORD.NEW": "Nova senha",
+        "PASSWORD.NEW.CONFIRM": "Confirmação da nova senha",
+        "PATH": "Caminho",
+        "PAYMENT": "Pagamento",
+        "PAYMENT.METHOD": "Forma de pagamento",
+        "PHONE": "Telefone",
+        "PHONE1": "Telefone 1",
+        "PHONE2": "Telefone 2",
+        "PHONE3": "Telefone 3",
+        "PHONE.MOBILE": "Celular",
+        "PICTURE": "Foto",
+        "PLACEHOLDER": "Marca d'água do campo",
+        "PLAYER": {
+            "URL": "URL do player"
+        },
+        "PREFERREDSHOP": "Loja preferencial",
+        "PRODUCT": "Produto",
+        "PROFILE": "Perfil",
+        "PUBLISHED": "Publicado",
+        "QUANTITY": "Quantidade",
+        "REQUIRED": "Obrigatório",
+        "REQUIRED.FIELDS": "Campos obrigatórios",
+        "RESEARCH": {
+            "FORM": {
+                "FIELDS": "Campos do formulário"
+            }
+        },
+        "RESOURCES": "Recursos",
+        "ROWS": "Linhas",
+        "ROWSPERPAGE": "Linhas por página",
+        "SEARCH": "Buscar",
+        "SEARCH.MENU": "Buscar menu",
+        "SELECT": "Selecione",
+        "SELECT.FIELD": "Selecione...",
+        "SELECT.PROFILE": "Selecione um perfil",
+        "SERVICE": "Serviço",
+        "SITEMAP": "Sitemap",
+        "SHOP": "Loja",
+        "SORT": "Ordenação",
+        "SOURCE": "Fonte",
+        "SOURCE.NEWS": "Fonte da notícia",
+        "SPECIALIST": "Especialista",
+        "STATE": "Estado",
+        "STATUS": "Status",
+        "SUBTOTAL": "Subtotal",
+        "SUBTOTAL.MONEY": "Subtotal",
+        "SYSTEM": {
+            "VERSION": {
+                "ANGULARJS": "Versão do Angular.js",
+                "GRIFFO": "Versão do Griffo",
+                "GRIFFO.UI": "Versão do Griffo UI",
+                "JQUERY": "Versão do jQuery",
+                "MYSQL": "Versão do MySQL",
+                "PHP": "Versão do PHP"
+            }
+        },
+        "TEMPLATE": "Template",
+        "THEME": "Tema",
+        "THUMBNAIL": "Miniatura",
+        "THUMBNAIL.HEIGHT": "Altura da miniatura",
+        "THUMBNAIL.WIDTH": "Largura da miniatura",
+        "TITLE": "Título",
+        "TITLE.BROWSER": "Título do navegador",
+        "TOOLS": "Ferramentas",
+        "TOTAL": "Total",
+        "TOTAL.MONEY": "Total",
+        "TYPE": "Tipo",
+        "URL": "URL",
+        "URL.LOGIN": "URL de login",
+        "URL.TO.INSTALL": "Digite a URL para instalar",
+        "USER": "Usuário",
+        "USER.NAME": "Nome de usuário",
+        "VALUE": "Valor",
+        "VALUE.MAX": "Valor máximo",
+        "VALUE.MIN": "Valor mínimo",
+        "VALUE.MONEY": "Valor",
+        "VALUE.UNIT": "Valor unitário",
+        "VALUE.TOTAL": "Valor total",
+        "VIDEO": "Vídeo",
+        "VIDEO.ID": "ID do vídeo",
+        "VISIBILITY": "Visibilidade",
+        "WARNING": "Atenção",
+        "WIDTH": "Largura",
+        "YES": "Sim"
+    },
+    "MODULE": {
+        "AUTHENTICATION": {
+            "ERROR": {
+
+                "SUBJECTANDADDRESS": {
+                    "INVALID": "O assunto e/ou destinatários são inálidos"
+                }
+            },
+            "NAME": "Autenticação",
+            "SUCCESS": {
+                "SEND": {
+                    "MESSAGE": "Mensagem enviada com sucesso"
+                },
+                "UPDATE": {
+                    "ACCESSCONTROL": "Permissões alteradas com sucesso"
+                }
+            }
+        },
+        "BANNER":{
+            "ERROR": {
+                "EXISTS": {
+                    "TITLE": "Já existe um banner com esse título cadastrado"
+                    }
+            },
+            "MENU": {
+                "CATEGORY": "Categorias",
+                "CONFIG": "Configurações",
+                "LIST": "Listar",
+                "NEW": "Novo"
+            },
+            "NAME": "Banner",
+            "RESOURCE": {
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSERT": "Inserir",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            },
+            "SUCCESS": {
+                "CONFIG": "Módulo configurado com sucesso"
+            },
+            "TITLE": {
+                "CATEGORY": "Categorias de banner",
+                "CATEGORY.NEW": "Nova categoria de banner",
+                "CONFIG": "Configurações de banners",
+                "DELETE": "Deletar banner",
+                "EDIT": "Editar banner",
+                "LIST": "Lista de banners",
+                "NEW": "Novo banner"
+            }
+        },
+        "BUDGET": {
+            "MENU": {
+                "CONFIG": "Configurações",
+                "LIST": "Listar",
+                "NEW": "Novo"
+            },
+            "NAME": "Orçamento",
+            "RESOURCE": {
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSERT": "Inserir",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            },
+            "TITLE": {
+                "CONFIG": "Configurações de orçamento",
+                "DELETE": "Deletar orçamento",
+                "EDIT": "Editar orçamento",
+                "LIST": "Lista de orçamentos",
+                "NEW": "Novo orçamento"
+            }
+        },
+        "CATEGORY": {
+            "MENU": {
+                "LIST": "Listar",
+                "NEW": "Novo"
+            },
+            "NAME": "Categorias",
+            "RESOURCE": {
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSERT": "Inserir",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            },
+            "TITLE": {
+                "DELETE": "Deletar categoria",
+                "EDIT": "Editar categoria",
+                "LIST": "Lista de categorias",
+                "NEW": "Nova categoria"
+            }
+        },
+        "CLIENT": {
+            "ERROR":{
+                "EXISTS": {
+                    "NAME": "Já existe um cliente com esse nome",
+                    "EMAIL": "Já existe um cliente com esse email"
+                }
+            },
+            "MENU": {
+                "CONFIG": "Configurações",
+                "LIST": "Listar",
+                "NEW": "Novo"
+            },
+            "NAME": "Cliente",
+            "RESOURCE": {
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSERT": "Inserir",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            },
+            "SUCCESS": {
+                "CONFIG": "Módulo configurado com sucesso"
+            },
+            "TITLE": {
+                "CONFIG": "Configurações de clientes",
+                "DELETE": "Deletar cliente",
+                "EDIT": "Editar cliente",
+                "LIST": "Lista de clientes",
+                "NEW": "Novo cliente"
+            },
+            "WARNING": {
+                "PASSWORD": {
+                    "RULES": {
+                        "DESCRIPTION": "A senha deve possuir de [[$1]] à [[$2]] caractéres."
+                    }
+                }
+            }
+        },
+        "DASHBOARD": {
+            "NAME": "Painel",
+            "RESOURCE": {
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSERT": "Inserir",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            }
+        },
+        "ENTRY": {
+            "MENU.CONFIG": "Configurações",
+            "MENU.LIST": "Listar",
+            "MENU.NEW": "Novo",
+            "NAME": "Pré-cadastro",
+            "RESOURCE": {
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSERT": "Inserir",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            },
+            "SUCCESS": {
+                "CONFIG": "Módulo configurado com sucesso"
+            }
+        },
+        "FILEMANAGER": {
+            "ACTION": {
+                "FILE": {
+                    "DELETE": "Excluir arquivos",
+                    "DOWNLOAD": "Baixar arquivos",
+                    "MOVE": "Mover arquivos(s)",
+                    "SELECT.ALL": "Selecionar tudo",
+                    "UNSELECT.ALL": "Deselecionar tudo",
+                    "UPLOAD": "Adicionar arquivos(s)"
+                },
+                "FOLDER": {
+                    "DELETE": "Deletar pasta",
+                    "NEW": "Criar pasta",
+                    "RELOAD": "Recarregar pasta",
+                    "RENAME": "Renomear pasta"
+                }
+            },
+            "BUTTON": {
+                "ACTIONS":{
+                    "OF": {
+                        "FILE": "Ações de arquivos",
+                        "FOLDER": "Ações de pasta"
+                    }
+                }
+            },
+            "CONFIRM": {
+                "DELETE": {
+                    "FILE": "Tem certeza que deseja excluír o arquivo \"[[$1]]\"?",
+                    "FILES": "Tem certeza que deseja excluír os arquivos abaixo?",
+                    "FOLDER": "Você está tentando excluír a pasta \"[[$1]]\", se isso acontecer, todos os arquivos contidos nela serão perdidos. Tem certeza que deseja excluir?"
+                },
+                "FILE": {
+                    "RENAME": "Novo nome para o arquivo"
+                },
+                "FOLDER": {
+                    "RENAME": "Novo nome para a pasta"
+                },
+                "MOVE": "Para onde deseja mover?"
+            },
+            "ERROR": {
+                "CREATE": {
+                    "FOLDER": "Não foi possivel criar a pasta, por favor, entre em contato com o administrador do sistema!"
+                },
+                "DELETE": {
+                    "FILE": "Não foi possivel deletar o arquivo, por favor, entre em contato com o administrador do sistema!",
+                    "FILES": "Não foi possivel deletar os arquivos, por favor, entre em contato com o administrador do sistema!",
+                    "FOLDER": "Não foi possivel deletar a pasta, por favor, entre em contato com o administrador do sistema!"
+                },
+                "INVALID": {
+                    "FILE": {
+                        "FORMAT": "Arquivos com formato \"[[$1]]\" não são permitidos, por isso, o arquivo \"[[$2]]\" não será adicionado."
+                    }
+                },
+                "LARGER": {
+                    "FILE": {
+                        "SIZE": "O tamanho de cada arquivo não pode ser maior que [[$1]], por isso, o arquivo \"[[$2]]\" não será adicionado."
+                    }
+                },
+                "LOAD": {
+                    "FILES": "Não foi possivel carregar os arquivos, por favor, entre em contato com o administrador do sistema!"
+                },
+                "MOVE": {
+                    "FILES": "Não foi possivel mover os arquivos, por favor, entre em contato com o administrador do sistema!",
+                    "FOLDER": "Não foi possivel mover a pasta, por favor, entre em contato com o administrador do sistema!"
+                },
+                "RENAME": {
+                    "FILE": "Não foi possivel renomear o arquivo, por favor, entre em contato com o administrador do sistema!",
+                    "FOLDER": "Não foi possivel renomear a pasta, por favor, entre em contato com o administrador do sistema!"
+                }
+            },
+            "ITEM": {
+                "TOOLBAR": {
+                    "DELETE": {
+                        "FILE": "Deletar arquivo",
+                        "FOLDER": "Deletar pasta"
+                    },
+                    "DOWNLOAD": {
+                        "FILE": "Baixar arquivo"
+                    },
+                    "INFO": {
+                        "FILE": "Informações do arquivo",
+                        "FOLDER": "Informações da pasta"
+                    },
+                    "MOVE": {
+                        "FOLDER": "Mover pasta"
+                    },
+                    "RENAME": {
+                        "FILE": "Renomear arquivo",
+                        "FOLDER": "Renomear pasta"
+                    }
+                }
+            },
+            "LABEL": {
+                "DROPFILES": {
+                    "HERE": "ARRASTE ARQUIVOS AQUI..."
+                },
+                "FIELD": {
+                    "SELECT": {
+                        "TARGET": "Selecione um destino..."
+                    }
+                },
+                "FILE": "arquivo",
+                "FILE.LAST": {
+                    "CHANGE": "Última modificação"
+                },
+                "FILE.LOCATION": "Localozação",
+                "FILE.NAME": "Nome do arquivo",
+                "FILE.SIZE": "Tamanho do arquivo",
+                "FILE.URL": "URL",
+                "FILES": "arquivos",
+                "FOLDER": {
+                    "LAST": {
+                        "CHANGE": "Última modificação"
+                    },
+                    "LOCATION": "Localização",
+                    "NAME": "Nome da pasta",
+                    "NEW": {
+                        "NAME": "Nome da nova pasta"
+                    }
+                },
+                "ITEM": "item",
+                "ITEMS": "itens",
+                "ORDER": {
+                    "BY": {
+                        "NAME": "Ordenar por nome",
+                        "SIZE": "Ordenar por tamanho",
+                        "TYPE": "Ordenar por tipo"
+                    }
+                },
+                "SELECTED": {
+                    "FILE": "arquivo selecionado",
+                    "FILES": "arquivos selecionados"
+                },
+                "SHOW": {
+                    "ALL": "Mostrar tudo",
+                    "ONLY": {
+                        "FOLDER": "Apenas pastas",
+                        "IMAGE": "Apenas imagens",
+                        "PDF": "Apenas PDF",
+                        "TEXT": "Apenas textos",
+                        "VIDEO": "Apenas vídeos"
+                    }
+                },
+                "TOTAL": {
+                    "PROGRESS": "Progresso total"
+                }
+            },
+            "NAME": "Gerenciador de arquivos",
+            "SEARCH": {
+                "FILE": "Buscar arquivos"
+            },
+            "TITLE": {
+                "CREATE": {
+                    "FOLDER": "Criar pasta"
+                },
+                "DELETE": {
+                    "FILE": "Deletar arquivo",
+                    "FILES": "Deletar arquivos",
+                    "FOLDER": "Deletar pasta"
+                },
+                "INFO": "Informações",
+                "MOVE": {
+                    "FILES": "Mover arquivos",
+                    "FOLDER": "Mover pasta"
+                },
+                "RENAME": {
+                    "FILE": "Renomear arquivo",
+                    "FOLDER": "Renomear pasta"
+                },
+                "UPLOAD": {
+                    "FILES": "Fazer upload de arquivos"
+                }
+            }
+        },
+        "FRACTION": {
+            "MENU": {
+                "CONFIG": "Configurações",
+                "LIST": "Listar",
+                "NEW": "Nova"
+            },
+            "NAME": "Frações",
+            "RESOURCE": {
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSERT": "Inserir",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            },
+            "TITLE": {
+                "CONFIG": "Configurações de frações",
+                "DELETE": "Deletar fração",
+                "EDIT": "Editar fração",
+                "LIST": "Lista de frações",
+                "NEW": "Nova fração"
+            }
+        },
+        "GALLERY": {
+            "ERROR": {
+                "EMPTY": {
+                    "NAME": {
+                        "FILE": "O nome do arquivo está vazio",
+                        "FOLDER": "O nome da pasta está vazio"
+                    },
+                    "PATH": {
+                        "FILE": "O caminho do arquivo está vazio",
+                        "FOLDER": "O caminho da pasta está vazio"
+                    }
+                }
+            },
+            "MENU": {
+                "CONFIG": "Configurações",
+                "LIST": "Listar",
+                "NEW": "Novo"
+            },
+            "NAME": "Galeria",
+            "RESOURCE": {
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSERT": "Inserir",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            },
+            "SUCCESS": {
+                "CREATE": {
+                    "FOLDER": "Pasta criada com sucesso"
+                },
+                "DELETE": {
+                    "FILE": "Arquivo deletado com sucesso",
+                    "FOLDER": "Pasta deletada com sucesso"
+                },
+                "UPLOAD": {
+                    "FILE": "Upload concluído com sucesso"
+                }
+            }
+        },
+        "GROUP":{
+            "ERROR": {
+                "NOTFOUND": {
+                    "FRACTIONS": "É necessário selecinar pelo menos uma fração para o grupo"
+                }
+            },
+            "LABEL": {
+                "NOTFOUND": {
+                    "FRACTIONS": "Nenhuma fração adicionada..."
+                }
+            },
+            "TITLE": {
+                "DELETE": "Deletar grupo de divisões",
+                "EDIT": "Editar grupo de divisões",
+                "NEW": "Novo grupo de divisões"
+            }
+        },
+        "LAYER": {
+            "ERROR": {
+                "EXISTS": {
+                    "IDLAYERANDIDMODULE": "Já existe um cadastro com essa LAYER ID e MODULE ID",
+                    "NAMEORLABEL": "Já existe uma camada com esse nome ou rótulo"
+                }
+            },
+            "MENU": {
+                "CONFIG": "Configurações",
+                "LIST": "Listar",
+                "NEW": "Novo"
+            },
+            "NAME": "Camadas",
+            "RESOURCE": {
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSERT": "Inserir",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            },
+            "SUCCESS": {
+                "CONFIG": "Módulo configurado com sucesso"
+            },
+            "TITLE": {
+                "CONFIG": "Configurações de camadas",
+                "DELETE": "Deletar camada",
+                "EDIT": "Editar camada",
+                "LIST": "Lista de camadas",
+                "NEW": "Nova camada"
+            }
+        },
+        "MENU": {
+            "ERROR": {
+                "EXISTS": {
+                    "PATH": "Já existe um menu com esse caminho",
+                    "PATHORLABEL": "Já existe um menu com esse caminho ou rótulo"
+                }
+            },
+            "MENU": {
+                "CONFIG": "Configurações",
+                "LIST": "Listar",
+                "NEW": "Novo"
+            },
+            "NAME": "Menu",
+            "RESOURCE": {
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSERT": "Inserir",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            },
+            "TITLE": {
+                "DELETE": "Deletar menu",
+                "EDIT": "Editar menu",
+                "LIST": "Lista de menus",
+                "NEW": "Novo menu"
+            }
+        },
+        "MODULE": {
+            "CONFIRM": {
+                "UNINSTALL": "Ao desinstalar, todos os dados cadastrados nesse módulo serão perdidos, tem certeza que deseja desinstalar?"
+            },
+            "ERROR": {
+                "ADD":{
+                    "USER": "Erro ao tentar adicionar o módulo ao usuário."
+                },
+                "COPY": {
+                    "ZIP": "Erro ao tentar copiar o arquivo zip do módulo."
+                },
+                "DELETE": {
+                    "FOLDER": "Erro ao tentar excluir a pasta do módulo",
+                    "STRUCT": "Módulos estruturais não podem ser deletados",
+                    "ZIP": "Erro ao tentar deletar o arquivo zip do módulo."
+                },
+                "DIRECTORY": {
+                    "NOTFOUND": "O diretório informado não é valido"
+                },
+                "DOWNLOAD": "Erro ao tentar fazer o download do módulo.",
+                "EMPTY": {
+                  "ATTRIBUTES": "A URL do módulo enviada está vazia!"
+                },
+                "INSTALL": "A instalação do módulo falhou, por favor, entre em contato com o administrador do sistema",
+
+                "LOAD": {
+                    "SQL": "Erro ao tentar carregar o arquivo SQL do módulo.",
+                    "XML": "Erro ao tentar carregar o arquivo XML do módulo."
+                },
+                "LOADXML": "Erro ao ler arquivo XML do módulo",
+                "NOTFOUND": "Módulo não encontrado",
+                "SUBJECTANDADDRESS": {
+                    "INVALID": "O assunto e/ou destinatários são inálidos"
+                },
+                "TABLE": {
+                    "EXISTS": "A tabela do módulo a ser instalado já existe!"
+                },
+                "TRY": {
+                    "DELETE": "Erro ao tentar deletar o módulo"
+                },
+                "UNZIP": "Erro ao tentar extrair o módulo."
+            },
+            "INSTALL": {
+                "RUNNING": "Instalando módulo..."
+            },
+            "MENU": {
+                "CONFIG": "Configurações",
+                "INSTALL": "Instalar",
+                "LIST": "Listar"
+            },
+            "NAME": "Módulos",
+            "RESOURCE": {
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSTALL": "Instalar",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            },
+            "SUCCESS": {
+                "INSTALL": "Módulo instalado com sucesso",
+                "MODULE": {
+                    "DELETE": "Módulo deletado com sucesso"
+                }
+            },
+            "TITLE": {
+                "EDIT": "Editar módulo",
+                "INSTALL": "Instalar novo módulo",
+                "LIST": "Lista de módulos instalados",
+                "UNINSTALL": "Desinstalar módulo"
+            },
+            "UNINSTALL": {
+                "RUNNING": "Desinstalando módulo..."
+            },
+            "WARNING": {
+                "EXISTS": "Esse módulo já está instalado"
+            }
+        },
+        "NEWS": {
+            "ERROR": {
+                "EXISTS": {
+                    "TITLEORURL": "Já existe uma notícia cadastrada com esse título ou URL"
+                }
+            },
+            "MENU": {
+                "CATEGORY": "Categorias",
+                "CONFIG": "Configurações",
+                "LIST": "Listar",
+                "NEW": "Novo"
+            },
+            "NAME": "Notícia",
+            "RESOURCE": {
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSERT": "Inserir",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            },
+            "SUCCESS": {
+                "CONFIG": "Módulo configurado com sucesso"
+            },
+            "TITLE": {
+                "CATEGORY": "Categorias de notícias",
+                "CATEGORY.NEW": "Nova categoria de notícia",
+                "CONFIG": "Configurações de notícias",
+                "DELETE": "Deletar notícia",
+                "EDIT": "Editar notícia",
+                "LIST": "Lista de notícias",
+                "NEW": "Nova notícia"
+            }
+        },
+        "PAGE": {
+            "CONFIRM": {
+                "EDIT": {
+                    "LEAVE": "Existem alterações nos Blocos de conteúdo e/ou Metatags, tem certeza que deseja fechar sem salvar?"
+                }
+            },
+            "ERROR": {
+                "EXISTS": {
+                    "URL": "Já existe uma página com esse URL"
+                }
+            },
+            "MENU": {
+                "CONFIG": "Configurações",
+                "LIST": "Listar",
+                "NEW": "Novo"
+            },
+            "NAME": "Página",
+            "NOTFOUND": {
+                "ADDED": {
+                    "BLOCK": "Nenhum bloco adicionado...",
+                    "METATAG": "Nenhuma meta tag adicionada..."
+                }
+            },
+            "RESOURCE": {
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSERT": "Inserir",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            },
+            "SUCCESS": {
+                "BLOCK": {
+                    "ADD": "Bloco adicionado com sucesso",
+                    "DELETE": "Bloco removido com sucesso",
+                    "EDIT": "Bloco editado com sucesso"
+                },
+                "CONFIG": "Módulo configurado com sucesso",
+                "METATAG": {
+                    "ADD": "Meta tag adicionada com sucesso",
+                    "DELETE": "Meta tag removia com sucesso",
+                    "EDIT": "Meta tag editada com sucesso"
+                }
+            },
+            "TITLE": {
+                "BLOCK.ADD": "Adicionar bloco",
+                "BLOCK.EDIT": "Editar bloco",
+                "CONFIG": "Configurações de páginas",
+                "DELETE": "Deletar página",
+                "EDIT": "Editar página",
+                "LIST": "Lista de páginas",
+                "METATAG.ADD": "Adicionar meta tag",
+                "METATAG.EDIT": "Editar meta tag",
+                "NEW": "Nova página"
+            }
+        },
+        "PRODUCT": {
+            "ERROR": {
+                "EXISTS": {
+                    "NAMEORURL": "Já existe um produto com esse nome ou URL"
+                }
+            },
+            "MENU": {
+                "CATEGORY": "Categorias",
+                "CONFIG": "Configurações",
+                "LIST": "Listar",
+                "NEW": "Novo",
+                "OPTIONAL": "Adicionais",
+                "FRACTION": "Divisões"
+            },
+            "NAME": "Produto",
+            "RESOURCE": {
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSERT": "Inserir",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            },
+            "SUCCESS": {
+                "CONFIG": "Módulo configurado com sucesso"
+            },
+            "TITLE": {
+                "CATEGORY": "Categorias de produtos",
+                "CATEGORY.NEW": "Nova categoria de produtos",
+                "CONFIG": "Configurações de produtos",
+                "DELETE": "Deletar produto",
+                "EDIT": "Editar produto",
+                "LIST": "Lista de produtos",
+                "NEW": "Novo produto",
+                "OPTIONAL": "Adicionais de produtos",
+                "OPTIONAL.NEW": "Novo adicional de produto",
+                "DIVISION": "Divisões de produtos",
+                "DIVISION.GROUP.NEW": "Novo grupo de divisão",
+                "DIVISION.FRACTION.NEW": "Nova fração de divisão"
+            }
+        },
+        "PROFILE": {
+            "CONFIRM": {
+                "CHANGE": "Tem certeza que deseja alterar as permissões do perfil selecionado?"
+            },
+            "LOADING": {
+                "PERMISSIONS": "Carregando permissões..."
+            },
+            "MENU": {
+                "ACCESSCONTROL": "Controle de acesso",
+                "CONFIG": "Configurações",
+                "LIST": "Listar",
+                "NEW": "Novo"
+            },
+            "NAME": "Perfil",
+            "NOTFOUND": {
+                "SELECTED": {
+                    "PROFILE": "Nenhum perfil selecionado..."
+                }
+            },
+            "RESOURCE": {
+                "ACCESS-CONTROL": "Controle de acesso",
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSERT": "Inserir",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            },
+            "SAVING": {
+                "PERMISSIONS": "Salvando permissões..."
+            },
+            "ERROR": {
+                "RECUSED": {
+                    "DELETE": "O perfil não pode ser excluído"
+                }
+            },
+            "SUCCESS": {
+                "UPDATE": "Perfil alterado com sucesso"
+            },
+            "TITLE": {
+                "ACCESSCONTROL": "Controle de acesso",
+                "DELETE": "Deletar perfil",
+                "EDIT": "Editar perfil",
+                "LIST": "Lista de perfis",
+                "NEW": "Novo perfil"
+            }
+        },
+        "RESEARCH": {
+            "ERROR": {
+                "EXISTS": {
+                    "URL": "Essa URL já está sendo utilizada"
+                },
+                "FIELD": {
+                    "MESSAGE": {
+                        "MAX": "A mensagem de validação de valor máximo é obrigatória",
+                        "MAXLENGTH": "A mensagem de validação de tamanho máximo é obrigatória",
+                        "MIN": "A mensagem de validação de valor mínimo é obrigatória",
+                        "MINLENGTH": "A mensagem de validação de tamanho mínimo é obrigatória",
+                        "NUMBER": "A mensagem de validação de campo numérico é obrigatória",
+                        "REQUIRED": "A mensagem de campo obrigatório é obrigatória",
+                        "URL": "A mensagem de validação de URL é obrigatória"
+                    }
+                }
+            },
+            "LABEL": {
+                "MESSAGE": {
+                    "EMAIL": "Mensagem validação de e-mail",
+                    "MAX": "Mensagem validação de valor máximo",
+                    "MAXLENGTH": "Mensagem validação de tamanho máximo",
+                    "MIN": "Mensagem validação de valor mínimo",
+                    "MINLENGTH": "Mensagem validação de tamanho mínimo",
+                    "NUMBER": "Mensagem validação de campo numérico",
+                    "REQUIRED": "Mensagem de campo obrigatório",
+                    "URL": "Mensagem validação de URL"
+                },
+                "VIEW": "Lista de cadastros na pesquisa"
+            },
+            "MENU": {
+                "CONFIG": "Configurações",
+                "LIST": "Listar",
+                "NEW": "Novo"
+            },
+            "NAME": "Pesquisa",
+            "NOTFOUND": {
+                "ADDED": {
+                    "FIELD": "Nenhum campo adicionado..."
+                }
+            },
+            "RESOURCE": {
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSERT": "Inserir",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            },
+            "SUCCESS": {
+                "CONFIG": "Módulo configurado com sucesso"
+            },
+            "TITLE": {
+                "CONFIG": "Configurações de pesquisas",
+                "DELETE": "Deletar pesquisa",
+                "EDIT": "Editar pesquisa",
+                "FIELD.ADD": "Adicionar campo",
+                "FIELD.DELETE": "Remover campo",
+                "FIELD.EDIT": "Editar campo",
+                "LIST": "Lista de pesquisas",
+                "NEW": "Nova pesquisa",
+                "VIEW": "Visualisar dados da pesquisa"
+            },
+            "WARNING": {
+                "CONTENTS": {
+                    "EXISTS": "Esse conteúdo já foi cadastrado"
+                },
+                "EDIT": "Já existem dados coletados com essa pesquisa, por isso não é mais possível editar os campo do formulário dessa pesquisa!",
+                "IDRESEARCH": {
+                    "EMPTY": "O IDRESEARCH está vazio"
+                }
+            },
+            "ERROR": {
+                "FIELD": {
+                    "MESSAGE": {
+                        "EMAIL": "A mensagem de validação de e-mail é obrigatória"
+                    }
+                }
+            }
+        },
+        "SEARCH": {
+            "MENU": {
+                "CATEGORY": "Categorias",
+                "CONFIG": "Configurações",
+                "LIST": "Listar",
+                "NEW": "Novo"
+            },
+            "NAME": "Busca",
+            "RESOURCE": {
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSERT": "Inserir",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            }
+        },
+        "SERVICE": {
+            "MENU": {
+                "CATEGORY": "Categorias",
+                "CONFIG": "Configurações",
+                "LIST": "Listar",
+                "NEW": "Novo"
+            },
+            "NAME": "Serviço",
+            "RESOURCE": {
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSERT": "Inserir",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            },
+            "SUCCESS": {
+                "CONFIG": "Módulo configurado com sucesso"
+            },
+            "TITLE": {
+                "CATEGORY": "Categorias de serviços",
+                "CATEGORY.NEW": "Nova categoria de Serviços",
+                "CONFIG": "Configurações de serviços",
+                "DELETE": "Deletar serviço",
+                "EDIT": "Editar serviço",
+                "LIST": "Lista de serviços",
+                "NEW": "Novo serviço"
+            },
+            "ERROR": {
+                "EXISTS": {
+                    "NAMEORURL": "Já existe um serviço com esse nome ou URL"
+                }
+            }
+        },
+        "SHOP": {
+            "MENU": {
+                "CONFIG": "Configurações",
+                "LIST": "Listar",
+                "NEW": "Novo"
+            },
+            "NAME": "Loja",
+            "RESOURCE": {
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSERT": "Inserir",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            },
+            "SUCCESS": {
+                "CONFIG": "Módulo configurado com sucesso"
+            },
+            "TITLE": {
+                "CONFIG": "Configurações das lojas",
+                "DELETE": "Deletar loja",
+                "EDIT": "Editar loja",
+                "LIST": "Lista de lojas",
+                "NEW": "Nova loja"
+            },
+            "ERROR": {
+                "EXISTS": {
+                    "NAMEORURL": "Já existe uma loja com esse nome"
+                }
+            }
+        },
+        "SPECIALIST": {
+            "MENU": {
+                "CATEGORY": "Categorias",
+                "CONFIG": "Configurações",
+                "LIST": "Listar",
+                "NEW": "Novo"
+            },
+            "NAME": "Especialista",
+            "RESOURCE": {
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSERT": "Inserir",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            },
+            "SUCCESS": {
+                "CONFIG": "Módulo configurado com sucesso",
+                "EXISTS": {
+                    "NAMEORURL": "Já existe um especialista com esse nome ou URL"
+                }
+            },
+            "TITLE": {
+                "CATEGORY": "Categorias de especialistas",
+                "CATEGORY": {
+                    "NEW": "Nova categorias de especialistas"
+                },
+                "CONFIG": "Configrações de especialistas",
+                "DELETE": "Deletar especialista",
+                "EDIT": "Editar especialista",
+                "LIST": "Lista de especialistas",
+                "NEW": "Novo especialista"
+            }
+        },
+        "TEMPLATE": {
+            "ERROR": {
+                "EXISTS": {
+                    "NAME": "Já existe um template com esse nome"
+                }
+            },
+            "MENU": {
+                "CONFIG": "Configurações",
+                "LIST": "Listar",
+                "NEW": "Novo"
+            },
+            "NAME": "Template",
+            "RESOURCE": {
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSERT": "Inserir",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            },
+            "TITLE": {
+                "DELETE": "Deletar template",
+                "EDIT": "Editar template",
+                "LIST": "Lista de templates",
+                "NEW": "Novo template"
+            }
+        },
+        "THEME": {
+            "ERROR": {
+                "EXISTS": {
+                    "NAME": "Já existe um tema com esse nome"
+                }
+            },
+            "MENU": {
+                "CONFIG": "Configurações",
+                "LIST": "Listar",
+                "NEW": "Novo"
+            },
+            "NAME": "Tema",
+            "RESOURCE": {
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSERT": "Inserir",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            },
+            "TITLE": {
+                "DELETE": "Deletar tema",
+                "EDIT": "Editar tema",
+                "LIST": "Lista de temas",
+                "NEW": "Novo tema"
+            }
+        },
+        "USER": {
+            "ERROR": {
+                "ADMIN": {
+                    "NOTDELETE": "O usuário administrativo não pode ser deletado"
+                },
+                "EXISTS": {
+                    "NAMEORLOGIN": "Já existe um usuário com esse nome ou nome de usuário"
+                },
+                "LOGIN": {
+                    "INCORRECT": "Usuário inválido e/ou senha incorreta"
+                },
+                "PASSWORD": {
+                    "EMPTY": "A senha atual não pode estar vazia"
+                }
+            },
+            "MENU": {
+                "CONFIG": "Configurações",
+                "LIST": "Listar",
+                "NEW": "Novo"
+            },
+            "NAME": "Usuário",
+            "RESOURCE": {
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSERT": "Inserir",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            },
+            "SUCCESS": {
+                "LOGIN": {
+                    "REDIRECT": "Logado com sucesso, você será redirecionado"
+                },
+                "LOGOUT": {
+                    "REDIRECT": "Deslogado com sucesso, você será redirecionado"
+                },
+                "PASSWORD": {
+                    "UPDATE": "Senha alterada com sucesso"
+                }
+            },
+            "TITLE": {
+                "DELETE": "Deletar usuário",
+                "EDIT": "Editar usuário",
+                "LIST": "Lista de usuários",
+                "NEW": "Novo usuário"
+            },
+            "WARNING": {
+                "PASSWORD": {
+                    "EQUAL": "A senha atual informada é inválida"
+                }
+            }
+        },
+        "VIDEO": {
+            "ERROR": {
+                "EXISTS": {
+                    "TITLE": "Já existe um vídeo com esse título"
+                }
+            },
+            "MENU": {
+                "CATEGORY": "Categorias",
+                "CONFIG": "Configurações",
+                "LIST": "Listar",
+                "NEW": "Novo"
+            },
+            "NAME": "Vídeo",
+            "RESOURCE": {
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSERT": "Inserir",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            },
+            "SUCCESS": {
+                "CONFIG": "Módulo configurado com sucesso"
+            },
+            "TITLE": {
+                "CATEGORY": "Categorias de vídeos",
+                "CATEGORY.NEW": "Nova categoria de vídeos",
+                "CONFIG": "Configurações de vídeos",
+                "DELETE": "Deletar vídeo",
+                "EDIT": "Editar vídeo",
+                "LIST": "Lista de vídeos",
+                "NEW": "Novo vídeo"
+            }
+        },
+        "OPTIONAL": {
+            "ERROR": {
+
+            },
+            "MENU": {
+                "CONFIG": "Configurações",
+                "LIST": "Listar",
+                "NEW": "Novo"
+            },
+            "NAME": "Adicional",
+            "RESOURCE": {
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSERT": "Inserir",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            },
+            "SUCCESS": {
+                "CONFIG": "Módulo configurado com sucesso"
+            },
+            "TITLE": {
+                "CONFIG": "Configurações de adicionais",
+                "DELETE": "Deletar adicional",
+                "EDIT": "Editar adicional",
+                "LIST": "Lista de adicionais",
+                "NEW": "Novo adicional"
+            }
+        },
+        "ORDER": {
+            "ERROR": {
+
+            },
+            "FORM": {
+                "MESSAGE": {
+                    "REQUIRED": {
+                        "PRODUCTS": "É obrigatório selecionar no mínimo 1 (um) produto"
+                    }
+                }
+            },
+            "LABEL": {
+                "SELECT": {
+                    "PRODUCT": "Adicionar produto..."
+                },
+                "TABLE": {
+                    "PRODUCT": {
+                        "EMPTY": "Nenhum produto..."
+                    }
+                }
+            },
+            "MENU": {
+                "CONFIG": "Configurações",
+                "LIST": "Listar",
+                "NEW": "Novo"
+            },
+            "NAME": "Pedido",
+            "RESOURCE": {
+                "CONFIG": "Configurações",
+                "DELETE": "Deletar",
+                "INSERT": "Inserir",
+                "SELECT": "Selecionar",
+                "UPDATE": "Editar"
+            },
+            "SUCCESS": {
+                "CONFIG": "Módulo configurado com sucesso"
+            },
+            "TITLE": {
+                "CONFIG": "Configurações de pedidos",
+                "DELETE": "Deletar pedidos",
+                "EDIT": "Editar pedidos",
+                "LIST": "Lista de pedidos",
+                "NEW": "Novo pedido"
+            }
+        }
+    },
+    "NOTFOUND": {
+        "DATA": "Nenhum dado encontrado..."
+    },
+    "SUCCESS": {
+        "CREATE": {
+            "COMPLETED": "Cadastro realizado com sucesso"
+        },
+        "DELETE": {
+            "COMPLETED": "Cadastro deletado com sucesso"
+        },
+        "UPDATE": {
+            "COMPLETED": "Cadastro alterado com sucesso"
+        }
+    },
+    "TITLE": {
+        "PASSWORD": {
+            "CHANGE": "Alterar senha"
+        },
+        "SYSTEM": {
+            "INFO": "Informações do sistema"
+        }
+    },
+    "WARNING": {
+        "PASSWORD": {
+            "RULES": {
+                "DESCRIPTION": "A senha deve possuir de [[$1]] à [[$2]] caractéres"
+            }
+        },
+        "MONEY": {
+            "RULES": {
+                "FORMAT": "O valor deve seguir o formato monetário (Ex. 150,00 ou 1.500,00)"
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+make-subtitle()
+    position relative
+    set-font-size(26px)
+    color $color-subtitle-text
+    padding 10px 15px
+    margin 30px 0
+    background $color-subtitle-bg
+    text-align center
+    &:first-child
+        margin-top 0
+    if($size-subtitle-border)
+        padding remify($size-subtitle-border * 2) remify($size-subtitle-border * 3)
+        border-left solid $size-subtitle-border $color-subtitle-border
