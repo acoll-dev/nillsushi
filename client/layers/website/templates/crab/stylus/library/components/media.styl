@@ -2,15 +2,16 @@
     display table
     padding 7px
     .media
-        $media-color = darken(#FFFFFF, 5%)
+        $media-color = $color-dark
         display table-cell
         padding 7px
         background $media-color;
         .media-body
             .media-heading
-                color #333333
+                color $color-text-thirdary
                 set-font-size(22px)
             .description
+                color $color-light
                 set-font-size(14px)
                 *
                     font-size .875rem !important
@@ -29,6 +30,7 @@
             +screen(xs)
                 width 75px
         .unit-value
+            color $color-light
             set-font-size(22px)
     +screen(xs)
         border-bottom solid 1px #EEEEEE

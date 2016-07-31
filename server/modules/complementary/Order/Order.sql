@@ -1,8 +1,4 @@
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
-
-
 -- -----------------------------------------------------
 -- Table `gr_module`
 -- -----------------------------------------------------
@@ -82,6 +78,19 @@ COLLATE = utf8_general_ci;
 
 
 -- -----------------------------------------------------
+-- Table `gr_daysenabled`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `gr_daysenabled` (
+  `iddaysenabled` INT NOT NULL AUTO_INCREMENT,
+  `date` DATETIME NOT NULL,
+  `enable` TINYINT(1) NOT NULL,
+  PRIMARY KEY (`iddaysenabled`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
+
+
+-- -----------------------------------------------------
 -- Table `gr_order`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `gr_order` (
@@ -104,10 +113,12 @@ CREATE TABLE IF NOT EXISTS `gr_order` (
   `fkidclient` INT NOT NULL,
   `fkidmodule` INT NOT NULL,
   `fkidshop` INT NOT NULL,
+  `fkiddaysenabled` INT NULL,
   PRIMARY KEY (`idorder`),
   INDEX `fk_order_gr_client1_idx` (`fkidclient` ASC),
   INDEX `fk_gr_order_gr_module1_idx` (`fkidmodule` ASC),
   INDEX `fk_gr_order_shop1_idx` (`fkidshop` ASC),
+  INDEX `fk_gr_order_gr_daysenabled1_idx` (`fkiddaysenabled` ASC),
   CONSTRAINT `fk_order_gr_client1`
     FOREIGN KEY (`fkidclient`)
     REFERENCES `gr_client` (`idclient`)
@@ -121,6 +132,11 @@ CREATE TABLE IF NOT EXISTS `gr_order` (
   CONSTRAINT `fk_gr_order_shop1`
     FOREIGN KEY (`fkidshop`)
     REFERENCES `gr_shop` (`idshop`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_gr_order_gr_daysenabled1`
+    FOREIGN KEY (`fkiddaysenabled`)
+    REFERENCES `gr_daysenabled` (`iddaysenabled`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -261,7 +277,4 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
 
-
-SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

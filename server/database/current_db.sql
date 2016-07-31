@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 08, 2016 at 06:30 AM
+-- Generation Time: Aug 01, 2016 at 12:54 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `gr_activitylog` (
   `activity` varchar(45) NOT NULL,
   `url` varchar(255) NOT NULL,
   `fkidusersession` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=288 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=340 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `gr_activitylog`
@@ -326,7 +326,59 @@ INSERT INTO `gr_activitylog` (`idactivitylog`, `date`, `activity`, `url`, `fkidu
 (284, '2016-06-08 02:15:13', 'Update Product', 'http://localhost/web/nillsushi/website/rest/admin/website/product/update_attributes/12', 56),
 (285, '2016-06-08 03:12:22', 'Delete Module order', 'http://localhost/web/nillsushi/website/rest/admin/website/module/20', 56),
 (286, '2016-06-08 03:12:46', 'Added order module in the Webmaster user', 'http://localhost/web/nillsushi/website/rest/admin/website/module/insert', 56),
-(287, '2016-06-08 03:12:46', 'Installation Module Order', 'http://localhost/web/nillsushi/website/rest/admin/website/module/insert', 56);
+(287, '2016-06-08 03:12:46', 'Installation Module Order', 'http://localhost/web/nillsushi/website/rest/admin/website/module/insert', 56),
+(288, '2016-06-08 10:38:18', 'Logout layer: admin userauth: admin', 'http://localhost/web/nillsushi/website/admin/website/order/list/', 56),
+(289, '2016-06-08 23:33:46', 'Login user: admin password: 21232f297a57a5a74', 'http://localhost/web/nillsushi/website/rest/admin/admin/authentication/login', 57),
+(290, '2016-06-08 23:36:19', 'Delete Module shop', 'http://localhost/web/nillsushi/website/rest/admin/website/module/19', 57),
+(291, '2016-06-08 23:36:32', 'Added shop module in the Webmaster user', 'http://localhost/web/nillsushi/website/rest/admin/website/module/insert', 57),
+(292, '2016-06-08 23:36:32', 'Installation Module Shop', 'http://localhost/web/nillsushi/website/rest/admin/website/module/insert', 57),
+(293, '2016-06-09 02:14:40', 'Update Access Control', 'http://localhost/web/nillsushi/website/rest/admin/website/authentication/update_access_control/1', 57),
+(294, '2016-07-30 21:45:02', 'Login user: admin password: 21232f297a57a5a74', 'http://localhost/web/nillsushi/website/rest/admin/admin/authentication/login', 58),
+(295, '2016-07-30 23:21:38', 'Delete Module order', 'http://localhost/web/nillsushi/website/rest/admin/website/module/25', 58),
+(296, '2016-07-30 23:32:22', 'Added shop module in the Webmaster user', 'http://localhost/web/nillsushi/website/rest/admin/website/module/insert', 58),
+(297, '2016-07-30 23:32:22', 'Installation Module Order', 'http://localhost/web/nillsushi/website/rest/admin/website/module/insert', 58),
+(298, '2016-07-31 00:00:34', 'Added order module in the Webmaster user', 'http://localhost/web/nillsushi/website/rest/admin/website/module/insert', 58),
+(299, '2016-07-31 00:00:34', 'Installation Module Order', 'http://localhost/web/nillsushi/website/rest/admin/website/module/insert', 58),
+(300, '2016-07-31 00:19:35', 'Delete Module order', 'http://localhost/web/nillsushi/website/rest/admin/website/module/27', 58),
+(301, '2016-07-31 00:20:03', 'Added order module in the Webmaster user', 'http://localhost/web/nillsushi/website/rest/admin/website/module/insert', 58),
+(302, '2016-07-31 00:20:03', 'Installation Module Order', 'http://localhost/web/nillsushi/website/rest/admin/website/module/insert', 58),
+(303, '2016-07-31 00:23:28', 'Login user: admin password: 21232f297a57a5a74', 'http://localhost/web/nillsushi/website/rest/admin/admin/authentication/login', 59),
+(304, '2016-07-31 00:26:19', 'Delete Module order', 'http://localhost/web/nillsushi/website/rest/admin/website/module/28', 59),
+(305, '2016-07-31 00:26:46', 'Added order module in the Webmaster user', 'http://localhost/web/nillsushi/website/rest/admin/website/module/insert', 59),
+(306, '2016-07-31 00:26:46', 'Installation Module Order', 'http://localhost/web/nillsushi/website/rest/admin/website/module/insert', 59),
+(307, '2016-07-31 00:28:48', 'Delete Module order', 'http://localhost/web/nillsushi/website/rest/admin/website/module/29', 59),
+(308, '2016-07-31 00:29:52', 'Added order module in the Webmaster user', 'http://localhost/web/nillsushi/website/rest/admin/website/module/insert', 59),
+(309, '2016-07-31 00:29:52', 'Installation Module Order', 'http://localhost/web/nillsushi/website/rest/admin/website/module/insert', 59),
+(310, '2016-07-31 00:55:38', 'Update Access Control', 'http://localhost/web/nillsushi/website/rest/admin/website/authentication/update_access_control/1', 59),
+(311, '2016-07-31 00:55:58', 'Update Access Control', 'http://localhost/web/nillsushi/website/rest/admin/website/authentication/update_access_control/1', 59),
+(312, '2016-07-31 01:10:31', 'Login user: admin password: 21232f297a57a5a74', 'http://localhost/web/nillsushi/website/rest/admin/admin/authentication/login', 60),
+(313, '2016-07-31 01:20:25', 'Register Days Enabled', 'http://localhost/web/nillsushi/website/rest/admin/website/daysenabled/insert', 60),
+(314, '2016-07-31 01:23:05', 'Register Days Enabled', 'http://localhost/web/nillsushi/website/rest/admin/website/daysenabled/insert', 60),
+(315, '2016-07-31 02:53:21', 'Login user: admin password: 21232f297a57a5a74', 'http://localhost/web/nillsushi/website/rest/admin/admin/authentication/login', 61),
+(316, '2016-07-31 04:00:27', 'Register Days Enabled', 'http://localhost/web/nillsushi/website/rest/admin/website/daysenabled/insert', 61),
+(317, '2016-07-31 04:01:08', 'Register Days Enabled', 'http://localhost/web/nillsushi/website/rest/admin/website/daysenabled/insert', 61),
+(318, '2016-07-31 04:26:50', 'Register Client', 'http://localhost/web/nillsushi/website/rest/admin/website/client/insert', 61),
+(319, '2016-07-31 04:27:40', 'Login user: admin password: 21232f297a57a5a74', 'http://localhost/web/nillsushi/website/rest/admin/admin/authentication/login', 62),
+(320, '2016-07-31 04:31:48', 'Delete Client', 'http://localhost/web/nillsushi/website/rest/admin/website/client/1', 62),
+(321, '2016-07-31 18:47:35', 'Logout layer: admin userauth: admin', 'http://localhost/web/nillsushi/website/admin/website/shop/new/', 62),
+(322, '2016-07-31 18:47:44', 'Login user: admin password: 21232f297a57a5a74', 'http://localhost/web/nillsushi/website/rest/admin/admin/authentication/login', 63),
+(323, '2016-07-31 18:48:25', 'Register Shop', 'http://localhost/web/nillsushi/website/rest/admin/website/shop/insert', 63),
+(324, '2016-07-31 18:49:10', 'Login user: cliente@teste.com password: f5bb0', 'http://localhost/web/nillsushi/website/rest/website/authentication/login', 64),
+(325, '2016-07-31 21:03:29', 'Logout layer: website userauth: cliente@teste', 'http://localhost/web/nillsushi/website/finish', 64),
+(326, '2016-07-31 21:03:36', 'Login user: cliente@teste.com password: f5bb0', 'http://localhost/web/nillsushi/website/rest/website/authentication/login', 65),
+(327, '2016-07-31 21:21:16', 'Logout layer: website userauth: cliente@teste', 'http://localhost/web/nillsushi/website/rest/website/authentication/logout', 65),
+(328, '2016-07-31 21:22:24', 'Login user: cliente@teste.com password: f5bb0', 'http://localhost/web/nillsushi/website/rest/website/authentication/login', 66),
+(329, '2016-07-31 21:22:56', 'Logout layer: website userauth: cliente@teste', 'http://localhost/web/nillsushi/website/rest/website/authentication/logout', 66),
+(330, '2016-07-31 21:38:50', 'Login user: cliente2@teste.com password: f5bb', 'http://localhost/web/nillsushi/website/rest/website/authentication/login', 67),
+(331, '2016-07-31 21:41:03', 'Update Client', 'http://localhost/web/nillsushi/website/rest/website/client/update_attributes/3', 67),
+(332, '2016-07-31 21:41:27', 'Logout layer: website userauth: cliente2@test', 'http://localhost/web/nillsushi/website/rest/website/authentication/logout', 67),
+(333, '2016-07-31 21:43:26', 'Login user: cliente3@teste.com password: f5bb', 'http://localhost/web/nillsushi/website/rest/website/authentication/login', 68),
+(334, '2016-07-31 21:43:40', 'Logout layer: website userauth: cliente3@test', 'http://localhost/web/nillsushi/website/rest/website/authentication/logout', 68),
+(335, '2016-07-31 21:46:44', 'Login user: cliente4@teste.com password: f5bb', 'http://localhost/web/nillsushi/website/rest/website/authentication/login', 69),
+(336, '2016-07-31 21:52:38', 'Logout layer: website userauth: cliente4@test', 'http://localhost/web/nillsushi/website/rest/website/authentication/logout', 69),
+(337, '2016-07-31 21:54:36', 'Login user: cliente4@teste.com password: f5bb', 'http://localhost/web/nillsushi/website/rest/website/authentication/login', 70),
+(338, '2016-07-31 22:53:11', 'Logout layer: admin userauth: admin', 'http://localhost/web/nillsushi/website/admin/website/order/list/', 63),
+(339, '2016-07-31 22:53:17', 'Login user: admin password: 21232f297a57a5a74', 'http://localhost/web/nillsushi/website/rest/admin/admin/authentication/login', 71);
 
 -- --------------------------------------------------------
 
@@ -369,7 +421,7 @@ CREATE TABLE IF NOT EXISTS `gr_banner` (
   `status` tinyint(1) NOT NULL,
   `fkidcategory` int(11) DEFAULT NULL,
   `fkidmodule` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `gr_banner`
@@ -441,7 +493,17 @@ CREATE TABLE IF NOT EXISTS `gr_client` (
   `status` tinyint(1) NOT NULL,
   `fkidmodule` int(11) NOT NULL,
   `fkidshop` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `gr_client`
+--
+
+INSERT INTO `gr_client` (`idclient`, `name`, `email`, `address`, `number`, `complement`, `district`, `city`, `state`, `phone`, `mobilephone`, `preferredshop`, `created`, `updated`, `status`, `fkidmodule`, `fkidshop`) VALUES
+(2, 'Teste', 'cliente@teste.com', 'Teste', '123', NULL, 'Teste', 'Itapeva', 'SP', '15999999999', '0', 'Itapeva', '2016-07-31 15:49:09', NULL, 1, 22, 1),
+(3, 'Teste 2', 'cliente2@teste.com', 'Teste', '123', NULL, 'Teste', 'Itapeva', 'SP', '15999999999', NULL, NULL, '2016-07-31 18:38:49', '2016-07-31 18:41:03', 1, 22, 1),
+(4, 'Cliente 3', 'cliente3@teste.com', 'Teste', '123', NULL, 'Teste', 'Itapeva', 'SP', '15999999999', '0', NULL, '2016-07-31 18:43:25', NULL, 1, 22, 1),
+(5, 'Cliente 4', 'cliente4@teste.com', 'Teste', '123', NULL, 'Teste', 'Itapeva', 'SP', '99999999999', NULL, NULL, '2016-07-31 18:46:44', NULL, 1, 22, 1);
 
 -- --------------------------------------------------------
 
@@ -466,6 +528,25 @@ CREATE TABLE IF NOT EXISTS `gr_customer` (
 
 INSERT INTO `gr_customer` (`idcustomer`, `logo`, `name`, `phone`, `email`, `address`, `map`, `social`) VALUES
 (1, 'logo/logo-header.png', 'Acoll Assessoria & Comunicação', 'O:8:"stdClass":3:{s:1:"0";s:10:"1535223302";s:1:"1";s:10:"1535225498";s:1:"2";s:11:"15997006808";}', 'O:8:"stdClass":1:{s:1:"0";s:20:"suporte@acoll.com.br";}', 'Rua Epitácio Piedade, 204, Vila Ophélia, Itapeva/SP', '{"coords":"-23.9852375,-48.8805527","zoom":15}', 'O:8:"stdClass":7:{s:8:"facebook";s:24:"http://www.google.com.br";s:7:"twitter";s:24:"http://www.google.com.br";s:9:"instagram";s:24:"http://www.google.com.br";s:7:"youtube";s:24:"http://www.google.com.br";s:10:"googlePlus";s:24:"http://www.google.com.br";s:6:"github";s:24:"http://www.google.com.br";s:8:"whatsapp";s:11:"15997006808";}');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gr_daysenabled`
+--
+
+CREATE TABLE IF NOT EXISTS `gr_daysenabled` (
+`iddaysenabled` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `enabled` tinyint(1) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `gr_daysenabled`
+--
+
+INSERT INTO `gr_daysenabled` (`iddaysenabled`, `date`, `enabled`) VALUES
+(4, '2016-07-31', 1);
 
 -- --------------------------------------------------------
 
@@ -658,7 +739,7 @@ CREATE TABLE IF NOT EXISTS `gr_layermodule` (
   `urlcategory` varchar(255) DEFAULT NULL,
   `default` tinyint(1) NOT NULL,
   `status` tinyint(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `gr_layermodule`
@@ -697,14 +778,14 @@ INSERT INTO `gr_layermodule` (`idlayermodule`, `idlayer`, `idmodule`, `filtermod
 (30, 2, 15, '/%module%/%view%', 'fraction/', NULL, NULL, 0, 1),
 (35, 1, 18, '/%layer%/%module%/%view%', 'website/banner/', NULL, NULL, 0, 1),
 (36, 2, 18, '/%view%/%id%', 'banner/', NULL, NULL, 0, 1),
-(37, 1, 19, '/%layer%/%module%/%view%', 'website/shop/', NULL, NULL, 0, 1),
-(38, 2, 19, '/%view%/%id%', 'shop/', NULL, NULL, 0, 1),
 (43, 1, 22, '/%layer%/%module%/%view%', 'website/client/', NULL, NULL, 0, 1),
 (44, 2, 22, '/%view%/%id%', 'client/', NULL, NULL, 0, 1),
 (47, 1, 24, '/%layer%/%module%/%view%', 'website/product/', NULL, NULL, 0, 1),
 (48, 2, 24, '/%view%/%urlcategory%/%category%', 'product/', NULL, 'categoria/', 0, 1),
-(49, 1, 25, '/%layer%/%module%/%view%', 'website/order/', NULL, NULL, 0, 1),
-(50, 2, 25, '/%view%/%id%', 'order/', NULL, NULL, 0, 1);
+(51, 1, 26, '/%layer%/%module%/%view%', 'website/shop/', NULL, NULL, 0, 1),
+(52, 2, 26, '/%view%/%id%', 'shop/', NULL, NULL, 0, 1),
+(59, 1, 30, '/%layer%/%module%/%view%', 'website/order/', NULL, NULL, 0, 1),
+(60, 2, 30, '/%view%/%id%', 'order/', NULL, NULL, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -722,7 +803,7 @@ CREATE TABLE IF NOT EXISTS `gr_menu` (
   `status` tinyint(1) NOT NULL,
   `fkidmodule` int(11) NOT NULL,
   `fkidlayer` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=128 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `gr_menu`
@@ -787,10 +868,6 @@ INSERT INTO `gr_menu` (`idmenu`, `label`, `icon`, `idmenuparent`, `path`, `keywo
 (71, 'List', 'fa fa-fw fa-list', 69, 'banner/list/', 'list,listar,listar banner', 1, 18, 1),
 (72, 'Category', 'fa fa-fw fa-flag', 69, 'banner/category/', 'category,categoria,categoria do banner', 1, 18, 1),
 (73, 'Config', 'fa fa-fw fa-cogs', 69, 'banner/config/', 'config,configuração,configuração do banner', 1, 18, 1),
-(74, 'shop', 'fa fa-fw fa-building-o', NULL, NULL, 'shop,loja,lojas', 1, 19, 1),
-(75, 'New', 'fa fa-fw fa-file', 74, 'shop/new/', 'new,novo,nova loja', 1, 19, 1),
-(76, 'List', 'fa fa-fw fa-list', 74, 'shop/list/', 'list,listar,listar loja,listar lojas', 1, 19, 1),
-(77, 'Config', 'fa fa-fw fa-cogs', 74, 'shop/config/', 'config,configuração,configuração da loja,configuração das lojas', 1, 19, 1),
 (86, 'Client', 'fa fa-fw fa-group', NULL, NULL, 'client,cliente', 1, 22, 1),
 (87, 'New', 'fa fa-fw fa-file', 86, 'client/new/', 'new,novo,novo cliente', 1, 22, 1),
 (88, 'List', 'fa fa-fw fa-list', 86, 'client/list/', 'list,listar,listar cliente', 1, 22, 1),
@@ -802,10 +879,14 @@ INSERT INTO `gr_menu` (`idmenu`, `label`, `icon`, `idmenuparent`, `path`, `keywo
 (101, 'Optional', 'fa fa-fw fa-plus', 97, 'product/optional/', 'optional,opcional,opcional do produto', 1, 24, 1),
 (102, 'Fraction', 'fa fa-fw fa-pie-chart', 97, 'product/fraction/', 'fração,frações,fração do produto', 1, 24, 1),
 (103, 'Config', 'fa fa-fw fa-cogs', 97, 'product/config/', 'config,configuração,configuração do produto', 1, 24, 1),
-(104, 'Order', 'fa fa-fw fa-clipboard', NULL, NULL, 'order,pedido,pedidos', 1, 25, 1),
-(105, 'New', 'fa fa-fw fa-file', 104, 'order/new/', 'new,novo,novo pedido', 1, 25, 1),
-(106, 'List', 'fa fa-fw fa-list', 104, 'order/list/', 'list,listar,listar pedido,listar pedidos', 1, 25, 1),
-(107, 'Config', 'fa fa-fw fa-cogs', 104, 'order/config/', 'config,configuração,configuração do pedido,configuração dos pedidos', 1, 25, 1);
+(108, 'shop', 'fa fa-fw fa-building-o', NULL, NULL, 'shop,loja,lojas', 1, 26, 1),
+(109, 'New', 'fa fa-fw fa-file', 108, 'shop/new/', 'new,novo,nova loja', 1, 26, 1),
+(110, 'List', 'fa fa-fw fa-list', 108, 'shop/list/', 'list,listar,listar loja,listar lojas', 1, 26, 1),
+(111, 'Config', 'fa fa-fw fa-cogs', 108, 'shop/config/', 'config,configuração,configuração da loja,configuração das lojas', 1, 26, 1),
+(124, 'Order', 'fa fa-fw fa-clipboard', NULL, NULL, 'order,pedido,pedidos', 1, 30, 1),
+(125, 'New', 'fa fa-fw fa-file', 124, 'order/new/', 'new,novo,novo pedido', 1, 30, 1),
+(126, 'List', 'fa fa-fw fa-list', 124, 'order/list/', 'list,listar,listar pedido,listar pedidos', 1, 30, 1),
+(127, 'Config', 'fa fa-fw fa-cogs', 124, 'order/config/', 'config,configuração,configuração do pedido,configuração dos pedidos', 1, 30, 1);
 
 -- --------------------------------------------------------
 
@@ -820,7 +901,7 @@ CREATE TABLE IF NOT EXISTS `gr_module` (
   `path` varchar(255) DEFAULT NULL,
   `searchable` tinyint(1) NOT NULL,
   `status` tinyint(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `gr_module`
@@ -843,10 +924,10 @@ INSERT INTO `gr_module` (`idmodule`, `name`, `struct`, `path`, `searchable`, `st
 (14, 'optional', 1, 'griffo/Optional/', 0, 1),
 (15, 'fraction', 1, 'griffo/Fraction/', 0, 1),
 (18, 'banner', 0, 'complementary/Banner/', 1, 1),
-(19, 'shop', 0, 'complementary/Shop/', 1, 1),
 (22, 'client', 0, 'complementary/Client/', 1, 1),
 (24, 'product', 0, 'complementary/Product/', 1, 1),
-(25, 'order', 0, 'complementary/Order/', 1, 1);
+(26, 'shop', 0, 'complementary/Shop/', 1, 1),
+(30, 'order', 0, 'complementary/Order/', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -860,28 +941,28 @@ CREATE TABLE IF NOT EXISTS `gr_moduleprofile` (
   `idprofile` int(11) NOT NULL,
   `visible` tinyint(1) DEFAULT NULL,
   `status` tinyint(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `gr_moduleprofile`
 --
 
 INSERT INTO `gr_moduleprofile` (`idmoduleprofile`, `idmodule`, `idprofile`, `visible`, `status`) VALUES
-(1, 1, 1, NULL, 1),
-(2, 2, 1, NULL, 1),
-(3, 3, 1, NULL, 1),
-(4, 4, 1, NULL, 1),
-(5, 5, 1, NULL, 1),
+(1, 1, 1, 1, 1),
+(2, 2, 1, 1, 1),
+(3, 3, 1, 1, 1),
+(4, 4, 1, 1, 1),
+(5, 5, 1, 1, 1),
 (6, 6, 1, NULL, 1),
-(7, 7, 1, NULL, 1),
-(8, 8, 1, NULL, 1),
-(9, 9, 1, NULL, 1),
-(10, 10, 1, NULL, 1),
-(11, 11, 1, NULL, 1),
-(12, 12, 1, NULL, 1),
+(7, 7, 1, 1, 1),
+(8, 8, 1, 1, 1),
+(9, 9, 1, 1, 1),
+(10, 10, 1, 1, 1),
+(11, 11, 1, 1, 1),
+(12, 12, 1, 1, 1),
 (13, 13, 1, NULL, 1),
-(14, 14, 1, NULL, 1),
-(15, 15, 1, NULL, 1),
+(14, 14, 1, 1, 1),
+(15, 15, 1, 1, 1),
 (18, 1, 2, 1, 1),
 (19, 2, 2, 1, 1),
 (20, 3, 2, 1, 1),
@@ -897,11 +978,11 @@ INSERT INTO `gr_moduleprofile` (`idmoduleprofile`, `idmodule`, `idprofile`, `vis
 (30, 13, 2, 1, 1),
 (31, 14, 2, 1, 1),
 (32, 15, 2, 1, 1),
-(34, 18, 1, NULL, 1),
-(35, 19, 1, NULL, 1),
-(38, 22, 1, NULL, 1),
-(40, 24, 1, NULL, 1),
-(41, 25, 1, NULL, 1);
+(34, 18, 1, 1, 1),
+(38, 22, 1, 1, 1),
+(40, 24, 1, 1, 1),
+(42, 26, 1, 1, 1),
+(46, 30, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -980,7 +1061,8 @@ CREATE TABLE IF NOT EXISTS `gr_order` (
   `status` tinyint(1) NOT NULL,
   `fkidclient` int(11) NOT NULL,
   `fkidmodule` int(11) NOT NULL,
-  `fkidshop` int(11) NOT NULL
+  `fkidshop` int(11) NOT NULL,
+  `fkiddaysenabled` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -1135,7 +1217,7 @@ CREATE TABLE IF NOT EXISTS `gr_profilemenu` (
   `idmenu` int(11) NOT NULL,
   `idprofile` int(11) NOT NULL,
   `status` tinyint(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=143 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=163 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `gr_profilemenu`
@@ -1229,10 +1311,6 @@ INSERT INTO `gr_profilemenu` (`idprofilemenu`, `idmenu`, `idprofile`, `status`) 
 (106, 71, 1, 1),
 (107, 72, 1, 1),
 (108, 73, 1, 1),
-(109, 74, 1, 1),
-(110, 75, 1, 1),
-(111, 76, 1, 1),
-(112, 77, 1, 1),
 (121, 86, 1, 1),
 (122, 87, 1, 1),
 (123, 88, 1, 1),
@@ -1244,10 +1322,14 @@ INSERT INTO `gr_profilemenu` (`idprofilemenu`, `idmenu`, `idprofile`, `status`) 
 (136, 101, 1, 1),
 (137, 102, 1, 1),
 (138, 103, 1, 1),
-(139, 104, 1, 1),
-(140, 105, 1, 1),
-(141, 106, 1, 1),
-(142, 107, 1, 1);
+(143, 108, 1, 1),
+(144, 109, 1, 1),
+(145, 110, 1, 1),
+(146, 111, 1, 1),
+(159, 124, 1, 1),
+(160, 125, 1, 1),
+(161, 126, 1, 1),
+(162, 127, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -1260,7 +1342,7 @@ CREATE TABLE IF NOT EXISTS `gr_profileresource` (
   `idprofile` int(11) NOT NULL,
   `idresource` int(11) NOT NULL,
   `status` tinyint(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=180 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=205 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `gr_profileresource`
@@ -1396,11 +1478,6 @@ INSERT INTO `gr_profileresource` (`idprofileresource`, `idprofile`, `idresource`
 (142, 1, 80, 1),
 (143, 1, 81, 1),
 (144, 1, 82, 1),
-(145, 1, 83, 1),
-(146, 1, 84, 1),
-(147, 1, 85, 1),
-(148, 1, 86, 1),
-(149, 1, 87, 1),
 (160, 1, 98, 1),
 (161, 1, 99, 1),
 (162, 1, 100, 1),
@@ -1411,11 +1488,16 @@ INSERT INTO `gr_profileresource` (`idprofileresource`, `idprofile`, `idresource`
 (172, 1, 110, 1),
 (173, 1, 111, 1),
 (174, 1, 112, 1),
-(175, 1, 113, 1),
-(176, 1, 114, 1),
-(177, 1, 115, 1),
-(178, 1, 116, 1),
-(179, 1, 117, 1);
+(180, 1, 118, 1),
+(181, 1, 119, 1),
+(182, 1, 120, 1),
+(183, 1, 121, 1),
+(184, 1, 122, 1),
+(200, 1, 138, 1),
+(201, 1, 139, 1),
+(202, 1, 140, 1),
+(203, 1, 141, 1),
+(204, 1, 142, 1);
 
 -- --------------------------------------------------------
 
@@ -1428,7 +1510,7 @@ CREATE TABLE IF NOT EXISTS `gr_resource` (
   `resource` varchar(45) NOT NULL,
   `idresourceparent` int(11) DEFAULT NULL,
   `fkidmodule` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=118 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=143 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `gr_resource`
@@ -1502,11 +1584,6 @@ INSERT INTO `gr_resource` (`idresource`, `resource`, `idresourceparent`, `fkidmo
 (80, 'select', NULL, 18),
 (81, 'delete', NULL, 18),
 (82, 'config', NULL, 18),
-(83, 'insert', NULL, 19),
-(84, 'update', NULL, 19),
-(85, 'select', NULL, 19),
-(86, 'delete', NULL, 19),
-(87, 'config', NULL, 19),
 (98, 'insert', NULL, 22),
 (99, 'update', NULL, 22),
 (100, 'select', NULL, 22),
@@ -1517,11 +1594,16 @@ INSERT INTO `gr_resource` (`idresource`, `resource`, `idresourceparent`, `fkidmo
 (110, 'select', NULL, 24),
 (111, 'delete', NULL, 24),
 (112, 'config', NULL, 24),
-(113, 'insert', NULL, 25),
-(114, 'update', NULL, 25),
-(115, 'select', NULL, 25),
-(116, 'delete', NULL, 25),
-(117, 'config', NULL, 25);
+(118, 'insert', NULL, 26),
+(119, 'update', NULL, 26),
+(120, 'select', NULL, 26),
+(121, 'delete', NULL, 26),
+(122, 'config', NULL, 26),
+(138, 'insert', NULL, 30),
+(139, 'update', NULL, 30),
+(140, 'select', NULL, 30),
+(141, 'delete', NULL, 30),
+(142, 'config', NULL, 30);
 
 -- --------------------------------------------------------
 
@@ -1543,15 +1625,14 @@ CREATE TABLE IF NOT EXISTS `gr_shop` (
   `phone3` varchar(30) DEFAULT NULL,
   `status` tinyint(4) NOT NULL,
   `fkidmodule` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `gr_shop`
 --
 
 INSERT INTO `gr_shop` (`idshop`, `name`, `address`, `number`, `complement`, `district`, `city`, `state`, `phone1`, `phone2`, `phone3`, `status`, `fkidmodule`) VALUES
-(1, 'Itapeva', 'Rua Lucas de Camargo', 249, NULL, 'Centro', 'Itapeva', 'SP', '1535211418', '15998211418', NULL, 1, 19),
-(2, 'Capão Bonito', 'Rua General Carneiro', 798, NULL, 'Centro', 'Capão Bonito', 'SP', '1535430602', '15998020602', NULL, 1, 19);
+(1, 'Loja principal', 'Endereço de exemplo', 123, NULL, 'Teste', 'Itapeva', 'SP', '15999999999', NULL, NULL, 1, 26);
 
 -- --------------------------------------------------------
 
@@ -1629,7 +1710,7 @@ CREATE TABLE IF NOT EXISTS `gr_user` (
 --
 
 INSERT INTO `gr_user` (`iduser`, `name`, `nickname`, `login`, `password`, `datecad`, `email`, `picture`, `menuorder`, `status`, `fkidprofile`, `fkidlanguage`, `fkidlayer`, `fkidtheme`, `fkiduserauth`) VALUES
-(1, 'Webmaster', 'Webmaster', 'admin', '21232f297a57a5a743894a0e4a801fc3', '2016-06-08 03:12:46', 'felipe@acoll.com.br', '', 'a:14:{i:0;i:8;i:1;i:2;i:2;i:4;i:3;i:3;i:4;i:5;i:5;i:7;i:6;i:9;i:7;i:10;i:8;i:11;i:9;i:12;i:10;i:14;i:11;i:15;i:14;i:18;i:15;i:25;}', 1, 1, 2, 2, 2, 1);
+(1, 'Webmaster', 'Webmaster', 'admin', '21232f297a57a5a743894a0e4a801fc3', '2016-07-31 00:55:58', 'felipe@acoll.com.br', '', 'a:18:{i:0;i:8;i:1;i:2;i:2;i:4;i:3;i:3;i:4;i:5;i:5;i:7;i:6;i:9;i:7;i:10;i:8;i:11;i:9;i:12;i:10;i:14;i:11;i:15;i:14;i:18;i:16;i:1;i:17;i:22;i:18;i:24;i:19;i:26;i:20;i:30;}', 1, 1, 2, 2, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -1641,7 +1722,7 @@ CREATE TABLE IF NOT EXISTS `gr_userauth` (
 `iduserauth` int(11) NOT NULL,
   `user` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `gr_userauth`
@@ -1651,7 +1732,11 @@ INSERT INTO `gr_userauth` (`iduserauth`, `user`, `password`) VALUES
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3'),
 (2, 'employee', 'fa5473530e4d1a5a1e1eb53d2fedb10c'),
 (3, 'teste', 'e10adc3949ba59abbe56e057f20f883e'),
-(4, 'teste', '698dc19d489c4e4db73e28a713eab07b');
+(4, 'teste', '698dc19d489c4e4db73e28a713eab07b'),
+(5, 'cliente@teste.com', 'f5bb0c8de146c67b44babbf4e6584cc0'),
+(6, 'cliente2@teste.com', 'f5bb0c8de146c67b44babbf4e6584cc0'),
+(7, 'cliente3@teste.com', 'f5bb0c8de146c67b44babbf4e6584cc0'),
+(8, 'cliente4@teste.com', 'f5bb0c8de146c67b44babbf4e6584cc0');
 
 -- --------------------------------------------------------
 
@@ -1664,7 +1749,7 @@ CREATE TABLE IF NOT EXISTS `gr_userauthapplication` (
   `iduserauth` int(11) NOT NULL,
   `idapplicationauth` int(11) NOT NULL,
   `status` tinyint(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `gr_userauthapplication`
@@ -1676,7 +1761,11 @@ INSERT INTO `gr_userauthapplication` (`iduserauthapplication`, `iduserauth`, `id
 (3, 2, 1, 1),
 (4, 2, 2, 1),
 (5, 3, 1, 1),
-(6, 4, 1, 1);
+(6, 4, 1, 1),
+(7, 5, 2, 1),
+(8, 6, 2, 1),
+(9, 7, 2, 1),
+(10, 8, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -1693,7 +1782,7 @@ CREATE TABLE IF NOT EXISTS `gr_usersession` (
   `datetimein` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `datetimeout` timestamp NULL DEFAULT NULL,
   `fkiduserauth` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `gr_usersession`
@@ -1755,7 +1844,22 @@ INSERT INTO `gr_usersession` (`idusersession`, `ip`, `idsession`, `accesstoken`,
 (53, '127.0.0.1', 'mjab2gpod0qkhm939bnsf50bq0', '89!@ad*&173e7b363cb66b9c8b73e33dbec78e39ea7\\%th6>ad', '2016-05-25 14:22:00', '2016-05-27 18:40:57', '2016-05-27 18:40:00', 1),
 (54, '127.0.0.1', 's6pfcvgoiok1ekskrj4qsrim96', '89!@ad*&182b89d5cda7dc040b4c098ee82053850a7\\%th6>ad', '2016-06-07 23:56:00', '2016-06-08 01:56:53', NULL, 1),
 (55, '127.0.0.1', '369mhf4tnekhjrihvoe4p7qgr3', '89!@ad*&183e9ee07ed93796fa8693c36ebba94b0a7\\%th6>ad', NULL, '2016-06-08 02:00:14', NULL, 1),
-(56, '127.0.0.1', 'ug3f1374n300b84jr3q75s1vc2', '89!@ad*&18e80dbca70179ccb045c941078000037a7\\%th6>ad', '2016-06-08 02:28:00', '2016-06-08 04:28:28', NULL, 1);
+(56, '127.0.0.1', 'ug3f1374n300b84jr3q75s1vc2', '89!@ad*&18e80dbca70179ccb045c941078000037a7\\%th6>ad', '2016-06-08 02:36:00', '2016-06-08 10:38:17', '2016-06-08 10:38:00', 1),
+(57, '127.0.0.1', 'k86umi39ionj0did8s9aqn9ou2', '89!@ad*&17903c5b97d9dddcca832688421487781a7\\%th6>ad', '2016-06-13 09:41:00', '2016-06-13 11:41:44', NULL, 1),
+(58, '127.0.0.1', 'j4jp1g0k0mr3gfp2e3avoilfr7', '89!@ad*&10b8182ed7228aea67bdc16f60cd7bf11a7\\%th6>ad', '2016-07-30 22:21:00', '2016-07-31 00:21:30', NULL, 1),
+(59, '127.0.0.1', 'ducrcgqra4qcn587ml4lc37ml2', '89!@ad*&1c3d641c774de77be4cd28e80ab3eb23ca7\\%th6>ad', '2016-07-30 23:09:00', '2016-07-31 01:09:55', NULL, 1),
+(60, '127.0.0.1', 'bjnukq92nsvv732u1pg67353r4', '89!@ad*&1c898558903849ee37913aecb8c8cc0c1a7\\%th6>ad', NULL, '2016-07-31 02:00:40', NULL, 1),
+(61, '127.0.0.1', '9urfjbl70g20hl23pk6oshrl81', '89!@ad*&190e435b04295d12df03909a031b18361a7\\%th6>ad', '2016-07-31 02:27:00', '2016-07-31 04:27:26', NULL, 1),
+(62, '127.0.0.1', 'hmg7jlo8hd646kifi3ds3vhf76', '89!@ad*&1609e4f5b79e092f9f744c0d3494524a5a7\\%th6>ad', '2016-07-31 02:31:00', '2016-07-31 18:47:35', '2016-07-31 18:47:00', 1),
+(63, '127.0.0.1', 'll9e2cjjjfoe37v9dolfinjpb5', '89!@ad*&178313c3ed83dcdee37880fd1d5564a2aa7\\%th6>ad', '2016-07-31 16:47:00', '2016-07-31 22:53:11', '2016-07-31 22:53:00', 1),
+(64, '127.0.0.1', '6sdehdhk4t89aib9g7cbhe07m3', '89!@ad*&11e4597cb5a2fd3f8036957858550b01fa7\\%th6>ad', '2016-07-31 16:55:00', '2016-07-31 21:03:28', '2016-07-31 21:03:00', 5),
+(65, '127.0.0.1', 'u611f502p9ajn8g0s90k329u53', '89!@ad*&1454d35e2b4c9989b3f94c0e90a721ec2a7\\%th6>ad', '2016-07-31 19:19:00', '2016-07-31 21:21:16', '2016-07-31 21:21:00', 5),
+(66, '127.0.0.1', 's4g9inoi90vl87g1i8gadm5kv4', '89!@ad*&1a1eb66c452ecac6fff57e7027daaeddba7\\%th6>ad', '2016-07-31 19:22:00', '2016-07-31 21:22:56', '2016-07-31 21:22:00', 5),
+(67, '127.0.0.1', 'qqeqhmrpcipmmc0vsevht9p4t6', '89!@ad*&1fced6ab15f6b712387f7b2a9fd44bd78a7\\%th6>ad', '2016-07-31 19:41:00', '2016-07-31 21:41:27', '2016-07-31 21:41:00', 6),
+(68, '127.0.0.1', 'tirv7s3oe81cnedgvqv166skb2', '89!@ad*&1f4c53f73051c0b2f172c005d74c2b41ca7\\%th6>ad', '2016-07-31 19:43:00', '2016-07-31 21:43:40', '2016-07-31 21:43:00', 7),
+(69, '127.0.0.1', '6h73ttf7ml3o66g680hh1udku1', '89!@ad*&1b4f24cf160d023ec1056f0508f44d36ea7\\%th6>ad', '2016-07-31 19:50:00', '2016-07-31 21:52:38', '2016-07-31 21:52:00', 8),
+(70, '127.0.0.1', 'v4m6bj6uh6sl7plvkptev1p1c1', '89!@ad*&147d78313df033271630fa6521f49b4bba7\\%th6>ad', '2016-07-31 20:51:00', '2016-07-31 22:51:28', NULL, 8),
+(71, '127.0.0.1', 'l07u6dgfuu6f4fi3ba9m9vnq36', '89!@ad*&16e4ae2df644dd807aa5ca72bcb5bef81a7\\%th6>ad', '2016-07-31 20:53:00', '2016-07-31 22:53:00', NULL, 1);
 
 --
 -- Indexes for dumped tables
@@ -1802,6 +1906,12 @@ ALTER TABLE `gr_client`
 --
 ALTER TABLE `gr_customer`
  ADD PRIMARY KEY (`idcustomer`), ADD KEY `name` (`name`);
+
+--
+-- Indexes for table `gr_daysenabled`
+--
+ALTER TABLE `gr_daysenabled`
+ ADD PRIMARY KEY (`iddaysenabled`);
 
 --
 -- Indexes for table `gr_filtermodel`
@@ -1897,7 +2007,7 @@ ALTER TABLE `gr_optionalproduct`
 -- Indexes for table `gr_order`
 --
 ALTER TABLE `gr_order`
- ADD PRIMARY KEY (`idorder`), ADD KEY `fk_order_gr_client1_idx` (`fkidclient`), ADD KEY `fk_gr_order_gr_module1_idx` (`fkidmodule`), ADD KEY `fk_gr_order_shop1_idx` (`fkidshop`);
+ ADD PRIMARY KEY (`idorder`), ADD KEY `fk_order_gr_client1_idx` (`fkidclient`), ADD KEY `fk_gr_order_gr_module1_idx` (`fkidmodule`), ADD KEY `fk_gr_order_shop1_idx` (`fkidshop`), ADD KEY `fk_gr_order_gr_daysenabled1_idx` (`fkiddaysenabled`);
 
 --
 -- Indexes for table `gr_orderproduct`
@@ -1997,7 +2107,7 @@ ALTER TABLE `gr_usersession`
 -- AUTO_INCREMENT for table `gr_activitylog`
 --
 ALTER TABLE `gr_activitylog`
-MODIFY `idactivitylog` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=288;
+MODIFY `idactivitylog` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=340;
 --
 -- AUTO_INCREMENT for table `gr_applicationauth`
 --
@@ -2007,7 +2117,7 @@ MODIFY `idapplicationauth` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `gr_banner`
 --
 ALTER TABLE `gr_banner`
-MODIFY `idbanner` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `idbanner` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `gr_block`
 --
@@ -2022,12 +2132,17 @@ MODIFY `idcategory` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT for table `gr_client`
 --
 ALTER TABLE `gr_client`
-MODIFY `idclient` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `idclient` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `gr_customer`
 --
 ALTER TABLE `gr_customer`
 MODIFY `idcustomer` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `gr_daysenabled`
+--
+ALTER TABLE `gr_daysenabled`
+MODIFY `iddaysenabled` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `gr_filtermodel`
 --
@@ -2072,22 +2187,22 @@ MODIFY `idlayer` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `gr_layermodule`
 --
 ALTER TABLE `gr_layermodule`
-MODIFY `idlayermodule` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=51;
+MODIFY `idlayermodule` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=61;
 --
 -- AUTO_INCREMENT for table `gr_menu`
 --
 ALTER TABLE `gr_menu`
-MODIFY `idmenu` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=108;
+MODIFY `idmenu` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=128;
 --
 -- AUTO_INCREMENT for table `gr_module`
 --
 ALTER TABLE `gr_module`
-MODIFY `idmodule` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
+MODIFY `idmodule` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT for table `gr_moduleprofile`
 --
 ALTER TABLE `gr_moduleprofile`
-MODIFY `idmoduleprofile` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=42;
+MODIFY `idmoduleprofile` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=47;
 --
 -- AUTO_INCREMENT for table `gr_notification`
 --
@@ -2137,22 +2252,22 @@ MODIFY `idprofilelayer` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 -- AUTO_INCREMENT for table `gr_profilemenu`
 --
 ALTER TABLE `gr_profilemenu`
-MODIFY `idprofilemenu` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=143;
+MODIFY `idprofilemenu` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=163;
 --
 -- AUTO_INCREMENT for table `gr_profileresource`
 --
 ALTER TABLE `gr_profileresource`
-MODIFY `idprofileresource` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=180;
+MODIFY `idprofileresource` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=205;
 --
 -- AUTO_INCREMENT for table `gr_resource`
 --
 ALTER TABLE `gr_resource`
-MODIFY `idresource` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=118;
+MODIFY `idresource` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=143;
 --
 -- AUTO_INCREMENT for table `gr_shop`
 --
 ALTER TABLE `gr_shop`
-MODIFY `idshop` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `idshop` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `gr_template`
 --
@@ -2172,17 +2287,17 @@ MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `gr_userauth`
 --
 ALTER TABLE `gr_userauth`
-MODIFY `iduserauth` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `iduserauth` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `gr_userauthapplication`
 --
 ALTER TABLE `gr_userauthapplication`
-MODIFY `iduserauthapplication` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `iduserauthapplication` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `gr_usersession`
 --
 ALTER TABLE `gr_usersession`
-MODIFY `idusersession` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=57;
+MODIFY `idusersession` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=72;
 --
 -- Constraints for dumped tables
 --
@@ -2205,6 +2320,7 @@ ADD CONSTRAINT `fk_gr_client_gr_shop1` FOREIGN KEY (`fkidshop`) REFERENCES `gr_s
 -- Constraints for table `gr_order`
 --
 ALTER TABLE `gr_order`
+ADD CONSTRAINT `fk_gr_order_gr_daysenabled1` FOREIGN KEY (`fkiddaysenabled`) REFERENCES `gr_daysenabled` (`iddaysenabled`) ON DELETE NO ACTION ON UPDATE NO ACTION,
 ADD CONSTRAINT `fk_gr_order_gr_module1` FOREIGN KEY (`fkidmodule`) REFERENCES `gr_module` (`idmodule`) ON DELETE NO ACTION ON UPDATE NO ACTION,
 ADD CONSTRAINT `fk_gr_order_shop1` FOREIGN KEY (`fkidshop`) REFERENCES `gr_shop` (`idshop`) ON DELETE NO ACTION ON UPDATE NO ACTION,
 ADD CONSTRAINT `fk_order_gr_client1` FOREIGN KEY (`fkidclient`) REFERENCES `gr_client` (`idclient`) ON DELETE NO ACTION ON UPDATE NO ACTION;

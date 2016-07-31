@@ -1,5 +1,5 @@
 'use strict'
-angular.module('mainApp').controller 'mainCtrl', ($rootScope, $scope, $grRestful, $grAlert, $grModal, $cookies, $timeout) ->
+angular.module('mainApp').controller 'mainCtrl', ($rootScope, $scope, $grRestful, $grAlert, $grModal, $localStorage, $timeout) ->
 
     $rootScope.GRIFFO.curYear = (new Date).getFullYear()
 
@@ -48,7 +48,7 @@ angular.module('mainApp').controller 'mainCtrl', ($rootScope, $scope, $grRestful
         $grRestful.auth
             action: 'logout'
         .then (r) ->
-            delete $cookies.griffo_cart_ready
+            delete $localStorage.griffo_cart_ready
             if r.response
                 alert.show 'success', 'Você saiu do sistema e está sendo redirecionado!'
                 window.location.reload()
@@ -80,18 +80,19 @@ angular.module('mainApp').controller 'mainCtrl', ($rootScope, $scope, $grRestful
             angular.forEach $scope.categories, (category) ->
                 productLoop category
 
-        if $cookies.griffo_cart
-            struct = JSON.parse($cookies.griffo_cart)[0]
-            properties = [
-                'id'
-                'name'
-                'count'
-                'unitvalue'
-            ]
-
-            if struct
-                if !angular.equals(Object.getOwnPropertyNames(struct), properties)
-                    $cookies.griffo_cart = JSON.stringify([])
+        $localStorage.griffo_cart = [] if !$localStorage.griffo_cart
+        # if $localStorage.griffo_cart
+        #     struct = $localStorage.griffo_cart
+        #     properties = [
+        #         'id'
+        #         'name'
+        #         'count'
+        #         'unitvalue'
+        #     ]
+        #
+        #     if struct
+        #         if !angular.equals(Object.getOwnPropertyNames(struct), properties)
+        #             $localStorage.griffo_cart = []
 
         $rootScope.$watch 'gr.cart.items', ((items) ->
             arr = []
@@ -103,7 +104,7 @@ angular.module('mainApp').controller 'mainCtrl', ($rootScope, $scope, $grRestful
                         count: i.count
                         unitvalue: i.unitvalue
 
-            $cookies.griffo_cart = JSON.stringify(arr)
+            $localStorage.griffo_cart = arr
         ), true
 
         $rootScope.ready = ->
@@ -121,7 +122,7 @@ angular.module('mainApp').controller 'mainCtrl', ($rootScope, $scope, $grRestful
             animation: false
             trigger: 'click'
             opened: false
-            items: if $cookies.griffo_cart then JSON.parse($cookies.griffo_cart) else []
+            items: $localStorage.griffo_cart ? []
             length: (total) ->
                 l = 0
                 angular.forEach $rootScope.gr.cart.items, (item) ->
@@ -176,7 +177,7 @@ angular.module('mainApp').controller 'mainCtrl', ($rootScope, $scope, $grRestful
                 total
             submit: ->
                 if $rootScope.GRIFFO.filter.page.url != 'finish/'
-                    $cookies.griffo_cart_ready = true
+                    $localStorage.griffo_cart_ready = true
                     $timeout ->
                         location.href = $rootScope.GRIFFO.curAlias + '/finish'
                         return
@@ -186,7 +187,7 @@ angular.module('mainApp').controller 'mainCtrl', ($rootScope, $scope, $grRestful
             cancel: ->
                 $grModal.confirm 'Tem certeza que deseja cancelar?', ->
                     $rootScope.gr.cart.clear()
-                    delete $cookies.griffo_cart_ready
+                    delete $localStorage.griffo_cart_ready
                     return
                 return
 
@@ -209,7 +210,7 @@ angular.module('mainApp').controller 'mainCtrl', ($rootScope, $scope, $grRestful
                 $scope.products = r.response
                 angular.forEach r.response, (item) ->
                     item.picture = $rootScope.GRIFFO.uploadPath + item.picture
-                    
+
                 ready.products = true
                 if $rootScope.ready
                     setProducts()

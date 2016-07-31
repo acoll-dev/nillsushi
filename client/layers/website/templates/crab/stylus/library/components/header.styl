@@ -17,13 +17,16 @@
             position absolute
             width 100%
             left 0
-            top 0
+            top 5px
             padding 10px 0
             background $color-bg-logo
+            border solid 3px darken($color-light, 15%)
+            border-radius 50%
             z-index 100
             img
                 position relative
                 margin 0 auto
+                width: 80%
         .navbar-text-header
             display table
             padding 10px
@@ -31,7 +34,7 @@
                 margin 0 0 5px
                 padding-bottom 10px
                 font-size 1.8rem
-                border-bottom solid 1px $color-text-primary
+                // border-bottom solid 1px $color-text-primary
             p
                 margin 0
                 padding 0 5px
@@ -65,6 +68,8 @@
                 margin-left -15px
                 background #FFFFFF
         +screen(xs)
+            .container
+                padding 5px
             .logo
             .navbar-text-header
                 display table-cell
@@ -73,7 +78,8 @@
             .logo
                 position relative
                 width 80px
-                margin 0
+                margin 5px
+                top 0
                 img
                     position relative
                     display block

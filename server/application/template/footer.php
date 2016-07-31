@@ -16,7 +16,7 @@ $PAGE->setTag(array("js" => array(
     PATH_LIBRARIES . "client/vendor/angular-translate/angular-translate.js",
     PATH_LIBRARIES . "client/vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.js",
     PATH_LIBRARIES . "client/vendor/angular-translate-storage-cookie/angular-translate-storage-cookie.js",
-    PATH_LIBRARIES . "client/vendor/angular-load/angular-load.js",
+    PATH_LIBRARIES . "client/vendor/ngstorage/ngStorage.js",
     PATH_LIBRARIES . "client/ng-print/ng-print.js",
     PATH_LIBRARIES . "client/vendor/imagesloaded/imagesloaded.pkgd.js",
     PATH_LIBRARIES . "client/vendor/angular-images-loaded/angular-images-loaded.js",
@@ -53,9 +53,13 @@ $PAGE->setTag(array("js" => array(
     /* TEXTANGULAR (GR-AUTOFIELDS) */
 
     PATH_LIBRARIES . "client/textAngular/dist/textAngularSetup.js",
-    PATH_LIBRARIES . "client/textAngular/dist/textAngular.js",
     PATH_LIBRARIES . "client/textAngular/dist/textAngular-rangy.min.js",
-    PATH_LIBRARIES . "client/textAngular/dist/textAngular-sanitize.min.js"
+    PATH_LIBRARIES . "client/textAngular/dist/textAngular-sanitize.min.js",
+    PATH_LIBRARIES . "client/textAngular/dist/textAngular.umd.js",
+
+    PATH_LIBRARIES . "client/vendor/moment/moment.js",
+
+    PATH_LIBRARIES . "client/vendor/requirejs/require.js"
 )),"footer", "first");
 
 $PAGE->setTag(array("js" => array(PATH_LIBRARIES . "client/griffo.js")), "footer");

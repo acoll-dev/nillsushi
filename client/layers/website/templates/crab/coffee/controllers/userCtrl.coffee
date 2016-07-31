@@ -1,5 +1,5 @@
 'use strict'
-angular.module('mainApp').controller 'userCtrl', ($rootScope, $scope, $cookies, $window, $grRestful, $grModal, $grAlert, $cidadeEstado, $timeout, angularLoad) ->
+angular.module('mainApp').controller 'userCtrl', ($rootScope, $scope, $localStorage, $window, $grRestful, $grModal, $grAlert, $cidadeEstado, $timeout) ->
 
     initNotification = ->
 
@@ -185,7 +185,7 @@ angular.module('mainApp').controller 'userCtrl', ($rootScope, $scope, $cookies, 
                     label: 'Loja preferencial'
                     list: 'item.value as item.label for item in shops'
                     columns: 12
-                    attr: required: true
+                    attr: required: true, ngShow: 'shops.length > 2'
                     msgs: required: 'Selecione uma loja preferencial'
                 }
             ]
@@ -298,8 +298,9 @@ angular.module('mainApp').controller 'userCtrl', ($rootScope, $scope, $cookies, 
                 ]
             modal.open()
 
-    delete $cookies.griffo_cart_ready
-    angularLoad.loadScript($rootScope.GRIFFO.librariesPath + 'client/desktop-notify/desktop-notify.min.js').then initNotification
+    delete $localStorage.griffo_cart_ready
+    # angularLoad.loadScript($rootScope.GRIFFO.librariesPath + 'client/desktop-notify/desktop-notify.min.js').then initNotification
+    do initNotification
 
 angular.module('mainApp').controller 'changePasswordCtrl', ($scope, $timeout, $grRestful, $grAlert) ->
     alert = $grAlert.new()

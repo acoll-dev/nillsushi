@@ -2,7 +2,7 @@
     <div class="footer-inner container">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-block" ng-repeat="shop in gr.shops">
             <div class="footer-block-inner">
-                <p>
+                <p ng-if="gr.shops.length > 1">
                     <strong>{{shop.name}}</strong>
                 </p>
                 <div class="contact-info">

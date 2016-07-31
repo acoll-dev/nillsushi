@@ -1,5 +1,24 @@
 'use strict';
 (function(){
+    window.Dependencies.add({
+        modules: [
+            "ui.calendar"
+        ],
+        files: {
+            css: [
+                GRIFFO.librariesPath + "client/vendor/fullcalendar/dist/fullcalendar.css"
+            ],
+            js: [
+                GRIFFO.librariesPath + "client/vendor/angular-ui-calendar/src/calendar.js",
+                GRIFFO.librariesPath + "client/vendor/fullcalendar/dist/fullcalendar.min.js",
+                GRIFFO.librariesPath + "client/vendor/fullcalendar/dist/gcal.js",
+                GRIFFO.librariesPath + "client/vendor/fullcalendar/dist/lang-all.js"
+            ]
+        }
+    });
+}());
+
+(function(){
     angular.module('adminApp').controller('formCtrl', ['$scope', '$filter', '$window', '$timeout', '$locale', '$grRestful', '$grAlert', '$cidadeEstado', function($scope, $filter, $window, $timeout, $locale, $grRestful, $grAlert, $cidadeEstado) {
         var alert = $grAlert.new();
         $scope.status = [
@@ -414,209 +433,307 @@
             $scope.$parent.form = form;
         });
     }]);
-    angular.module('adminApp').controller('tableCtrl', ['$rootScope', '$scope', '$filter', '$window', '$timeout', '$locale', '$grRestful', '$grAlert', '$cidadeEstado', 'angularLoad', '$ngPrint', function($rootScope, $scope, $filter, $window, $timeout, $locale, $grRestful, $grAlert, $cidadeEstado, angularLoad, $ngPrint) {
-        function initNotification(){
-            var permissionLevels = {},
-                notify = $window.notify;
-            permissionLevels[notify.PERMISSION_GRANTED] = 0;
-            permissionLevels[notify.PERMISSION_DEFAULT] = 1;
-            permissionLevels[notify.PERMISSION_DENIED] = 2;
-            $scope.isSupported = notify.isSupported;
-            $scope.permissionLevel = permissionLevels[notify.permissionLevel()];
-            $scope.requestPermissions = function() {
-                notify.requestPermission(function() {
-                    $scope.$apply($scope.permissionLevel = permissionLevels[notify.permissionLevel()]);
-                })
-            };
-            $scope.notify = function(){
-                if($scope.isSupported && $scope.permissionLevel === 0){
-                    if($scope.orders.length > 0){
-                        notify.createNotification("Novo pedido #" + $scope.orders[$scope.orders.length - 1].idorder, {
-                            body:"Novo pedido para a loja " + $scope.findShop($rootScope.GRIFFO.curShop),
-                            icon: $rootScope.GRIFFO.templatePath + "image/notification-check.png"
-                        });
-                    }else{
-                        notify.createNotification("Novo pedido", {
-                            body:"Novo pedido para a loja " + $scope.findShop($rootScope.GRIFFO.curShop),
-                            icon: $rootScope.GRIFFO.templatePath + "image/notification-check.png"
-                        });
-                    }
-                }
-            };
-            $scope.requestPermissions();
-        };
-        angularLoad.loadScript(GRIFFO.librariesPath + 'client/desktop-notify/desktop-notify.min.js').then(initNotification);
-        $scope.print = function(order){
-            $scope.orderPrint = order;
+    angular.module('adminApp').controller('tableCtrl', ['$rootScope', '$scope', '$filter', '$window', '$timeout', '$locale', '$grRestful', '$grAlert', '$cidadeEstado', '$ngPrint', function($rootScope, $scope, $filter, $window, $timeout, $locale, $grRestful, $grAlert, $cidadeEstado, angularLoad, $ngPrint) {
+
+        var loopOrders = $timeout,
+            lastID = 0,
+            firstLoop = true,
+            alert = $grAlert.new();
+
+        var initialize = function(){
+            $rootScope.GRIFFO.curShop = 1;
+            $rootScope.GRIFFO.shops = [];
+            $scope.orders = [];
+            $scope.clients = [];
+            $scope.calendarMode = true;
+
             $timeout(function(){
-                $ngPrint({
-                    content: angular.element('#orderPrintSection').html()
-                });
-                $scope.orderPrint = false;
+                $scope.$parent.grTable = $scope.grTable;
             });
-        };
-        function makeShopTranslate(){
+
+            angular.forEach(init, function(fn, key){
+                if(key != 'notification'){
+                    fn();
+                }
+            });
+        }
+
+        var makeShopTranslate = function(){
             if($rootScope.GRIFFO.shops.length > 0 && $scope.orders.length > 0){
                 angular.forEach($scope.orders, function(order){
                     order.shop = $scope.findShop(order.fkidshop);
                 });
             }
         };
-        $rootScope.GRIFFO.curShop = 1;
-        $rootScope.GRIFFO.shops = [];
-        $scope.orders = [];
-        $scope.clients = [];
-        $scope.findClient = function(id){
-            var curClient;
-            angular.forEach($scope.clients, function(client){
-                if(client.idclient === id){
-                    curClient = client
-                }
-            });
-            return curClient;
-        };
-        $scope.findShop = function(id){
-            var name;
-            angular.forEach($rootScope.GRIFFO.shops, function(shop){
-                if(shop.value === id){
-                    name = shop.label;
-                }
-            });
-            return name;
-        };
-        $grRestful.find({
-            module: 'client',
-            action: 'get'
-        }).then(function(r){
-            if(r.response){
-                $scope.clients = r.response;
-            }
-        });
-        $grRestful.find({
-            module: 'shop',
-            action: 'select'
-        }).then(function(r){
-            if(r.response){
-                $rootScope.GRIFFO.shops = r.response;
-                $rootScope.GRIFFO.shops[0].label = "Selecione uma loja...";
-                makeShopTranslate();
-            }
-        });
-        var loopOrders = $timeout,
-            lastID = 0,
-            firstLoop = true,
-            alert = $grAlert.new();
 
-        $scope.reload = function(reload){
-            if(!reload){
-                alert.show('loading', 'ALERT.LOADING.TABLE.DATA', 0);
+        var loadOrders = function(reloading){
+            if($scope.showCompleted){
+                $grRestful.find({
+                    module: 'order',
+                    action: 'completed',
+                    params: 'fkidshop=' + $rootScope.GRIFFO.curShop
+                }).then(function(r){
+                    if(r.response){
+                        $scope.orders = r.response;
+                        $scope.calendar.update();
+                        if(reloading){
+                            alert.show('success', 'ALERT.SUCCESS.LOAD.TABLE.DATA', 2000);
+                        }
+                    }else{
+                        console.debug(r);
+                        alert.show('danger', 'ALERT.ERROR.LOAD.TABLE.DATA');
+                    }
+                });
             }else{
-                alert.show('loading', 'ALERT.RELOADING.TABLE.DATA', 0);
+                $grRestful.find({
+                    module: 'order',
+                    action: 'get',
+                    params: 'fkidshop=' + $rootScope.GRIFFO.curShop
+                }).then(function(r){
+                    if(r.response){
+                        var _lastID = 0;
+                        angular.forEach(r.response, function(order){
+                            if(order.idorder > _lastID){
+                                _lastID  = order.idorder;
+                            }
+                        });
+                        if(!firstLoop && (_lastID > lastID)){
+                            makeShopTranslate();
+                            $scope.notify();
+                        }else if(firstLoop){
+                            makeShopTranslate();
+                            firstLoop = false;
+                        }
+                        if(_lastID > lastID){
+                            lastID = _lastID;
+                        }
+                        $scope.orders = r.response;
+                        $scope.calendar.update();
+                        if(reloading){
+                            alert.show('success', 'ALERT.SUCCESS.LOAD.TABLE.DATA', 2000);
+                        }
+                    }else{
+                        console.debug(r);
+                        alert.show('danger', 'ALERT.ERROR.LOAD.TABLE.DATA');
+                    }
+                });
             }
-            loop(true);
         }
 
-        function loop(reloading){
+        var loop = function(reloading){
             if(reloading){
                 $timeout.cancel(loopOrders);
             }
             if(angular.isDefined($rootScope.GRIFFO.curShop)){
                 if(!$scope.showCompleted){
-                    $grRestful.find({
-                        module: 'order',
-                        action: 'get',
-                        params: 'fkidshop=' + $rootScope.GRIFFO.curShop
-                    }).then(function(r){
-                        if(r.response){
-                            var _lastID = 0;
-                            angular.forEach(r.response, function(order){
-                                if(order.idorder > _lastID){
-                                    _lastID  = order.idorder;
-                                }
-                            });
-                            if(!firstLoop && (_lastID > lastID)){
-                                makeShopTranslate();
-                                $scope.notify();
-                            }else if(firstLoop){
-                                makeShopTranslate();
-                                firstLoop = false;
-                            }
-                            if(_lastID > lastID){
-                                lastID = _lastID;
-                            }
-                            $scope.orders = r.response;
-                            if(reloading){
-                                alert.show('success', 'ALERT.SUCCESS.LOAD.TABLE.DATA', 2000);
-                            }
-                        }else{
-                            console.debug(r);
-                            alert.show('danger', 'ALERT.ERROR.LOAD.TABLE.DATA');
-                        }
-                    });
+                    loadOrders(reloading);
                     loopOrders = $timeout(function(){
                         loop();
                     }, 30000);
                 }else{
-                    $grRestful.find({
-                        module: 'order',
-                        action: 'completed',
-                        params: 'fkidshop=' + $rootScope.GRIFFO.curShop
-                    }).then(function(r){
-                        if(r.response){
-                            $scope.orders = r.response;
-                            if(reloading){
-                                alert.show('success', 'ALERT.SUCCESS.LOAD.TABLE.DATA', 2000);
-                            }
-                        }else{
-                            console.debug(r);
-                            alert.show('danger', 'ALERT.ERROR.LOAD.TABLE.DATA');
-                        }
-                    });
+                    loadOrders(reloading);
                 }
             }
         };
-        $scope.$watch('showCompleted', function(completed){
-            if($rootScope.GRIFFO.curShop){
-                $timeout.cancel(loopOrders);
-                firstLoop = true;
-                loop();
-            }
-        });
-        $rootScope.$watch('GRIFFO.curShop', function(id){
-            if(id){
-                $timeout.cancel(loopOrders);
-                lastID = 0;
-                firstLoop = true;
-                loop();
-            }
-        });
-        $timeout(function(){
-            $scope.$parent.grTable = $scope.grTable;
-        });
-        var initCalendar = function (){
-            $scope.calendar_mode = true;
-            $scope.calendar = {
-                orders: [],
-                config: {
-                    lang: 'pt-br',
-                    header: {
-                        left: 'month agendaWeek agendaDay',
-                        center: 'title',
-                        right: 'today prev,next'
-                    },
-                    height: 650,
-                    views: {
-                        day: { titleFormat: 'D [de] MMMM YYYY' },
-                        week: { titleFormat: 'D [de] MMMM YYYY' },
-                        month: { titleFormat: 'MMMM YYYY' }
-                    },
-                    // editable: true,
-                    // dayClick: $scope.alertEventOnClick,
-                    // eventDrop: $scope.alertOnDrop,
-                    // eventResize: $scope.alertOnResize
+
+        var init = {
+            notification: function(){
+                var permissionLevels = {},
+                    notify = $window.notify;
+                permissionLevels[notify.PERMISSION_GRANTED] = 0;
+                permissionLevels[notify.PERMISSION_DEFAULT] = 1;
+                permissionLevels[notify.PERMISSION_DENIED] = 2;
+                $scope.isSupported = notify.isSupported;
+                $scope.permissionLevel = permissionLevels[notify.permissionLevel()];
+                $scope.requestPermissions = function() {
+                    notify.requestPermission(function() {
+                        $scope.$apply($scope.permissionLevel = permissionLevels[notify.permissionLevel()]);
+                    })
+                };
+                $scope.notify = function(){
+                    if($scope.isSupported && $scope.permissionLevel === 0){
+                        if($scope.orders.length > 0){
+                            notify.createNotification("Novo pedido #" + $scope.orders[$scope.orders.length - 1].idorder, {
+                                body:"Novo pedido para a loja " + $scope.findShop($rootScope.GRIFFO.curShop),
+                                icon: $rootScope.GRIFFO.templatePath + "image/notification-check.png"
+                            });
+                        }else{
+                            notify.createNotification("Novo pedido", {
+                                body:"Novo pedido para a loja " + $scope.findShop($rootScope.GRIFFO.curShop),
+                                icon: $rootScope.GRIFFO.templatePath + "image/notification-check.png"
+                            });
+                        }
+                    }
+                };
+                $scope.requestPermissions();
+            },
+            scopeFunctions: function(){
+                $scope.reload = function(reload){
+                    if(!reload){
+                        alert.show('loading', 'ALERT.LOADING.TABLE.DATA', 0);
+                    }else{
+                        alert.show('loading', 'ALERT.RELOADING.TABLE.DATA', 0);
+                    }
+                    loop(true);
                 }
-            };
+                $scope.print = function(order){
+                    $scope.orderPrint = order;
+                    $timeout(function(){
+                        $ngPrint({
+                            content: angular.element('#orderPrintSection').html()
+                        });
+                        $scope.orderPrint = false;
+                    });
+                };
+
+                $scope.findClient = function(id){
+                    var curClient;
+                    angular.forEach($scope.clients, function(client){
+                        if(client.idclient === id){
+                            curClient = client
+                        }
+                    });
+                    return curClient;
+                };
+
+                $scope.findShop = function(id){
+                    var name;
+                    angular.forEach($rootScope.GRIFFO.shops, function(shop){
+                        if(shop.value === id){
+                            name = shop.label;
+                        }
+                    });
+                    return name;
+                };
+            },
+            requests: function(){
+                $grRestful.find({
+                    module: 'client',
+                    action: 'get'
+                }).then(function(r){
+                    if(r.response){
+                        $scope.clients = r.response;
+                    }
+                });
+                $grRestful.find({
+                    module: 'shop',
+                    action: 'select'
+                }).then(function(r){
+                    if(r.response){
+                        $rootScope.GRIFFO.shops = r.response;
+                        $rootScope.GRIFFO.shops[0].label = "Selecione uma loja...";
+                        makeShopTranslate();
+                    }
+                });
+            },
+            watchers: function(){
+                $scope.$watch('showCompleted', function(completed){
+                    if($rootScope.GRIFFO.curShop){
+                        $timeout.cancel(loopOrders);
+                        firstLoop = true;
+                        loop();
+                    }
+                });
+                $rootScope.$watch('GRIFFO.curShop', function(id){
+                    if(id){
+                        $timeout.cancel(loopOrders);
+                        lastID = 0;
+                        firstLoop = true;
+                        loop();
+                    }
+                });
+            },
+            calendar: function(){
+                $scope.calendar = {
+                    orders: [],
+                    config: {
+                        lang: 'pt-br',
+                        header: {
+                            left: 'month agendaWeek agendaDay',
+                            center: 'title',
+                            right: 'today prev,next'
+                        },
+                        height: 650,
+                        views: {
+                            day: { titleFormat: 'D [de] MMMM YYYY' },
+                            week: { titleFormat: 'D [de] MMMM YYYY' },
+                            month: { titleFormat: 'MMMM YYYY' }
+                        },
+                        // editable: true,
+                        // dayClick: $scope.alertEventOnClick,
+                        // eventDrop: $scope.alertOnDrop,
+                        // eventResize: $scope.alertOnResize
+                    },
+                    update: function(){
+                        console.log($scope.orders);
+                    }
+                };
+            },
+            form: function(){
+                $scope.status = [
+                    {
+                        label: 'Habilidado',
+                        value: true
+                    },
+                    {
+                        label: 'Desabilidado',
+                        value: false
+                    }
+                ]
+                $scope.formSettings = {
+                    data: {
+                        date: new Date,
+                        enabled: $scope.status[0].value
+                    },
+                    schema: [
+                        {
+                            property: 'date',
+                            type: 'date',
+                            label: 'LABEL.DATE',
+                            columns: 4,
+                            attr: {
+                                required: true
+                            },
+                            msgs: {
+                                required: 'FORM.MESSAGE.REQUIRED.DATE'
+                            }
+                        },
+                        {
+                            property: 'enabled',
+                            type: 'select',
+                            label: 'LABEL.STATUS',
+                            list: 'item.value as item.label for item in status',
+                            columns: 4,
+                            attr: {
+                                required: true
+                            },
+                            msgs: {
+                                required: 'FORM.MESSAGE.REQUIRED.STATUS'
+                            }
+                        }
+                    ],
+                    submit: function(data){
+                        if($scope.form.$invalid) return;
+                        var newData = angular.copy(data);
+                        // newData.date = moment(newData.date).format('DD/MM/YYYY');
+                        $grRestful.create({
+                            module: 'daysenabled',
+                            action: 'insert',
+                            post: newData
+                        }).then(function (r) {
+                            if(r.response){
+                                $scope.form.reset();
+                                loadOrders();
+                            }
+                            alert.show(r.status, r.message);
+                        }, function (r) {
+                            alert.show('danger', 'ERROR.FATAL');
+                        });
+                    }
+                }
+            },
         }
-        initCalendar();
+
+        initialize();
     }]);
 }());

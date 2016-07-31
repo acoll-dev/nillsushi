@@ -36,7 +36,9 @@
                 PATH_TEMPLATE . "js/directives/imgLiquidDrt.js",
                 PATH_TEMPLATE . "js/directives/includeReplaceDrt.js",
 
-                PATH_LIBRARIES . "client/vendor/imgLiquid/js/imgLiquid.js"
+                PATH_LIBRARIES . "client/vendor/imgLiquid/js/imgLiquid.js",
+
+                PATH_LIBRARIES . "client/desktop-notify/desktop-notify.min.js"
             )//,
 //            "analyticsCode"=>"UA-XXXXX-X"
         ),'footer'

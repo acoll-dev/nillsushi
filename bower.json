@@ -43,6 +43,7 @@
     "file-saver": "*",
     "angular-i18n": "~1.4.8",
     "angular-simple-logger": "~0.1.5",
-    "angular-ui-calendar": "^1.0.1"
+    "angular-ui-calendar": "^1.0.1",
+    "ngstorage": "^0.3.10"
   }
 }

@@ -40,8 +40,8 @@
 }
 
 .ta-editor.ta-codemirror{
-  padding: 0;
-}
+   padding: 0;
+ }
 
 .ta-editor:focus {
 	user-select: text;

@@ -8,16 +8,11 @@
 
             PATH_LIBRARIES . "client/vendor/angular-ui-tree/dist/angular-ui-tree.min.css",
             PATH_LIBRARIES . "client/vendor/angular-toggle-switch/angular-toggle-switch.css",
-            PATH_LIBRARIES . "client/vendor/fancybox/source/jquery.fancybox.css",
+            PATH_LIBRARIES . "client/vendor/fancybox/source/jquery.fancybox.css"
 
-            /* CRAB ORDER DEPENDENCIES */
-            PATH_LIBRARIES . "client/vendor/fullcalendar/dist/fullcalendar.css"
-        ),
-        "htmlAttr" => array(
-            "ng-app" => "adminApp",
-            "ng-controller"=>"adminCtrl"
         ),
         "bodyAttr" => array(
+            "ng-controller"=>"adminCtrl",
             "ng-class" => "{'open-left': sidebarOpen === 'left', 'open-right': sidebarOpen === 'right', 'open-both': sidebarOpen === 'both', 'open-none': sidebarOpen === 'none'}",
             "class" => "{{user.theme ? 'theme-' + user.theme : 'theme-dark'}}"
         )
@@ -179,14 +174,12 @@
             PATH_LIBRARIES . "client/vendor/urlify/urlify.js",
             PATH_LIBRARIES . "client/vendor/fancybox/source/jquery.fancybox.pack.js",
 
-            /* CRAB ORDER DEPENDENCIES */
-            PATH_LIBRARIES . "client/vendor/moment/min/moment.min.js",
-            PATH_LIBRARIES . "client/vendor/angular-ui-calendar/src/calendar.js",
-            PATH_LIBRARIES . "client/vendor/fullcalendar/dist/fullcalendar.min.js",
-            PATH_LIBRARIES . "client/vendor/fullcalendar/dist/gcal.js",
-            PATH_LIBRARIES . "client/vendor/fullcalendar/dist/lang-all.js"
         )//,
 //        "analyticsCode"=>"UA-XXXXX-X"
     ),'footer');
     $PAGE->getFooter();
 ?>
+
+<script>
+    (function(){ window.Dependencies.app_name = 'adminApp'; }());
+</script>

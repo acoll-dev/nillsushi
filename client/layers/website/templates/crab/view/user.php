@@ -23,8 +23,8 @@
                         <dd>{{formSettings.data.state || '-'}}</dd>
                         <dt>Cidade</dt>
                         <dd>{{formSettings.data.city || '-'}}</dd>
-                        <dt>Loja preferencial</dt>
-                        <dd>{{findShop(formSettings.data.fkidshop) || '-'}}</dd>
+                        <dt ng-if="gr.shops.length > 1">Loja preferencial</dt>
+                        <dd ng-if="gr.shops.length > 1">{{findShop(formSettings.data.fkidshop) || '-'}}</dd>
                     </dl>
                 </div>
                 <div  ng-show="editable()">

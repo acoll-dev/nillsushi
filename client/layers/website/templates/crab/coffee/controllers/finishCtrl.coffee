@@ -1,6 +1,6 @@
 'use strict'
-angular.module('mainApp').controller 'finishCtrl', ($rootScope, $scope, $cookies, $grRestful, $grModal, $grAlert, $cidadeEstado, $timeout) ->
-    
+angular.module('mainApp').controller 'finishCtrl', ($rootScope, $scope, $localStorage, $grRestful, $grModal, $grAlert, $cidadeEstado, $timeout) ->
+
     alert = $grAlert.new()
     finished = false
 
@@ -40,11 +40,12 @@ angular.module('mainApp').controller 'finishCtrl', ($rootScope, $scope, $cookies
                 label: e[1]
             return
 
-        delete $cookies.griffo_cart_ready
+        delete $localStorage.griffo_cart_ready
 
         $scope.formSettings =
             data:
                 status: 0
+                date: new Date
                 formpayment: 'Dinheiro'
                 address: $scope.addresses[0]
                 state: $rootScope.GRIFFO.user.state
@@ -56,9 +57,17 @@ angular.module('mainApp').controller 'finishCtrl', ($rootScope, $scope, $cookies
                     type: 'select'
                     label: 'Loja'
                     list: 'item.value as item.label for item in shops'
-                    columns: 6
-                    attr: required: true
+                    columns: 12
+                    attr: required: true, ngShow: 'shops.length > 2'
                     msgs: required: 'A loja é obrigatória'
+                }
+                {
+                  property: 'date',
+                  type: 'date',
+                  label: 'Data do pedido',
+                  columns: 6,
+                  attr: required: true
+                  msgs: required: 'A data é obrigatória'
                 }
                 {
                     property: 'fetch'

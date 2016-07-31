@@ -21,6 +21,7 @@ class OrderController {
                     $array = array();
                     $token = "";
                     $products = array();
+                    $find = array();
                     
                     ///////////////VERIFICA PERMISSÃO AO RECURSO////////////////
 
@@ -77,7 +78,10 @@ class OrderController {
                     
                     $find = Module::find_by_name('order');
                     $array['fkidmodule'] = $find->idmodule;
-                    $array['created'] = date('Y-m-d H:i:s');
+                    
+                    if(!isset($array['created'])){
+                        $array['created'] = date('Y-m-d H:i:s');
+                    }
                     
                     if(isset($array['deliveryfee'])){
                         $array['total'] = (float) $array['subtotal'] + (float) $array['deliveryfee'];
@@ -87,6 +91,16 @@ class OrderController {
                     
                     if(!isset($array['status'])){
                         $array['status'] = 0;
+                    }
+                    
+                    $find = array();
+                    
+                    
+                    /***Verificando se a data do pedido escolhida está cadastrada***/
+                    
+                    $find = Daysenabled::find_by_sql("SELECT iddaysenabled from ".DB_PREFIX."daysenabled WHERE DAY(date) = DAY(".$array['created'].") AND MONTH(date) = MONTH(".$array['created'].") AND YEAR(date) = YEAR(".$array['created'].")");
+                    if(!$find){
+                        throw new Exception("ERROR.DAYSNOTEXISTS");
                     }
                     
                     Order::create($array);

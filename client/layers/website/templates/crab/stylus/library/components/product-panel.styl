@@ -4,15 +4,16 @@
     &.panel-primary
         .panel-heading
             background $color-bg-primary
-            color $color-text-primary
+            // color $color-text-primary
+            color $color-text-thirdary
             &:hover
                 background desaturate(darken($color-bg-primary, 10%), 10%)
     &.panel-secondary
         .panel-heading
-            background darken(#FFFFFF, 8%)
-            color $color-text-secondary
+            background $color-bg-thirdary
+            color $color-text-primary
             &:hover
-                background darken(#FFFFFF, 12%)
+                background darken($color-bg-thirdary, 12%)
     .page-header
         display block
         width 100%
@@ -52,6 +53,7 @@
             width 100%
             border-top none !important
             padding 7px
+            background lighten($color-dark, 15%)
             .thumbnail-wrapper
                 padding 0
                 .thumbnail

@@ -2,7 +2,7 @@
 @license textAngular
 Author : Austin Anderson
 License : 2013 MIT
-Version 1.4.9
+Version 1.5.1
 
 See README.md or https://github.com/fraywing/textAngular/wiki for requirements and use.
 */
@@ -11,10 +11,7 @@ See README.md or https://github.com/fraywing/textAngular/wiki for requirements a
 Commonjs package manager support (eg componentjs).
 */
 
-/* istanbul ignore next:  */
-'undefined'!=typeof module&&'undefined'!=typeof exports&&module.exports===exports&&(module.exports='textAngular');
 
-(function(){ // encapsulate all variables so they don't become global vars
 "use strict";
 // IE version detection - http://stackoverflow.com/questions/4169160/javascript-ie-detection-why-not-use-simple-conditional-comments
 // We need this as IE sometimes plays funny tricks with the contenteditable.
@@ -662,12 +659,11 @@ angular.module('textAngular.DOM', ['textAngular.factories'])
 			}catch(e){}
 		};
 	};
-}]).service('taSelection', ['$window', '$document', 'taDOM',
+}]).service('taSelection', ['$document', 'taDOM',
 /* istanbul ignore next: all browser specifics and PhantomJS dosen't seem to support half of it */
-function($window, $document, taDOM){
+function($document, taDOM){
 	// need to dereference the document else the calls don't work correctly
 	var _document = $document[0];
-	var rangy = $window.rangy;
 	var brException = function (element, offset) {
 		/* check if selection is a BR element at the beginning of a container. If so, get
 		* the parentNode instead.
@@ -1015,11 +1011,11 @@ angular.module('textAngular.taBind', ['textAngular.factories', 'textAngular.DOM'
 	};
 }])
 .directive('taBind', [
-		'taSanitize', '$timeout', '$window', '$document', 'taFixChrome', 'taBrowserTag',
+		'taSanitize', '$timeout', '$document', 'taFixChrome', 'taBrowserTag',
 		'taSelection', 'taSelectableElements', 'taApplyCustomRenderers', 'taOptions',
 		'_taBlankTest', '$parse', 'taDOM', 'textAngularManager',
 		function(
-			taSanitize, $timeout, $window, $document, taFixChrome, taBrowserTag,
+			taSanitize, $timeout, $document, taFixChrome, taBrowserTag,
 			taSelection, taSelectableElements, taApplyCustomRenderers, taOptions,
 			_taBlankTest, $parse, taDOM, textAngularManager){
 	// Uses for this are textarea or input with ng-model and ta-bind='text'
@@ -1466,10 +1462,12 @@ angular.module('textAngular.taBind', ['textAngular.factories', 'textAngular.DOM'
 					var _processingPaste = false;
 					/* istanbul ignore next: phantom js cannot test this for some reason */
 					var processpaste = function(text) {
+                        var _isOneNote = text.match(/content=["']*OneNote.File/i);
 						/* istanbul ignore else: don't care if nothing pasted */
+                        //console.log(text);
 						if(text && text.trim().length){
 							// test paste from word/microsoft product
-							if(text.match(/class=["']*Mso(Normal|List)/i)){
+							if(text.match(/class=["']*Mso(Normal|List)/i) || text.match(/content=["']*Word.Document/i) || text.match(/content=["']*OneNote.File/i)){
 								var textFragment = text.match(/<!--StartFragment-->([\s\S]*?)<!--EndFragment-->/i);
 								if(!textFragment) textFragment = text;
 								else textFragment = textFragment[1];
@@ -1497,7 +1495,14 @@ angular.module('textAngular.taBind', ['textAngular.factories', 'textAngular.DOM'
 									_list.lastLevelMatch = null;
 								};
 								for(var i = 0; i <= dom[0].childNodes.length; i++){
-									if(!dom[0].childNodes[i] || dom[0].childNodes[i].nodeName === "#text" || dom[0].childNodes[i].tagName.toLowerCase() !== "p") continue;
+									if(!dom[0].childNodes[i] || dom[0].childNodes[i].nodeName === "#text"){
+										continue;
+									} else {
+										var tagName = dom[0].childNodes[i].tagName.toLowerCase();
+										if(tagName !== "p" && tagName !== "h1" && tagName !== "h2" && tagName !== "h3" && tagName !== "h4" && tagName !== "h5" && tagName !== "h6"){
+											continue;
+										}
+									}
 									var el = angular.element(dom[0].childNodes[i]);
 									var _listMatch = (el.attr('class') || '').match(/MsoList(Bullet|Number|Paragraph)(CxSp(First|Middle|Last)|)/i);
 
@@ -1560,7 +1565,11 @@ angular.module('textAngular.taBind', ['textAngular.factories', 'textAngular.DOM'
 									if(node.attributes.length <= 0) _unwrapElement(node);
 								});
 								angular.forEach(targetDom.find('font'), _unwrapElement);
-								text = targetDom.html();
+
+                                text = targetDom.html();
+                                if(_isOneNote){
+                                    text = targetDom.html() || dom.html();
+                                }
 							}else{
 								// remove unnecessary chrome insert
 								text = text.replace(/<(|\/)meta[^>]*?>/ig, '');
@@ -1652,13 +1661,13 @@ angular.module('textAngular.taBind', ['textAngular.factories', 'textAngular.DOM'
 							e.preventDefault();
 							return false;
 						} else {// Everything else - empty editdiv and allow browser to paste content into it, then cleanup
-							var _savedSelection = $window.rangy.saveSelection(),
+							var _savedSelection = rangy.saveSelection(),
 								_tempDiv = angular.element('<div class="ta-hidden-input" contenteditable="true"></div>');
 							$document.find('body').append(_tempDiv);
 							_tempDiv[0].focus();
 							$timeout(function(){
 								// restore selection
-								$window.rangy.restoreSelection(_savedSelection);
+								rangy.restoreSelection(_savedSelection);
 								processpaste(_tempDiv[0].innerHTML);
 								element[0].focus();
 								_tempDiv.remove();
@@ -1789,11 +1798,11 @@ angular.module('textAngular.taBind', ['textAngular.factories', 'textAngular.DOM'
 								taSelection.setSelectionToElementStart(element.children()[0]);
 							}else if(val.substring(0, 1) !== '<' && attrs.taDefaultWrap !== ''){
 								/* we no longer do this, since there can be comments here and white space
-								var _savedSelection = $window.rangy.saveSelection();
+								var _savedSelection = rangy.saveSelection();
 								val = _compileHtml();
 								val = "<" + attrs.taDefaultWrap + ">" + val + "</" + attrs.taDefaultWrap + ">";
 								_setInnerHTML(val);
-								$window.rangy.restoreSelection(_savedSelection);
+								rangy.restoreSelection(_savedSelection);
 								*/
 							}
 							var triggerUndo = _lastKey !== event.keyCode && UNDO_TRIGGER_KEYS.test(event.keyCode);
@@ -2033,38 +2042,11 @@ textAngular.config([function(){
 	angular.forEach(taTools, function(value, key){ delete taTools[key];	});
 }]);
 
-textAngular.run([function(){
-	/* istanbul ignore next: not sure how to test this */
-	// Require Rangy and rangy savedSelection module.
-	if (typeof define === 'function' && define.amd) {
-		// AMD. Register as an anonymous module.
-		define(function(require) {
-			window.rangy = require('rangy');
-			window.rangy.saveSelection = require('rangy/lib/rangy-selectionsaverestore');
-		});
-	} else if (typeof require ==='function' && typeof module !== 'undefined' && typeof exports === 'object') {
-		// Node/CommonJS style
-		window.rangy = require('rangy');
-		window.rangy.saveSelection = require('rangy/lib/rangy-selectionsaverestore');
-	} else {
-		// Ensure that rangy and rangy.saveSelection exists on the window (global scope).
-		// TODO: Refactor so that the global scope is no longer used.
-		if(!window.rangy){
-			throw("rangy-core.js and rangy-selectionsaverestore.js are required for textAngular to work correctly, rangy-core is not yet loaded.");
-		}else{
-			window.rangy.init();
-			if(!window.rangy.saveSelection){
-				throw("rangy-selectionsaverestore.js is required for textAngular to work correctly.");
-			}
-		}
-	}
-}]);
-
 textAngular.directive("textAngular", [
 	'$compile', '$timeout', 'taOptions', 'taSelection', 'taExecCommand',
-	'textAngularManager', '$window', '$document', '$animate', '$log', '$q', '$parse',
+	'textAngularManager', '$document', '$animate', '$log', '$q', '$parse',
 	function($compile, $timeout, taOptions, taSelection, taExecCommand,
-		textAngularManager, $window, $document, $animate, $log, $q, $parse){
+		textAngularManager, $document, $animate, $log, $q, $parse){
 		return {
 			require: '?ngModel',
 			scope: {},
@@ -2075,8 +2057,7 @@ textAngular.directive("textAngular", [
 				var _keydown, _keyup, _keypress, _mouseup, _focusin, _focusout,
 					_originalContents, _toolbars,
 					_serial = (attrs.serial) ? attrs.serial : Math.floor(Math.random() * 10000000000000000),
-					_taExecCommand, _resizeMouseDown, _updateSelectedStylesTimeout,
-					_codemirrorEditor, _hasCodemirror = angular.isDefined(attrs.codemirror);
+					_taExecCommand, _resizeMouseDown, _updateSelectedStylesTimeout;
 
 				scope._name = (attrs.name) ? attrs.name : 'textAngularEditor' + _serial;
 
@@ -2141,7 +2122,7 @@ textAngular.directive("textAngular", [
 					// we still need the hidden input even with a textarea as the textarea may have invalid/old input in it,
 					// wheras the input will ALLWAYS have the correct value.
 					forminput: angular.element("<input type='hidden' tabindex='-1' style='display: none;'>"),
-					html: _hasCodemirror ? angular.element("<div></div>") : angular.element('<textarea></textarea>'),
+					html: angular.element("<textarea></textarea>"),
 					text: angular.element("<div></div>"),
 					// other toolbased elements
 					scrollWindow: angular.element("<div class='ta-scroll-window'></div>"),
@@ -2269,7 +2250,14 @@ textAngular.directive("textAngular", [
 							event.preventDefault();
 							event.stopPropagation();
 							_body.off('mousemove', mousemove);
-							scope.showPopover(_el);
+							// at this point, we need to force the model to update! since the css has changed!
+							// this fixes bug: #862 - we now hide the popover -- as this seems more consitent.
+							// there are still issues under firefox, the window does not repaint. -- not sure
+							// how best to resolve this, but clicking anywhere works.
+							scope.$apply(function (){
+								scope.hidePopover();
+								scope.updateTaBindtaTextElement();
+							}, 100);
 						});
 						event.stopPropagation();
 						event.preventDefault();
@@ -2290,24 +2278,13 @@ textAngular.directive("textAngular", [
 				// allow for insertion of custom directives on the textarea and div
 				scope.setup.htmlEditorSetup(scope.displayElements.html);
 				scope.setup.textEditorSetup(scope.displayElements.text);
-				if(_hasCodemirror){
-					scope.displayElements.html.attr({
-						'id': 'taHtmlElement' + _serial,
-						'ng-show': 'showHtml',
-						'ng-model': 'html',
-						'ng-model-options': element.attr('ng-model-options'),
-						'ui-codemirror': '{onLoad: codemirrorLoaded}',
-						'ui-codemirror-opts': '$parent.' + element.attr('codemirror-opts')
-					});
-				}else{
-					scope.displayElements.html.attr({
-						'id': 'taHtmlElement' + _serial,
-						'ng-show': 'showHtml',
-						'ta-bind': 'ta-bind',
-						'ng-model': 'html',
-						'ng-model-options': element.attr('ng-model-options')
-					});
-				}
+				scope.displayElements.html.attr({
+					'id': 'taHtmlElement' + _serial,
+					'ng-show': 'showHtml',
+					'ta-bind': 'ta-bind',
+					'ng-model': 'html',
+					'ng-model-options': element.attr('ng-model-options')
+				});
 				scope.displayElements.text.attr({
 					'id': 'taTextElement' + _serial,
 					'contentEditable': 'true',
@@ -2363,22 +2340,6 @@ textAngular.directive("textAngular", [
 					scope.displayElements.text.attr('ta-paste', '_pasteHandler($html)');
 				}
 
-				if(_hasCodemirror){
-						scope.codemirrorLoaded = function(_editor){
-							_codemirrorEditor = _editor;
-							_editor.on('focus', function(a, e){
-								$timeout(function(){
-									_focusin();
-								});
-							});
-							_editor.on('blur', function(a, e){
-								$timeout(function(){
-									_focusout();
-								});
-							});
-						};
-				}
-
 				// compile the scope with the text and html elements only - if we do this with the main element it causes a compile loop
 				$compile(scope.displayElements.scrollWindow)(scope);
 				$compile(scope.displayElements.html)(scope);
@@ -2391,46 +2352,27 @@ textAngular.directive("textAngular", [
 				scope.displayElements.scrollWindow.addClass("ta-text ta-editor " + scope.classes.textEditor);
 				scope.displayElements.html.addClass("ta-html ta-editor " + scope.classes.htmlEditor);
 
-				if(_hasCodemirror){
-					scope.displayElements.html.addClass("ta-codemirror");
-				}
-
 				// used in the toolbar actions
 				scope._actionRunning = false;
 				var _savedSelection = false;
 				scope.startAction = function(){
 					scope._actionRunning = true;
 					// if rangy library is loaded return a function to reload the current selection
-					_savedSelection = $window.rangy.saveSelection();
+					_savedSelection = rangy.saveSelection();
 					return function(){
-						if(_savedSelection) $window.rangy.restoreSelection(_savedSelection);
+						if(_savedSelection) rangy.restoreSelection(_savedSelection);
 					};
 				};
 				scope.endAction = function(){
 					scope._actionRunning = false;
 					if(_savedSelection){
 						if(scope.showHtml){
-							if(!_hasCodemirror){
-								// if codemirror is not found, call textarea focus event
-								scope.displayElements.html[0].focus();
-							}else{
-								$timeout(function(){
-									// update codemirror content
-									_codemirrorEditor.refresh();
-									_codemirrorEditor.focus();
-									_codemirrorEditor.execCommand('selectAll');
-									// beautify code if exists autoFormatRange command on codemirror
-									if(_codemirrorEditor.autoFormatRange){
-										_codemirrorEditor.autoFormatRange(_codemirrorEditor.getCursor(true), _codemirrorEditor.getCursor(false));
-										_codemirrorEditor.execCommand('selectAll');
-									}
-								});
-							}
+							scope.displayElements.html[0].focus();
 						}else{
 							scope.displayElements.text[0].focus();
 						}
-						// $window.rangy.restoreSelection(_savedSelection);
-						$window.rangy.removeMarkers(_savedSelection);
+						// rangy.restoreSelection(_savedSelection);
+						rangy.removeMarkers(_savedSelection);
 					}
 					_savedSelection = false;
 					scope.updateSelectedStyles();
@@ -2444,10 +2386,10 @@ textAngular.directive("textAngular", [
 					scope.focussed = true;
 					element.addClass(scope.classes.focussed);
 					_toolbars.focus();
-					if(!_hasCodemirror){
-						element.triggerHandler('focus');
-					}
+					element.triggerHandler('focus');
 				};
+				scope.displayElements.html.on('focus', _focusin);
+				scope.displayElements.text.on('focus', _focusin);
 				_focusout = function(e){
 					// if we are NOT runnig an action and have NOT focussed again on the text etc then fire the blur events
 					if(!scope._actionRunning && $document[0].activeElement !== scope.displayElements.html[0] && $document[0].activeElement !== scope.displayElements.text[0]){
@@ -2456,23 +2398,16 @@ textAngular.directive("textAngular", [
 						// to prevent multiple apply error defer to next seems to work.
 						$timeout(function(){
 							scope._bUpdateSelectedStyles = false;
-							if(!_hasCodemirror){
-								element.triggerHandler('blur');
-							}
+							element.triggerHandler('blur');
 							scope.focussed = false;
 						}, 0);
 					}
-					if(!_hasCodemirror){
-						e.preventDefault();
-					}
+					e.preventDefault();
 					return false;
 				};
-				if(!_hasCodemirror){
-					scope.displayElements.html.on('focus', function(){ _focusin(true); });
-					scope.displayElements.html.on('blur', _focusout);
-				}
-				scope.displayElements.text.on('focus', _focusin);
+				scope.displayElements.html.on('blur', _focusout);
 				scope.displayElements.text.on('blur', _focusout);
+
 				scope.displayElements.text.on('paste', function(event){
 					element.triggerHandler('paste', event);
 				});
@@ -2673,9 +2608,7 @@ textAngular.directive("textAngular", [
 						scope.updateSelectedStyles();
 					});
 				};
-				if(!_hasCodemirror){
-					scope.displayElements.html.on('mouseup', _mouseup);
-				}
+				scope.displayElements.html.on('mouseup', _mouseup);
 				scope.displayElements.text.on('mouseup', _mouseup);
 			}
 		};
@@ -2943,17 +2876,16 @@ textAngular.service('textAngularManager', ['taToolExecuteAction', 'taTools', 'ta
 		},
 		// this is used by taBind to send a key command in response to a special key event
 		sendKeyCommand: function(scope, event){
-			angular.forEach(editors, function(_editor){
-				/* istanbul ignore else: if nothing to do, do nothing */
-				if (_editor.editorFunctions.sendKeyCommand(event)){
-					/* istanbul ignore else: don't run if already running */
-					if(!scope._bUpdateSelectedStyles){
-						scope.updateSelectedStyles();
-					}
-					event.preventDefault();
-					return false;
+			var _editor = editors[scope._name];
+			/* istanbul ignore else: if nothing to do, do nothing */
+			if (_editor && _editor.editorFunctions.sendKeyCommand(event)) {
+				/* istanbul ignore else: don't run if already running */
+				if(!scope._bUpdateSelectedStyles){
+					scope.updateSelectedStyles();
 				}
-			});
+				event.preventDefault();
+				return false;
+			}
 		}
 	};
 }]);
@@ -3135,4 +3067,3 @@ textAngular.directive('textAngularToolbar', [
 		};
 	}
 ]);
-})();

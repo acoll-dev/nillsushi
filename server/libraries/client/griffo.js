@@ -1,9 +1,96 @@
 'use strict';
+
+(function(){
+    var Dependencies = window.Dependencies = {
+        app_name: "",
+        list: {
+            modules: [],
+            files: {
+                css: [],
+                js: []
+            }
+        },
+        add: function(dependecies){
+            if(angular.isObject(dependecies)){
+                if(dependecies.files && dependecies.files.css){
+                    Dependencies.list.files.css = angular.extend([], Dependencies.list.files.css, dependecies.files.css);
+                }
+                if(dependecies.files && dependecies.files.js){
+                    Dependencies.list.files.js = angular.extend([], Dependencies.list.files.js, dependecies.files.js);
+                }
+                if(dependecies.modules){
+                    Dependencies.list.modules = angular.extend([], Dependencies.list.modules, dependecies.modules);
+                }
+            }
+        },
+        bootstrap: function(){
+            if(Dependencies.list.modules.length > 0){
+                angular.forEach(Dependencies.list.modules, function(module){
+                    angular.module(Dependencies.app_name).requires.push(module);
+                });
+            }
+            angular.bootstrap(document, [Dependencies.app_name]);
+        },
+        initialize: function(){
+            if(Dependencies.list.files.css.length > 0){
+                var loadCSS = function(dependecies){
+                    angular.forEach(dependecies, function(dependency){
+                        var link = document.createElement("link");
+                        link.type = "text/css";
+                        link.rel = "stylesheet";
+                        link.href = dependency;
+                        document.getElementsByTagName("head")[0].appendChild(link);
+                    });
+                }
+                loadCSS(Dependencies.list.files.css);
+            }
+            if(Dependencies.list.files.js.length > 0){
+                var loadJS = function(index, dependecies){
+                    var dependency = dependecies[index];
+                    if(dependency){
+                        if(dependency.indexOf("http") != 0 || dependency.indexOf("https") != 0){
+                            dependency = GRIFFO.baseUrl + dependency;
+                        }
+                        requirejs([dependency], function(load_dependency){
+                            if(!window[dependency] && load_dependency){
+                                window[dependency] = load_dependency;
+                            }
+                            loadJS(index+1, dependecies);
+                        });
+                    }else{
+                        Dependencies.bootstrap();
+                    }
+                };
+                loadJS(0, Dependencies.list.files.js);
+            }else{
+                Dependencies.bootstrap();
+            }
+        }
+    }
+    $(document).ready(function(){
+        if(Dependencies.app_name){
+            Dependencies.initialize();
+        }
+    });
+}());
+
 (function(){
     angular.module('griffo', ['gr.core', 'gr.directive', 'gr.filter']);
+    requirejs.config({
+        baseUrl: GRIFFO.librariesPath + "client/vendor/",
+        paths: {
+            'jquery': 'jquery/dist/jquery',
+            'desktop-notify': 'desktop-notify/desktop-notify.min.js',
+            'moment': 'moment/min/moment.min',
+            'fullcalendar': 'fullcalendar/dist/fullcalendar.min',
+            'fullcalendar-gcal': 'fullcalendar/dist/gcal',
+            'fullcalendar-lang-all': 'fullcalendar/dist/lang-all',
+            'ui-calendar': 'angular-ui-calendar/src/calendar'
+        }
+    });
 }());
 (function(){
-    angular.module('gr.core', ['gr.ui', 'gr.restful', 'gr.filemanager', 'textAngular', 'ui.codemirror', 'pascalprecht.translate', 'angularLoad', 'ngPrint', 'angular-images-loaded', 'ngCookies', 'ui.select', 'cidade-estado'])
+    angular.module('gr.core', ['gr.ui', 'gr.restful', 'gr.filemanager', 'textAngular', 'ui.codemirror', 'pascalprecht.translate', 'ngPrint', 'angular-images-loaded', 'ngCookies', 'ui.select', 'cidade-estado'])
         .factory('$griffo', ['$rootScope', '$timeout', '$window', '$http', '$translate', function ($rootScope, $timeout, $window, $http, $translate) {
                 var griffo,
                     wnd = angular.element($window),

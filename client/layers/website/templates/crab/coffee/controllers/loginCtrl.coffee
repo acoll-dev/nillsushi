@@ -66,7 +66,7 @@ angular.module('mainApp').controller 'loginCtrl', ($rootScope, $scope, $cookies,
                 alert.show 'danger', 'ERROR.FATAL'
 
 angular.module('mainApp').controller 'signupCtrl', ($rootScope, $scope, $cookies, $grRestful, $grAlert, $cidadeEstado, $timeout) ->
-        
+
         alert = $grAlert.new()
         $scope.shops = []
 
@@ -75,6 +75,7 @@ angular.module('mainApp').controller 'signupCtrl', ($rootScope, $scope, $cookies
             action: 'select'
         .then (r) ->
             $scope.shops = r.response if r.response
+            $scope.formSettings.data.fkidshop = $scope.shops[1].value if $scope.shops[1]?
 
         $scope.states = []
 
@@ -87,7 +88,8 @@ angular.module('mainApp').controller 'signupCtrl', ($rootScope, $scope, $cookies
             data:
                 status: true
                 state: 'SP'
-                preferredshop: 'Itapeva'
+                mobilephone: ''
+                fkidshop: ''
             schema: [
                 {
                     property: 'fkidshop'
@@ -95,7 +97,7 @@ angular.module('mainApp').controller 'signupCtrl', ($rootScope, $scope, $cookies
                     label: 'Loja preferencial'
                     list: 'item.value as item.label for item in shops'
                     columns: 12
-                    attr: required: true
+                    attr: required: true, ngShow: 'shops.length > 2'
                     msgs: required: 'Selecione uma loja preferencial'
                 }
                 {

@@ -34,10 +34,10 @@ class Application {
     public $URL_REDIRECTION;
     public $REQUIRE_AUTHENTICATION = false;
     public $REST = false;
-    
+
     private static $_instance;
     private static $_instanceModules = array();
-    
+
 
     public function includeModule($module, $instance = false) {
 
@@ -175,7 +175,7 @@ class Application {
                         $class = $this->actions[$action]['class'];
                         $function = $this->actions[$action]['function'];
                         $module = $this->actions[$action]['module'];
-                        
+
                         if (!empty($module)) {
                             $this->setDependencyModule($module);
                         }
@@ -220,7 +220,7 @@ class Application {
             $this->actions = Tools::sortKeyArray($this->actions, 'priority');
             $this->showArray($this->actions);exit;
             foreach ($this->actions as $key => $value) {
-                
+
                 $class = $value['class'];
                 $function = $value['function'];
                 $module = $value['module'];
@@ -261,7 +261,7 @@ class Application {
                 $this->CON->transaction();
                 if (isset($_SESSION[CLIENT.LAYER])) {
                     $this->setDependencyModule(array('Activitylog','Usersession'));
-                    
+
                     $token = $_SESSION[CLIENT.LAYER];
                     $usersession = Usersession::find_by_accesstoken(Tools::$salt_Pre . $token . Tools::$salt_End);
                     $atributtes = array('idactivitylog' => null, 'date' => date('Y-m-d H:i:s'), 'activity' => $activity, 'url' => THIS, 'fkidusersession' => $usersession->idusersession);
@@ -300,7 +300,7 @@ class Application {
     public function redirect() {
 
         $url = $this->URL_REDIRECTION;
-        
+
         if (!empty($url)) {
             if (Tools::check_url($url) === true) {
                 header('location: ' . $url);
@@ -311,17 +311,17 @@ class Application {
             }
         }else{
             global $APP;
-            
+
             if(isset($_SESSION[CLIENT.LAYER]) && LAYER === 'admin' && empty($APP->FILTER) && !empty($APP->USER['fkidlayer'])){
                 $APP->setDependencyModule(array('Layer'));
-                
+
                 $layer = Layer::find($APP->USER['fkidlayer']);
-                
+
                 header('location: ' . CUR_ALIAS . '/' . $layer->name);
                 exit(0);
             }
         }
-        
+
         /*
         $arrayMenus = array();
         $arrayFilter = array();
@@ -343,7 +343,7 @@ class Application {
             if (file_exists(DIR_CURTEMPLATE . 'login.php')) {
                 require_once(DIR_CURTEMPLATE . 'login.php');
             }
-            
+
             exit(0);
         }
 
@@ -362,13 +362,13 @@ class Application {
             header('location: ' . CUR_ALIAS . ((!empty($this->LANGUAGE_LAYER)) ? '/' . $this->LANGUAGE_LAYER : '') . '/home/');
             exit(0);
         }*/
-         
+
     }
 
     public function setVarGriffo() {
 
         global $PAGE,$APP;
-        
+
         //$aux = (LAYER === 'admin') ? ((MODULE === 'dashboard') ? '/index.php' : ((!empty($this->VIEW)) ? '/' . $this->VIEW . '.php' : $this->VIEW)) : ((MODULE === 'page' && LAYER === 'website' && empty($this->VIEW)) ? '/home.php' : '/' . $this->VIEW . '.php');
 
         if(LAYER === 'admin'){
@@ -408,7 +408,7 @@ class Application {
     }
 
     /*public function admin() {
-        
+
         $this->setDependencyModule(array('Authentication', 'Layer', 'Menu'));
         $cur_layer = CUR_LAYER;
         //Identifica Layer padrao do usuário
@@ -429,7 +429,7 @@ class Application {
 
         Authentication::update_session_user();
     }*/
-    
+
     public function getVarGriffo() {
         global $PAGE;
         return json_decode($PAGE->getGriffo());
