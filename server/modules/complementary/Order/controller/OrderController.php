@@ -79,10 +79,6 @@ class OrderController {
                     $find = Module::find_by_name('order');
                     $array['fkidmodule'] = $find->idmodule;
                     
-                    if(!isset($array['created'])){
-                        $array['created'] = date('Y-m-d H:i:s');
-                    }
-                    
                     if(isset($array['deliveryfee'])){
                         $array['total'] = (float) $array['subtotal'] + (float) $array['deliveryfee'];
                     }else{
@@ -93,13 +89,24 @@ class OrderController {
                         $array['status'] = 0;
                     }
                     
-                    /***
-                    $find = array();
+                    $auxDate = explode(" ",$array['created']);
                     
+                    if(!isset($array['created'])){
+                        $array['created'] = date('Y-m-d H:i:s');
+                    }else{
+                        //Se na camada website, a data do pedido não pode ser menor que a do dia atual
+                        if(LAYER == "website"){
+                            if($auxDate[0] < date('Y-m-d')){
+                                throw new Exception("ERROR.DATEINVALID");
+                            }
+                        }
+                    }
+                    
+                    
+                    $find = array();
                     
                     //Verificando se a data do pedido escolhida está cadastrada
                     
-                    $auxDate = explode(" ",$array['created']);
                     $aux = explode("-",$auxDate[0]);
                     
                     $find = Daysenabled::find_by_sql("SELECT iddaysenabled from ".DB_PREFIX."daysenabled WHERE DAY(date) = DAY(".$aux[2].") AND MONTH(date) = MONTH(".$auxDate[0].") AND YEAR(date) = YEAR(".$aux[0].")");
@@ -107,7 +114,7 @@ class OrderController {
                     if(!$find){
                         throw new Exception("ERROR.DAYSNOTEXISTS");
                     }
-                    ***/
+                    
                     
                     Order::create($array);
                     $lastorder = Order::last();
@@ -581,7 +588,7 @@ class OrderController {
             try {
                 global $APP;
                 $APP->CON->transaction();
-                $APP->setDependencyModule(array('Order','Orderproduct','Authentication'));
+                $APP->setDependencyModule(array('Order','Orderproduct','Authentication','Daysenabled'));
                 $array = array();
                 $update_attributes = array();
                 $products = array();
@@ -637,7 +644,21 @@ class OrderController {
                 if (Authentication::check_token($token) === false) {
                     throw new Exception("ERROR.INVALID.TOKEN");
                 }
+                
+                
+                $find = array();
+                    
+                //Verificando se a data do pedido escolhida está cadastrada
 
+                $aux = explode("-",$auxDate[0]);
+
+                $find = Daysenabled::find_by_sql("SELECT iddaysenabled from ".DB_PREFIX."daysenabled WHERE DAY(date) = DAY(".$aux[2].") AND MONTH(date) = MONTH(".$auxDate[0].") AND YEAR(date) = YEAR(".$aux[0].")");
+
+                if(!$find){
+                    throw new Exception("ERROR.DAYSNOTEXISTS");
+                }
+                
+                
                 $array['updated'] = date('Y-m-d H:i:s');
                 
                 if(isset($array['deliveryfee'])){

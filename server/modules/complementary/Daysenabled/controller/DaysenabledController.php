@@ -42,17 +42,30 @@ class DaysenabledController {
                         }
                     }
 
-
                     if(!empty($token)){
                         if (Authentication::check_token($token) === false) {
                             throw new Exception("ERROR.INVALID.TOKEN");
                         }
                     }
-
-                    Daysenabled::create($array);
+                    
+                    if(!isset($array['date'])){
+                        $array['date'] = date('Y-m-d');
+                    }
+                    
+                    $find = false;
+                    $find = Daysenabled::find_by_date($array['date']);
+                    
+                    if($find){
+                        $array['enabled'] = 1;
+                        $find->update_attributes($array);
+                        $APP->activityLog("Update Days Enabled");
+                    }else{
+                        Daysenabled::create($array);
+                        $APP->activityLog("Register Days Enabled");
+                    }
 
                     $APP->CON->commit();
-                    $APP->activityLog("Register Days Enabled");
+                    
                     return $APP->response(true, 'success', 'SUCCESS.CREATE.COMPLETED', $json);
                 } else {
                     throw new Exception("There are no values for registering!");

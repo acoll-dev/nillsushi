@@ -98,6 +98,7 @@
         "ACTION": "Essa ação não poderá ser desfeita, tem certeza que deseja continuar?"
     },
     "ERROR": {
+        "DATEINVALID" : "Data inválida!",
         "EMPTY": {
             "VALUE": "A variável \"Tipo\" está vazia ou não foi aceita"
         },
