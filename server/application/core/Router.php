@@ -476,7 +476,7 @@ class Router {
 
                     foreach ($alias as $key => $value) {
                         $tmpAlias = '/' . str_replace(PROTOCOL, '', $key);
-
+                                            
                         if (strcmp($tmp, $tmpAlias) == 0) {
                             $cur_alias = $key;
                             $url = explode($tmp, str_replace('?' . QUERY_STRING, '', $curUrl));
@@ -502,7 +502,6 @@ class Router {
                 throw new RuntimeException("Não foram definidos os alias da aplicação.");
             }
         }
-
         return $return;
     }
 

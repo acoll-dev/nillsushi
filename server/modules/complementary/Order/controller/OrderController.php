@@ -17,7 +17,7 @@ class OrderController {
 
                 if (!empty($attributes)) {
 
-                    $APP->setDependencyModule(array('Order','Orderproduct', 'Authentication','Module'));
+                    $APP->setDependencyModule(array('Order','Orderproduct', 'Authentication','Module','Daysenabled'));
                     $array = array();
                     $token = "";
                     $products = array();
@@ -93,15 +93,21 @@ class OrderController {
                         $array['status'] = 0;
                     }
                     
+                    /***
                     $find = array();
                     
                     
-                    /***Verificando se a data do pedido escolhida está cadastrada***/
+                    //Verificando se a data do pedido escolhida está cadastrada
                     
-                    $find = Daysenabled::find_by_sql("SELECT iddaysenabled from ".DB_PREFIX."daysenabled WHERE DAY(date) = DAY(".$array['created'].") AND MONTH(date) = MONTH(".$array['created'].") AND YEAR(date) = YEAR(".$array['created'].")");
+                    $auxDate = explode(" ",$array['created']);
+                    $aux = explode("-",$auxDate[0]);
+                    
+                    $find = Daysenabled::find_by_sql("SELECT iddaysenabled from ".DB_PREFIX."daysenabled WHERE DAY(date) = DAY(".$aux[2].") AND MONTH(date) = MONTH(".$auxDate[0].") AND YEAR(date) = YEAR(".$aux[0].")");
+                    
                     if(!$find){
                         throw new Exception("ERROR.DAYSNOTEXISTS");
                     }
+                    ***/
                     
                     Order::create($array);
                     $lastorder = Order::last();
