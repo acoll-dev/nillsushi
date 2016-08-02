@@ -25,6 +25,7 @@ class DaysenabledController {
                         if (isset($value->name)) {
 
                             if($value->name === 'enabled'){
+                                
                                 if($value->value == true){
                                     $value->value = 1;
                                 }else{
@@ -56,7 +57,6 @@ class DaysenabledController {
                     $find = Daysenabled::find_by_date($array['date']);
                     
                     if($find){
-                        $array['enabled'] = 1;
                         $find->update_attributes($array);
                     }else{
                         Daysenabled::create($array);
