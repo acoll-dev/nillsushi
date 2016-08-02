@@ -89,11 +89,10 @@ class OrderController {
                         $array['status'] = 0;
                     }
                     
-                    $auxDate = explode(" ",$array['created']);
-                    
                     if(!isset($array['created'])){
                         $array['created'] = date('Y-m-d H:i:s');
                     }else{
+                        $auxDate = explode(" ",$array['created']);
                         //Se na camada website, a data do pedido não pode ser menor que a do dia atual
                         if(LAYER == "website"){
                             if($auxDate[0] < date('Y-m-d')){
@@ -102,6 +101,7 @@ class OrderController {
                         }
                     }
                     
+                    $auxDate = explode(" ",$array['created']);
                     
                     $find = array();
                     
@@ -112,7 +112,7 @@ class OrderController {
                     $find = Daysenabled::find_by_sql("SELECT iddaysenabled from ".DB_PREFIX."daysenabled WHERE DAY(date) = DAY(".$aux[2].") AND MONTH(date) = MONTH(".$auxDate[0].") AND YEAR(date) = YEAR(".$aux[0].")");
                     
                     if(!$find){
-                        throw new Exception("ERROR.DAYSNOTEXISTS");
+                        throw new Exception("ERROR.DAYNOTEXISTS");
                     }
                     
                     
@@ -655,7 +655,7 @@ class OrderController {
                 $find = Daysenabled::find_by_sql("SELECT iddaysenabled from ".DB_PREFIX."daysenabled WHERE DAY(date) = DAY(".$aux[2].") AND MONTH(date) = MONTH(".$auxDate[0].") AND YEAR(date) = YEAR(".$aux[0].")");
 
                 if(!$find){
-                    throw new Exception("ERROR.DAYSNOTEXISTS");
+                    throw new Exception("ERROR.DAYNOTEXISTS");
                 }
                 
                 
