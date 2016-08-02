@@ -51,7 +51,7 @@
                             }else{
                                 dataAux.push({
                                     name: i,
-                                    value: d || ''
+                                    value: (angular.isDefined(d) && d != null) ? d : ''
                                 });
                             }
                         });

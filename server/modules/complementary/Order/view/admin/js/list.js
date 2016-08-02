@@ -480,7 +480,7 @@
                             alert.show('success', 'ALERT.SUCCESS.LOAD.TABLE.DATA', 2000);
                         }
                     }else{
-                        console.debug(r);
+                        // console.debug(r);
                         alert.show('danger', 'ALERT.ERROR.LOAD.TABLE.DATA');
                     }
                 });
@@ -513,7 +513,7 @@
                             alert.show('success', 'ALERT.SUCCESS.LOAD.TABLE.DATA', 2000);
                         }
                     }else{
-                        console.debug(r);
+                        // console.debug(r);
                         alert.show('danger', 'ALERT.ERROR.LOAD.TABLE.DATA');
                     }
                 });
@@ -715,7 +715,8 @@
                     submit: function(data){
                         if($scope.form.$invalid) return;
                         var newData = angular.copy(data);
-                        // newData.date = moment(newData.date).format('DD/MM/YYYY');
+                        newData.date = moment(newData.date).format('YYYY-MM-DD');
+
                         $grRestful.create({
                             module: 'daysenabled',
                             action: 'insert',

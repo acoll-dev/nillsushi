@@ -83,7 +83,7 @@
     <div class="well" style="background: #FFFFFF;" ng-show="calendarMode">
         <div class="container-fluid">
             <label>
-                Gerenciar dias
+                Gerenciar dias - {{formSettings.data.enabled}}
             </label>
         </div>
         <div class="well">
