@@ -24,7 +24,7 @@ class DaysenabledController {
                     foreach ($attributes as $key => $value) {
                         if (isset($value->name)) {
 
-                            if($value->name === 'enable'){
+                            if($value->name === 'enabled'){
                                 if($value->value == true){
                                     $value->value = 1;
                                 }else{
@@ -157,7 +157,7 @@ class DaysenabledController {
                 foreach ($attributes as $key => $value) {
                     if (isset($value->name)) {
 
-                        if($value->name === 'enable'){
+                        if($value->name === 'enabled'){
                             if($value->value == true){
                                 $value->value = 1;
                             }else{
