@@ -46,6 +46,7 @@ angular.module('mainApp').controller 'finishCtrl', ($rootScope, $scope, $localSt
             data:
                 status: 0
                 date: new Date
+                time: moment(new Date).format("HH:mm")
                 formpayment: 'Dinheiro'
                 address: $scope.addresses[0]
                 state: $rootScope.GRIFFO.user.state
@@ -62,18 +63,26 @@ angular.module('mainApp').controller 'finishCtrl', ($rootScope, $scope, $localSt
                     msgs: required: 'A loja é obrigatória'
                 }
                 {
-                  property: 'date',
-                  type: 'date',
-                  label: 'Data do pedido',
-                  columns: 6,
+                  property: 'date'
+                  type: 'date'
+                  label: 'Data do pedido'
+                  columns: 6
                   attr: required: true
                   msgs: required: 'A data é obrigatória'
+                }
+                {
+                  property: 'time'
+                  type: 'text'
+                  label: 'Hora do pedido'
+                  columns: 6
+                  attr: required: true, grMask: "'99:99'"
+                  msgs: required: 'A hora é obrigatória'
                 }
                 {
                     property: 'fetch'
                     type: 'checkbox'
                     label: 'Vai buscar?'
-                    columns: 6
+                    columns: 12
                 }
                 {
                     property: 'formpayment'
@@ -166,12 +175,13 @@ angular.module('mainApp').controller 'finishCtrl', ($rootScope, $scope, $localSt
             ]
             submit: (data) ->
                 return if !$scope.form.$valid
-
+                time = data.time.split(':')
                 order =
                     fkidclient: $rootScope.GRIFFO.user.id
                     fetch: data.fetch
                     subtotal: $rootScope.gr.cart.total()
                     fkidshop: data.fkidshop
+                    created: moment(data.date).hour(time[0]).minute(time[1]).second(0).format('YYYY-MM-DD HH:mm:ss')
                     products: []
 
                 angular.forEach $rootScope.gr.cart.items, (item) ->
