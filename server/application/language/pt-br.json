@@ -99,7 +99,7 @@
     },
     "ERROR": {
         "DATEINVALID" : "Data inválida!",
-        "DAYNOTEXISTS": "O dia não está cadastrado!",
+        "DAYNOTEXISTS": "Esse dia não está habilitado para pedidos!",
         "EMPTY": {
             "VALUE": "A variável \"Tipo\" está vazia ou não foi aceita"
         },
