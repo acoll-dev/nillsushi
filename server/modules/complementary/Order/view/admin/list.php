@@ -83,7 +83,7 @@
     <div class="well" style="background: #FFFFFF;" ng-show="calendarMode">
         <div class="container-fluid">
             <label>
-                Gerenciar dias - {{formSettings.data.enabled}}
+                Gerenciar dias
             </label>
         </div>
         <div class="well">
@@ -93,7 +93,7 @@
             <span class="pull-right gr-form-required-label">{{'LABEL.REQUIRED.FIELDS' | grTranslate}}</span>
         </div>
         <hr style="margin-top: 0;"/>
-        <div ui-calendar="calendar.config" ng-model="calendar.orders"></div>
+        <div ui-calendar="calendar.config" ng-model="calendarEventSource" calendar="orders"></div>
     </div>
     <table gr-table list="orders" reload="reload()" sortby="{'idorder': 'desc'}" export-csv="GRIFFO_orderList" ng-show="!calendarMode">
         <tr gr-repeat="(key, data) in $data">

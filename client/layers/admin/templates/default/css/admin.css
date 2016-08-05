@@ -402,6 +402,20 @@
 .badge.badge-danger {
   background-color: #d9534f;
 }
+.mini-badge {
+  display: block !important;
+  height: 5px;
+  width: 5px;
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  -webkit-opacity: 0.6;
+  -moz-opacity: 0.6;
+  -ie-opacity: 0.6;
+  -o-opacity: 0.6;
+  opacity: 0.6;
+}
 .container-large {
   padding: 15px;
 }

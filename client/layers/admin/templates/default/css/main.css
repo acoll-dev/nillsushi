@@ -11,6 +11,9 @@
  * copy this file and change the imported extensions and partials as
  * needed.
  */
+.clickable {
+  cursor: pointer;
+}
 html,
 html body {
   min-width: 320px;

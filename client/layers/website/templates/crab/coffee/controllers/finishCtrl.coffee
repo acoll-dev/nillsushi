@@ -46,7 +46,8 @@ angular.module('mainApp').controller 'finishCtrl', ($rootScope, $scope, $localSt
             data:
                 status: 0
                 date: new Date
-                time: moment(new Date).format("HH:mm")
+                # time: moment(new Date).format("HH:mm")
+                time: '00:00'
                 formpayment: 'Dinheiro'
                 address: $scope.addresses[0]
                 state: $rootScope.GRIFFO.user.state
@@ -70,19 +71,20 @@ angular.module('mainApp').controller 'finishCtrl', ($rootScope, $scope, $localSt
                   attr: required: true
                   msgs: required: 'A data é obrigatória'
                 }
-                {
-                  property: 'time'
-                  type: 'text'
-                  label: 'Hora do pedido'
-                  columns: 6
-                  attr: required: true, grMask: "'99:99'"
-                  msgs: required: 'A hora é obrigatória'
-                }
+                # {
+                #   property: 'time'
+                #   type: 'text'
+                #   label: 'Hora do pedido'
+                #   columns: 6
+                #   attr: required: true, grMask: "'99:99'"
+                #   msgs: required: 'A hora é obrigatória'
+                # }
                 {
                     property: 'fetch'
                     type: 'checkbox'
                     label: 'Vai buscar?'
-                    columns: 12
+                    # columns: 12
+                    columns: 6
                 }
                 {
                     property: 'formpayment'

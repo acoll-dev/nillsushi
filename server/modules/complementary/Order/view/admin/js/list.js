@@ -9,10 +9,10 @@
                 GRIFFO.librariesPath + "client/vendor/fullcalendar/dist/fullcalendar.css"
             ],
             js: [
-                GRIFFO.librariesPath + "client/vendor/angular-ui-calendar/src/calendar.js",
-                GRIFFO.librariesPath + "client/vendor/fullcalendar/dist/fullcalendar.min.js",
+                GRIFFO.librariesPath + "client/vendor/fullcalendar/dist/fullcalendar.js",
                 GRIFFO.librariesPath + "client/vendor/fullcalendar/dist/gcal.js",
-                GRIFFO.librariesPath + "client/vendor/fullcalendar/dist/lang-all.js"
+                GRIFFO.librariesPath + "client/vendor/fullcalendar/dist/lang-all.js",
+                GRIFFO.librariesPath + "client/vendor/angular-ui-calendar/src/calendar.js"
             ]
         }
     });
@@ -435,6 +435,17 @@
     }]);
     angular.module('adminApp').controller('tableCtrl', ['$rootScope', '$scope', '$filter', '$window', '$timeout', '$locale', '$grRestful', '$grAlert', '$cidadeEstado', '$ngPrint', function($rootScope, $scope, $filter, $window, $timeout, $locale, $grRestful, $grAlert, $cidadeEstado, angularLoad, $ngPrint) {
 
+        var $color = {
+            primary: "#337ab7",
+            success: "#5cb85c",
+            info: "#5bc0de",
+            warning: "#f0ad4e",
+            danger: "#d9534f",
+            default: "#777777",
+
+            text: "#FFFFFF",
+        }
+
         var loopOrders = $timeout,
             lastID = 0,
             firstLoop = true,
@@ -445,6 +456,7 @@
             $rootScope.GRIFFO.shops = [];
             $scope.orders = [];
             $scope.clients = [];
+            $scope.daysenabled = {};
             $scope.calendarMode = true;
 
             $timeout(function(){
@@ -475,7 +487,7 @@
                 }).then(function(r){
                     if(r.response){
                         $scope.orders = r.response;
-                        $scope.calendar.update();
+                        getClients();
                         if(reloading){
                             alert.show('success', 'ALERT.SUCCESS.LOAD.TABLE.DATA', 2000);
                         }
@@ -508,7 +520,7 @@
                             lastID = _lastID;
                         }
                         $scope.orders = r.response;
-                        $scope.calendar.update();
+                        getClients();
                         if(reloading){
                             alert.show('success', 'ALERT.SUCCESS.LOAD.TABLE.DATA', 2000);
                         }
@@ -535,6 +547,44 @@
                 }
             }
         };
+
+        var findClient = function(id){
+            var client = null
+            angular.forEach($scope.clients, function(_client){
+                if(_client.idclient == id){
+                    client = _client;
+                }
+            });
+            return client;
+        }
+
+        var getClients = function(){
+            $grRestful.find({
+                module: 'client',
+                action: 'get'
+            }).then(function(r){
+                if(r.response){
+                    $scope.clients = r.response;
+                    $scope.calendar.update();
+                    $scope.calendar.element.fullCalendar('prev');
+                    $scope.calendar.element.fullCalendar('next');
+                }
+            });
+        }
+
+        var getDaysenabled = function(){
+            $grRestful.find({
+                module: 'daysenabled',
+                action: 'get'
+            }).then(function(r){
+                if(r.response){
+                    $scope.daysenabled = {};
+                    angular.forEach(r.response, function(day){
+                        $scope.daysenabled[moment(day.date).format('YYYY-MM-DD')] = day;
+                    });
+                }
+            });
+        }
 
         var init = {
             notification: function(){
@@ -608,14 +658,6 @@
             },
             requests: function(){
                 $grRestful.find({
-                    module: 'client',
-                    action: 'get'
-                }).then(function(r){
-                    if(r.response){
-                        $scope.clients = r.response;
-                    }
-                });
-                $grRestful.find({
                     module: 'shop',
                     action: 'select'
                 }).then(function(r){
@@ -627,6 +669,7 @@
                 });
             },
             watchers: function(){
+                var callLoop = false
                 $scope.$watch('showCompleted', function(completed){
                     if($rootScope.GRIFFO.curShop){
                         $timeout.cancel(loopOrders);
@@ -644,13 +687,14 @@
                 });
             },
             calendar: function(){
+                $scope.calendarEvents = [];
                 $scope.calendar = {
-                    orders: [],
+                    element: null,
                     config: {
                         lang: 'pt-br',
                         header: {
-                            left: 'month agendaWeek agendaDay',
-                            center: 'title',
+                            // left: 'month agendaWeek agendaDay',
+                            // center: 'title',
                             right: 'today prev,next'
                         },
                         height: 650,
@@ -659,15 +703,82 @@
                             week: { titleFormat: 'D [de] MMMM YYYY' },
                             month: { titleFormat: 'MMMM YYYY' }
                         },
+                        dayRender: function (date, cell) {
+                            var day = date.format('YYYY-MM-DD'),
+                                day_enabled = $scope.daysenabled[day] && $scope.daysenabled[day].enabled == 1 ? true : false;
+                            cell.html('');
+                            if(day_enabled){
+                                cell.html('<div class="badge badge-success mini-badge"></div>');
+                            }else{
+                                cell.html('<div class="badge badge-danger mini-badge"></div>');
+                            }
+                        },
+                        eventLimit: true,
+                        eventClick: function(event, element){
+                            $scope.grTable.fn.edit($scope.grTable,event.id,'view/admin/edit.php')
+                        }
                         // editable: true,
                         // dayClick: $scope.alertEventOnClick,
                         // eventDrop: $scope.alertOnDrop,
                         // eventResize: $scope.alertOnResize
                     },
+                    clear: function(){
+                        length = $scope.calendarEvents.length;
+                        if(length > 0){
+                            for(var x = 0; x <= length; x++){
+                                $scope.calendarEvents.splice(x, 1);
+                            }
+                        }
+                    },
                     update: function(){
-                        console.log($scope.orders);
+                        if($scope.clients.length > 0){
+                            $scope.calendar.clear();
+                            angular.forEach($scope.orders, function(order){
+                                var client = findClient(order.fkidclient);
+                                if(client){
+
+                                    switch(order.status){
+                                        case 4:
+                                            status = 'info';
+                                            break;
+                                        case 3:
+                                            status = 'success';
+                                            break;
+                                        case 2:
+                                            status = 'warning';
+                                            break;
+                                        case 1:
+                                            status = 'danger';
+                                            break;
+                                        case 0:
+                                            status = 'primary';
+                                            break;
+                                        default:
+                                            status = 'default';
+                                    }
+
+                                    var new_event = {
+                                        id: order.idorder,
+                                        title: client.name,
+                                        status: order.status,
+                                        backgroundColor: $color[status],
+                                        borderColor: $color[status],
+                                        textColor: $color.text,
+                                        start: moment(order.created).format('YYYY-MM-DD'),
+                                        className: ['clickable'],
+                                        stick: true,
+                                    }
+                                    $scope.calendarEvents.push(new_event);
+                                }
+                            });
+                        }
                     }
                 };
+                $scope.calendarEventSource = [$scope.calendarEvents];
+                $scope.$on('ui-calendar:initialized', function(event, calendar){
+                    $scope.calendar.element = calendar;
+                });
+                getDaysenabled();
             },
             form: function(){
                 $scope.status = [
@@ -725,6 +836,7 @@
                             if(r.response){
                                 $scope.form.reset();
                                 loadOrders();
+                                getDaysenabled();
                             }
                             alert.show(r.status, r.message);
                         }, function (r) {
