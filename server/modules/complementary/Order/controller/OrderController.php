@@ -111,6 +111,14 @@ class OrderController {
                     
                     if(!$find){
                         throw new Exception("ERROR.DAYNOTEXISTS");
+                    }else{
+                        $find = array();
+                        
+                        $find = Daysenabled::find_by_sql("SELECT iddaysenabled from ".DB_PREFIX."daysenabled WHERE date = '{$auxDate[0]}' AND enabled = 0");
+                        
+                        if(!$find){
+                            throw new Exception("ERROR.DAYNOTEXISTS");
+                        }
                     }
                     
                     
@@ -644,16 +652,24 @@ class OrderController {
                 }
                 
                 
-                $find = array();
+                $auxDate = explode(" ",$array['created']);
                     
+                $find = array();
+
                 //Verificando se a data do pedido escolhida está cadastrada
 
-                $aux = explode("-",$auxDate[0]);
-
-                $find = Daysenabled::find_by_sql("SELECT iddaysenabled from ".DB_PREFIX."daysenabled WHERE DAY(date) = DAY(".$aux[2].") AND MONTH(date) = MONTH(".$auxDate[0].") AND YEAR(date) = YEAR(".$aux[0].")");
+                $find = Daysenabled::find_by_sql("SELECT iddaysenabled from ".DB_PREFIX."daysenabled WHERE date = '{$auxDate[0]}'");
 
                 if(!$find){
                     throw new Exception("ERROR.DAYNOTEXISTS");
+                }else{
+                    $find = array();
+
+                    $find = Daysenabled::find_by_sql("SELECT iddaysenabled from ".DB_PREFIX."daysenabled WHERE date = '{$auxDate[0]}' AND enabled = 0");
+
+                    if(!$find){
+                        throw new Exception("ERROR.DAYNOTEXISTS");
+                    }
                 }
                 
                 
