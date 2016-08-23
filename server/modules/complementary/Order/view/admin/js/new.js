@@ -6,16 +6,16 @@
         $scope.status = [
             {
                 value: 0,
-                label: 'Aguardando atendimento'
+                label: 'Pedido Agendado'
             },{
                 value: 1,
                 label: 'Em produção'
             },{
-                value: 2,
-                label: 'Em transporte'
-            },{
+            //     value: 2,
+            //     label: 'Em transporte'
+            // },{
                 value: 4,
-                label: 'Concluído, aguardando retirada'
+                label: 'Aguardando retirada'
             },{
                 value: 3,
                 label: 'Entregue'

@@ -73,10 +73,10 @@
         </div>
         <label style="margin-bottom: 0;">Estados de pedido</label>
         <hr style="margin: 5px 0;"/>
-        <span class="badge badge-primary" style="margin: 7px;">Aguardando atendimento</span>
+        <span class="badge badge-primary" style="margin: 7px;">Pedido Agendado</span>
         <span class="badge badge-danger" style="margin: 7px;">Em produção</span>
-        <span class="badge badge-warning" style="margin: 7px;">Em transporte</span>
-        <span class="badge badge-info" style="margin: 7px;">Concluído, aguardando retirada</span>
+        <!-- <span class="badge badge-warning" style="margin: 7px;">Aguardando retirada</span> -->
+        <span class="badge badge-info" style="margin: 7px;">Aguardando retirada</span>
         <span class="badge badge-success" style="margin: 7px;">Entregue</span>
     </div>
     <div class="clearfix"></div>
@@ -140,10 +140,10 @@
             </dd>
             <dt>Estado do pedido</dt>
             <dd>
-                <span ng-if="orderPrint.status === 0">Aguardando atendimento</span>
+                <span ng-if="orderPrint.status === 0">Pedido Agendado</span>
                 <span ng-if="orderPrint.status === 1">Em produção</span>
                 <span ng-if="orderPrint.status === 2">Em transporte</span>
-                <span ng-if="orderPrint.status === 4">Concluído, aguardando retirada</span>
+                <span ng-if="orderPrint.status === 4">Aguardando retirada</span>
                 <span ng-if="orderPrint.status === 3">Entregue</span>
             </dd>
             <dt data-ng-if="!orderPrint.fetch">Forma de pagamento</dt>

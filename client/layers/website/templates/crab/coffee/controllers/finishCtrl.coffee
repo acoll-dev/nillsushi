@@ -45,9 +45,10 @@ angular.module('mainApp').controller 'finishCtrl', ($rootScope, $scope, $localSt
         $scope.formSettings =
             data:
                 status: 0
+                fetch: yes
                 date: new Date
-                # time: moment(new Date).format("HH:mm")
-                time: '00:00'
+                time: moment(new Date).format("HH:mm")
+                # time: '00:00'
                 formpayment: 'Dinheiro'
                 address: $scope.addresses[0]
                 state: $rootScope.GRIFFO.user.state
@@ -60,7 +61,7 @@ angular.module('mainApp').controller 'finishCtrl', ($rootScope, $scope, $localSt
                     label: 'Loja'
                     list: 'item.value as item.label for item in shops'
                     columns: 12
-                    attr: required: true, ngShow: 'shops.length > 2'
+                    attr: required: yes, ngShow: 'shops.length > 2'
                     msgs: required: 'A loja é obrigatória'
                 }
                 {
@@ -68,112 +69,114 @@ angular.module('mainApp').controller 'finishCtrl', ($rootScope, $scope, $localSt
                   type: 'date'
                   label: 'Data do pedido'
                   columns: 6
-                  attr: required: true
-                  msgs: required: 'A data é obrigatória'
+                  attr: required: yes, min: moment(new Date).format("YYYY-MM-DD")
+                  msgs: required: 'A data é obrigatória', min: "Precisa ser #{moment(new Date).format("DD/MM/YYYY")} ou depois"
                 }
-                # {
-                #   property: 'time'
-                #   type: 'text'
-                #   label: 'Hora do pedido'
-                #   columns: 6
-                #   attr: required: true, grMask: "'99:99'"
-                #   msgs: required: 'A hora é obrigatória'
-                # }
+                {
+                  property: 'time'
+                  type: 'text'
+                  label: 'Hora do pedido'
+                  columns: 6
+                #   attr: required: yes, uiTimeMask: "short", ngPattern: "/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/d+"
+                  attr: required: yes, uiTimeMask: "short"
+                  msgs: required: 'A hora é obrigatória', time: 'A hora é inválida'
+                }
                 {
                     property: 'fetch'
                     type: 'checkbox'
                     label: 'Vai buscar?'
-                    # columns: 12
-                    columns: 6
+                    columns: 12
+                    attr: disabled: yes
+                    # columns: 6
                 }
-                {
-                    property: 'formpayment'
-                    type: 'select'
-                    label: 'Forma de pagamento'
-                    list: 'item as item for item in payments'
-                    attr:
-                        required: true
-                        ngIf: '!formSettings.data.fetch'
-                    msgs: required: 'A forma de pagamento é obrigatória'
-                }
-                {
-                    property: 'change'
-                    type: 'money'
-                    label: 'LABEL.CHANGE.FOR'
-                    placeholder: '0,00'
-                    columns: 6
-                    attr: ngIf: 'formSettings.data.formpayment === \'Dinheiro\' && !formSettings.data.fetch'
-                }
-                {
-                    type: 'hr'
-                    attr: 'ng-if': '!formSettings.data.fetch'
-                }
-                {
-                    property: 'address'
-                    type: 'select'
-                    label: 'Endereço de entrega'
-                    list: 'item as item for item in addresses'
-                    attr:
-                        required: true
-                        ngIf: '!formSettings.data.fetch'
-                    msgs: required: 'O endereço de entrega é obrigatório'
-                }
-                {
-                    property: 'address1'
-                    label: 'Novo endereço'
-                    columns: 8
-                    attr:
-                        required: true
-                        ngIf: 'formSettings.data.address === \'Outro...\' && !formSettings.data.fetch'
-                    msgs: required: 'O novo endereço é obrigatório'
-                }
-                {
-                    property: 'number'
-                    type: 'number'
-                    label: 'Número'
-                    columns: 4
-                    attr:
-                        required: true
-                        ngIf: 'formSettings.data.address === \'Outro...\' && !formSettings.data.fetch'
-                    msgs: required: 'O número é obrigatório'
-                }
-                {
-                    property: 'complement'
-                    label: 'Complemento'
-                    columns: 6
-                    attr: ngIf: 'formSettings.data.address === \'Outro...\' && !formSettings.data.fetch'
-                }
-                {
-                    property: 'district'
-                    label: 'Bairro'
-                    columns: 6
-                    attr:
-                        required: true
-                        ngIf: 'formSettings.data.address === \'Outro...\' && !formSettings.data.fetch'
-                    msgs: required: 'O bairro é obrigatório'
-                }
-                {
-                    property: 'state'
-                    type: 'select'
-                    label: 'Estado'
-                    columns: 6
-                    list: 'item.value as item.label for item in states'
-                    attr:
-                        required: true
-                        ngIf: 'formSettings.data.address === \'Outro...\' && !formSettings.data.fetch'
-                    msgs: required: 'Selecione um estado'
-                }
-                {
-                    property: 'city'
-                    type: 'select'
-                    label: 'Cidade'
-                    columns: 6
-                    list: 'item.value as item.label for item in cities'
-                    attr:
-                        required: true
-                        ngIf: 'formSettings.data.address === \'Outro...\' && !formSettings.data.fetch'
-                    msgs: required: 'Selecione uma cidade'
-                }
+                # {
+                #     property: 'formpayment'
+                #     type: 'select'
+                #     label: 'Forma de pagamento'
+                #     list: 'item as item for item in payments'
+                #     attr:
+                #         required: yes
+                #         ngIf: '!formSettings.data.fetch'
+                #     msgs: required: 'A forma de pagamento é obrigatória'
+                # }
+                # {
+                #     property: 'change'
+                #     type: 'money'
+                #     label: 'LABEL.CHANGE.FOR'
+                #     placeholder: '0,00'
+                #     columns: 6
+                #     attr: ngIf: 'formSettings.data.formpayment === \'Dinheiro\' && !formSettings.data.fetch'
+                # }
+                # {
+                #     type: 'hr'
+                #     attr: 'ng-if': '!formSettings.data.fetch'
+                # }
+                # {
+                #     property: 'address'
+                #     type: 'select'
+                #     label: 'Endereço de entrega'
+                #     list: 'item as item for item in addresses'
+                #     attr:
+                #         required: yes
+                #         ngIf: '!formSettings.data.fetch'
+                #     msgs: required: 'O endereço de entrega é obrigatório'
+                # }
+                # {
+                #     property: 'address1'
+                #     label: 'Novo endereço'
+                #     columns: 8
+                #     attr:
+                #         required: yes
+                #         ngIf: 'formSettings.data.address === \'Outro...\' && !formSettings.data.fetch'
+                #     msgs: required: 'O novo endereço é obrigatório'
+                # }
+                # {
+                #     property: 'number'
+                #     type: 'number'
+                #     label: 'Número'
+                #     columns: 4
+                #     attr:
+                #         required: yes
+                #         ngIf: 'formSettings.data.address === \'Outro...\' && !formSettings.data.fetch'
+                #     msgs: required: 'O número é obrigatório'
+                # }
+                # {
+                #     property: 'complement'
+                #     label: 'Complemento'
+                #     columns: 6
+                #     attr: ngIf: 'formSettings.data.address === \'Outro...\' && !formSettings.data.fetch'
+                # }
+                # {
+                #     property: 'district'
+                #     label: 'Bairro'
+                #     columns: 6
+                #     attr:
+                #         required: yes
+                #         ngIf: 'formSettings.data.address === \'Outro...\' && !formSettings.data.fetch'
+                #     msgs: required: 'O bairro é obrigatório'
+                # }
+                # {
+                #     property: 'state'
+                #     type: 'select'
+                #     label: 'Estado'
+                #     columns: 6
+                #     list: 'item.value as item.label for item in states'
+                #     attr:
+                #         required: yes
+                #         ngIf: 'formSettings.data.address === \'Outro...\' && !formSettings.data.fetch'
+                #     msgs: required: 'Selecione um estado'
+                # }
+                # {
+                #     property: 'city'
+                #     type: 'select'
+                #     label: 'Cidade'
+                #     columns: 6
+                #     list: 'item.value as item.label for item in cities'
+                #     attr:
+                #         required: yes
+                #         ngIf: 'formSettings.data.address === \'Outro...\' && !formSettings.data.fetch'
+                #     msgs: required: 'Selecione uma cidade'
+                # }
             ]
             submit: (data) ->
                 return if !$scope.form.$valid
@@ -217,7 +220,7 @@ angular.module('mainApp').controller 'finishCtrl', ($rootScope, $scope, $localSt
                     post: order
                 .then (r) ->
                     if r.response
-                        finished = true
+                        finished = yes
                         $scope.form.reset()
                         $rootScope.gr.cart.clear()
                         alert.show r.status, 'Seu pedido foi enviado com sucesso, você será redirecionado para acompanhar seu pedido.'
