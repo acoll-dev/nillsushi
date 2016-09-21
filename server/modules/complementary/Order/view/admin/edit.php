@@ -9,7 +9,7 @@
                     <dt>Nome</dt>
                     <dd>{{formSettings.data.client.name}}</dd>
                     <dt>Telefone</dt>
-                    <dd>{{formSettings.data.client.phone + (formSettings.data.client.mobilephone ? ' / ' + formSettings.data.client.mobilephone : '')}}</dd>
+                    <dd>{{(formSettings.data.client.phone | phone) + (formSettings.data.client.mobilephone && formSettings.data.client.mobilephone != '0' ? ' / ' + (formSettings.data.client.mobilephone | phone) : '')}}</dd>
                     <dt>Endereço</dt>
                     <dd>{{formSettings.data.client.address + ', ' + formSettings.data.client.number + (formSettings.data.client.complement ? ', ' + formSettings.data.client.complement : '') + ', ' + formSettings.data.client.city + ', ' + formSettings.data.client.state}}</dd>
                 </dl>
