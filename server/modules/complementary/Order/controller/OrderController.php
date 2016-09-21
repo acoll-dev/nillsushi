@@ -107,11 +107,11 @@ class OrderController {
                     
                     //Verificando se a data do pedido escolhida está cadastrada
                     
-                    $find = Daysenabled::find_by_sql("SELECT iddaysenabled from ".DB_PREFIX."daysenabled WHERE date = '{$auxDate[0]}'");
+                    $find = Daysenabled::find_by_sql("SELECT iddaysenabled from ".DB_PREFIX."daysenabled WHERE date = '{$auxDate[0]}' AND enabled = 1");
                     
                     if(!$find){
                         throw new Exception("ERROR.DAYNOTEXISTS");
-                    }else{
+                    }/*else{
                         $find = array();
                         
                         $find = Daysenabled::find_by_sql("SELECT iddaysenabled from ".DB_PREFIX."daysenabled WHERE date = '{$auxDate[0]}' AND enabled = 0");
@@ -119,7 +119,7 @@ class OrderController {
                         if(!$find){
                             throw new Exception("ERROR.DAYNOTEXISTS");
                         }
-                    }
+                    }*/
                     
                     
                     Order::create($array);
